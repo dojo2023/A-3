@@ -6,9 +6,14 @@
 <meta charset="UTF-8">
 <title>C²A</title>
 </head>
-	<h1>SEARCH</h1>
+	<h1>C²A</h1>
+	<h2>SEARCH</h2>
 	<hr>
 	<form action="">
+		<div>
+		<p>検索したいキーワードを入力してください。</p>
+  		<input type="search" name="search" placeholder="キーワードを入力">
+  		</div>
 		<div>
 		GENDER<br>
 		<input type="radio" name="gender" value="MEN">MEN
@@ -29,6 +34,7 @@
 		<div>
 		OUTER<br>
 		<select name="sub_outer">
+			<option value="none">選択してください</option>
 			<option value="jacket">ジャケット</option>
 			<option value="coat">コート</option>
 		</select>
@@ -36,6 +42,7 @@
 		<div>
 		TOPS<br>
 		<select name="sub_tops">
+			<option value="none">選択してください</option>
 			<option value="shirt">シャツ・ブラウス</option>
 			<option value="poloshirt">ポロシャツ</option>
 			<option value="sweater">セーター</option>
@@ -46,6 +53,7 @@
 		<div>
 		BOTTOMS<br>
 		<select name="sub_bottoms">
+			<option value="none">選択してください</option>
 			<option value="straight">ストレートパンツ</option>
 			<option value="slacks">スラックス</option>
 			<option value="tarered">テーパードパンツ</option>
@@ -57,6 +65,7 @@
 		<div>
 		DRESS<br>
 		<select name="sub_dress">
+			<option value="none">選択してください</option>
 			<option value="shirts_dress">シャツワンピース</option>
 			<option value="jumper">ジャンパースカート</option>
 			<option value="knee">ひざ丈のワンピース</option>
@@ -65,6 +74,7 @@
 		<div>
 		SHOES<br>
 		<select name="sub_shoes">
+			<option value="none">選択してください</option>
 			<option value="pumps">パンプス</option>
 			<option value="loafers">ローファー</option>
 			<option value="sneakers">スニーカー</option>
@@ -74,6 +84,7 @@
 		<div>
 		accessory<br>
 		<select name="sub_acce">
+			<option value="none">選択してください</option>
 			<option value="necklace">ネックレス</option>
 			<option value="pierce">ピアス</option>
 			<option value="earring">イヤリング</option>
