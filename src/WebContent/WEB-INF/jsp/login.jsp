@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>タイトルは後で</title>
+	<title>C²A | LOGIN</title>
 	<!-- スタイルシートの挿入 -->
 	<link rel="stylesheet" href="/login/css/style.css">
 </head>
@@ -14,13 +14,13 @@
 
 	<div class="loginpage">
 		<h1>LOGIN</h1>
-		<form id="login_form" method="post" action="TRex/LoginServlet">
+		<form id="login_form" method="post" action="/TRex/LoginServlet">
 			USER_ID<input type="text" name="ID"><br>
 			PASSWORD<input type="password" name="PW"><br>
 			<input type="submit" name="LOGIN" value="LOGIN">
 			<span id="error_massage"></span><br>
 			<p>パスワードを忘れた方はこちら<br>
-			<p>新規登録は<a href="register.jsp">こちら</a>
+			<p>新規登録は<a href="MypageNewServlet.java">こちら</a>
 		</form>
 	</div>
 	<!-- [ログイン]ボタンを押したとき -->
