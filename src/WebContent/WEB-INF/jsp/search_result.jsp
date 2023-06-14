@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>C²A</title>
 <link rel ="stylesheet" href="/TRex/css/search_result.css">
 </head>
 
