@@ -12,8 +12,8 @@
 	<h1>REGISTER</h1>
 	<h1>C²A</h1>
 	<!-- ハンバーガーメニュー -->
-	  <button type="button" class="menu-btn">
-      <i class="fa fa-bars" aria-hidden="true"></i>
+	<button type="button" class="menu-btn">
+    <i class="fa fa-bars" aria-hidden="true"></i>
     </button>
     <div class="menu">
       <div class="menu__item">MY PAGE</div>
