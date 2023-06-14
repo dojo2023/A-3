@@ -4,24 +4,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>C²A</title>
 <link rel ="stylesheet" href="/TRex/css/top.css">
 </head>
-<body>
-<div class="wrapper">
+
+
     <header>
+    <div class=" ">
       <!-- 天気　ロゴ　ハンバーガーメニュー -->
     </header>
-<h1>C²A</h1>
 
 
-<h2>今週のトレンド</h2>
+<body>
+<h1>今週のトレンド</h1>
 
 <div class="box">
   <!-- 枠とスライドが入ります -->
 </div>
 
   </div>
-<input type="button" value="今日のコーデ一覧はこちら" href='list.jsp'>
+<input type="button" value="今日のコーデ一覧はこちら" href='/TRex/ListServlet.java'>
 </body>
 </html>
