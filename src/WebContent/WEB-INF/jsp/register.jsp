@@ -7,11 +7,14 @@
 <title>C²A | REGISTER</title>
 </head>
 <header>
+	<!-- 天気 -->
 	<h1>REGISTER</h1>
+	<h1>C²A</h1>
+	<!-- ハンバーガーメニュー -->
 </header>
 <body>
 <div class = "wrapper">
-	<form id = "register_form" method = "POST" action = "/TRex/RegisterServlet">
+	<form id = "register" method = "POST" action = "/TRex/RegisterServlet">
 		<table>
 			<tr>
 				<td>
@@ -84,7 +87,7 @@
 						</select>
 					</div>
 					<div>
-						accessory<br>
+						ACCESSORY<br>
 						<select name="sub_acce">
 							<option value="necklace">ネックレス</option>
 							<option value="pierce">ピアス</option>
