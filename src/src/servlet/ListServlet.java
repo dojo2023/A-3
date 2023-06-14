@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.GoodDao;
+import model.Goods;
+
 /**
  * Servlet implementation class ListServlet
  */
@@ -30,7 +33,16 @@ public class ListServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
+		String colthes_id = request.getParameter("");
+		String uid = request.getParameter("");
+
+	GoodDao,igood = new GoodDao();
+		String good=igood,isgoodOK(gooid,clothesid,uid)
+		if (good != null) {
+			//いいね成功
+		}
 	}
 
 }

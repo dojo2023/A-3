@@ -7,13 +7,27 @@
 	<title>C²A | LOGIN</title>
 	<!-- スタイルシートの挿入 -->
 	<link rel="stylesheet" href="/login/css/style.css">
+	<link rel="stylesheet" href="/TRex/css/hamburger.css">
 </head>
+<header>
+	<!-- 天気、サイトロゴ、ハンバーガーメニュー -->
+	<h1>LOGIN</h1>
+	<!-- ハンバーガーメニュー -->
+	<button type="button" class="menu-btn">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    <div class="menu">
+      <div class="menu__item">MY PAGE</div>
+      <div class="menu__item">TOP PAGE</div>
+      <div class="menu__item">SEARCH</div>
+      <div class="menu__item">LIST</div>
+      <div class="menu__item">REGISTER</div>
+      <div class="menu__item">LOGOUT</div>
+    </div>
+</header>
 <body>
-	<!-- ログイン画面 -->
-	<!-- ロゴと天気が入る -->
 
 	<div class="loginpage">
-		<h1>LOGIN</h1>
 		<form id="login_form" method="post" action="/TRex/LoginServlet">
 			USER_ID<input type="text" name="ID"><br>
 			PASSWORD<input type="password" name="PW"><br>
@@ -36,4 +50,9 @@
 	}
 
 </body>
+<script>
+	document.querySelector('.menu-btn').addEventListener('click', function(){
+	document.querySelector('.menu').classList.toggle('is-active');
+	});
+</script>
 </html>
