@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>C²Ae</title>
 <link rel="stylesheet" href="/TRex/css/hamburger.css">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
 	<h1>C²A</h1>
@@ -107,8 +108,10 @@
 
 </body>
 <script>
+	/* ハンバーガーメニュー用 */
 	document.querySelector('.menu-btn').addEventListener('click', function(){
 	document.querySelector('.menu').classList.toggle('is-active');
 	});
+
 </script>
 </html>
