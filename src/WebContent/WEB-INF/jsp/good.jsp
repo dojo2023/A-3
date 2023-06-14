@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>C²A</title>
 </head>
+<header>
+	<h1>C²A</h1>
+	<h2>GOOD</h2>
+</header>
 <body>
+
 
 </body>
 </html>
