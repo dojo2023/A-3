@@ -8,12 +8,13 @@
 	<!-- スタイルシートの挿入 -->
 	<link rel="stylesheet" href="/login/css/style.css">
 </head>
+<header>
+	<!-- 天気、サイトロゴ、ハンバーガーメニュー -->
+	<h1>LOGIN</h1>
+</header>
 <body>
-	<!-- ログイン画面 -->
-	<!-- ロゴと天気が入る -->
 
 	<div class="loginpage">
-		<h1>LOGIN</h1>
 		<form id="login_form" method="post" action="/TRex/LoginServlet">
 			USER_ID<input type="text" name="ID"><br>
 			PASSWORD<input type="password" name="PW"><br>
