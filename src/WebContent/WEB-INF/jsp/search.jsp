@@ -6,9 +6,12 @@
 <meta charset="UTF-8">
 <title>C²A</title>
 </head>
+<header>
 	<h1>C²A</h1>
 	<h2>SEARCH</h2>
 	<hr>
+</header>
+<body>
 	<form action="">
 		<div>
 		<p>検索したいキーワードを入力してください。</p>
@@ -122,7 +125,7 @@
 		<input type="submit"name="submit" value="検索">
 		</div>
 	</form>
-<body>
+
 
 </body>
 
