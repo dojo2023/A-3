@@ -4,8 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>C²A</title>
+<link rel ="stylesheet" href="/TRex/css/list.css">
 </head>
+
+<header>
+<!-- 天気　ロゴ　ハンバーガーメニュー -->
+	<h1>C²A</h1>
+	<h2>LIST</h2>
+	<hr>
+</header>
+
 <body>
 
 </body>
