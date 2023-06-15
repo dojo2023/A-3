@@ -4,8 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>C²Ae</title>
+<title>C²A</title>
 <link rel="stylesheet" href="/TRex/css/hamburger.css">
+<link rel="stylesheet" href="/TRex/css/mypage_new.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
@@ -33,7 +34,11 @@
 	USER ID<br>
 	<input type="text" name="userid" placeholder="USER ID"><br>
 	PASSWORDS<br>
-	<input type="password" name="password" placeholder="PASS"><br>
+	<!-- <input type="password" name="password" placeholder="PASS"><br> -->
+	<span id="fieldPassword">
+	    <input type="password" id="textPassword" name="password" placeholder="PASSWORD">
+	</span>
+		 <span id="buttonEye" class="fa fa-eye" onclick="pushHideButton()"></span><br>
 	NAME<br>
 	<input type="text" name="name" placeholder="NAME"><br>
 	EMAIL<br>
@@ -115,5 +120,8 @@
 	document.querySelector('.menu').classList.toggle('is-active');
 	});
 
+
 </script>
+<!-- マスク用 -->
+<script src="/TRex/js/mask.js"></script>
 </html>
