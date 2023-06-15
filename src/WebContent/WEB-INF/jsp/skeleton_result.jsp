@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel ="stylesheet" href="/TRex/css/skelton_result.css">
 <link rel="stylesheet" href="/TRex/css/hamburger.css">
 </head>
 <header>
@@ -22,6 +23,7 @@
       <div class="menu__item">REGISTER</div>
       <div class="menu__item">LOGOUT</div>
     </div>
+    <hr>
 </header>
 <body>
 

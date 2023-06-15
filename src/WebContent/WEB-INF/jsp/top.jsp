@@ -30,6 +30,7 @@
       <div class="menu__item">REGISTER</div>
       <div class="menu__item">LOGOUT</div>
     </div>
+    <hr>
     </header>
 
 

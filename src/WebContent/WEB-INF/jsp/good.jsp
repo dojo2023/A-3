@@ -26,6 +26,7 @@
       <div class="menu__item">REGISTER</div>
       <div class="menu__item">LOGOUT</div>
     </div>
+    <hr>
 </header>
 <body>
 	<input type="hidden" name="clothesID" value="${clothesID}" id="cl">

@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>C²A | EDIT MYPAGE</title>
+<link rel ="stylesheet" href="/TRex/css/mypage_edit.css">
 <link rel="stylesheet" href="/TRex/css/hamburger.css">
 </head>
 <header>
