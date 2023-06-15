@@ -8,6 +8,7 @@
 	<!-- スタイルシートの挿入 -->
 	<link rel="stylesheet" href="/login/css/style.css">
 	<link rel="stylesheet" href="/TRex/css/hamburger.css">
+	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <header>
 	<!-- 天気、サイトロゴ、ハンバーガーメニュー -->
@@ -30,7 +31,11 @@
 	<div class="loginpage">
 		<form id="login_form" method="post" action="/TRex/LoginServlet">
 			USER_ID<input type="text" name="ID"><br>
-			PASSWORD<input type="password" name="PW"><br>
+			PASSWORD<!-- <input type="password" name="PW"><br> -->
+			<span id="fieldPassword">
+	    	<input type="password" id="textPassword" name="password" placeholder="PASSWORD">
+			</span>
+		 	<span id="buttonEye" class="fa fa-eye" onclick="pushHideButton()"></span><br>
 			<input type="submit" name="LOGIN" value="LOGIN">
 			<span id="error_massage"></span><br>
 			<p>パスワードを忘れた方はこちら<br>
@@ -55,4 +60,6 @@
 	document.querySelector('.menu').classList.toggle('is-active');
 	});
 </script>
+<!-- マスク用 -->
+<script src="/TRex/js/mask.js"></script>
 </html>
