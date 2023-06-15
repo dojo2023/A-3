@@ -49,7 +49,7 @@
 				<td>
 					<div>
 						<label>PASSWORDS<br>
-						<input type="password" name="password" placeholder="PASS">
+						<input type="password" name="password" placeholder="PASSWORD">
 						<input type= "button" name = "change_password" value = "変更">
 						</label>
 					</div>
