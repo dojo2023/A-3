@@ -9,9 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.GoodDao;
-import model.Goods;
-
 /**
  * Servlet implementation class ListServlet
  */
@@ -38,10 +35,12 @@ public class ListServlet extends HttpServlet {
 		String colthes_id = request.getParameter("");
 		String uid = request.getParameter("");
 
-	GoodDao,igood = new GoodDao();
-		String good=igood,isgoodOK(gooid,clothesid,uid)
+	GoodDao igood = new GoodDao();
+		String good=igood,isgoodOK(clothesid,uid)
 		if (good != null) {
 			//いいね成功
+			//１ならいいね成功
+			//0ならいいね失敗
 		}
 	}
 
