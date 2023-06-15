@@ -44,8 +44,7 @@
 <input type="button" value="今日のコーデ一覧はこちら" href='/TRex/ListServlet.java'>
 </body>
 
-<<<<<<< Updated upstream
-=======
+
  <script type="text/javascript" src="TRex/mamewaza_weather/mamewaza_weather.min.js"></script>
 <script type="text/javascript">
 $.mamewaza_weather( {
