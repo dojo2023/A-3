@@ -27,7 +27,7 @@
       <div class="menu__item">LOGOUT</div>
     </div>
 	<hr>
-	<form action="">
+	<form id = "mypage_form" action="">
 		  <input type="file" name="icon">
 		  <button type="submit">送信する</button>
 	<div>
@@ -44,7 +44,7 @@
 	EMAIL<br>
 	<input type="text" name="email" placeholder="E-MAIL"><br>
 	GENDER<br>
-		<select name="gender">
+		<select name="gender" id = "genderSelect">
 			<option value="none">選択してください</option>
 			<option value="men">男性</option>
 			<option value="woman">女性</option>
@@ -109,6 +109,7 @@
 		<input type="date" name="calendar" max="9999-12-31">
 	</div>
 	<div>
+		<div style="color:#ff0000;" class="contents" id="error_message"></div>
 		<input type="submit"name="submit" value="登録">
 	</div>
 	</form>
@@ -124,4 +125,5 @@
 </script>
 <!-- マスク用 -->
 <script src="/TRex/js/mask.js"></script>
+<script src="/TRex/js/user_error.js"></script>
 </html>

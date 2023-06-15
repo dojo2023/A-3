@@ -27,7 +27,7 @@
 	<hr>
 </header>
 <body>
-	<form id = "mypage_edit" method = "POST" action = "/TRex/MypageEditServlet">
+	<form id = "mypage_form" method = "POST" action = "/TRex/MypageEditServlet">
 		<table>
 			<tr>
 				<td>
@@ -77,7 +77,7 @@
 				<td>
 					<div>
 						<label>GENDER<br>
-							<select name="gender">
+							<select name="gender" id = "genderSelect">
 								<option value="none">選択してください</option>
 								<option value="men">男性</option>
 								<option value="woman">女性</option>
@@ -176,7 +176,8 @@
 			<tr>
 				<td>
 					<div>
-						<input type="submit"name="submit" value="REGISTER">
+					    <div style="color:#ff0000;" class="contents" id="error_message"></div>
+						<input type="submit"name="register" value="REGISTER" onclick="return check()">
 					</div>
 				</td>
 			</tr>
@@ -196,4 +197,5 @@
 	document.querySelector('.menu').classList.toggle('is-active');
 	});
 </script>
+<script src="/TRex/js/user_error.js"></script>
 </html>
