@@ -31,16 +31,36 @@
 
 	<div class="loginpage">
 		<form id="login_form" method="post" action="/TRex/LoginServlet">
-		  	USER_ID<input type="text" name="ID"><br>
+			<div>
+				<label for="user_id">USER_ID</label>
+			</div>
+			<div>
+				<input type="text" id="user_id" required />
+			</div>
+			<div>
+				<label for="password">PASSWORD</label>
+			</div>
+			<div>
+				<input type="password" id="password" required oninput="CheckUser_id(this)" />
+			</div>
+			<p>
+				<input type="submit" id="submit" value="LOGIN">
+			</p>
+			<span id="error_massage"></span>
+			<p>パスワードを忘れた方はこちら<br>
+			<p>新規登録は<a href="MypageNewServlet.java">こちら</a>
+
+		  <!--  USER_ID<input type="text" name="ID"><br>
 			PASSWORD<input type="password" name="PW"><br>
 			<input type="submit" name="LOGIN" value="LOGIN">
 			<span id="error_massage"></span><br>
 			<p>パスワードを忘れた方はこちら<br>
 			<p>新規登録は<a href="MypageNewServlet.java">こちら</a>
+			-->
 		</form>
 	</div>
 	<!-- [ログイン]ボタンを押したとき -->
-
+	<!--
 	var formObj = document.getElementById('login_form');
 	ver errorMessageObj = document.getElementById('error_massage');
 	formObj.onsubmit = function() {
@@ -50,6 +70,20 @@
 		}
 		errorMassageObj.textContent = null;
 	}
+	-->
+<script>
+	function CheckUser_id(input) {
+		var text = document.getElementById("user_id").value;
+		var password = input.value;
+
+		if(user_id != password) {
+			input.setCustomValidity('IDとパスワードが一致しません。';)
+		}
+		else {
+			input.setCustomValisty('');
+		}
+	}
+</script>
 
 </body>
 <script>
