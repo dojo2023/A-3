@@ -4,10 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>C²Ae</title>
+<title>C²A</title>
 <link rel="stylesheet" href="/TRex/css/hamburger.css">
+<link rel="stylesheet" href="/TRex/css/mypage_new.css">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
+<!-- 天気 -->
+ <div id="ww_4872ca99eaffb" v='1.3' loc='id' a='{"t":"horizontal","lang":"ja","sl_lpl":1,"ids":[],"font":"Times","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3,"el_whr":3}'>Weather Data Source: <a href="https://oneweather.org/ja/tokyo/14_days/" id="ww_4872ca99eaffb_u" target="_blank">東京天気予報14日間</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_4872ca99eaffb"></script>
 	<h1>C²A</h1>
 	<h2>SEARCH</h2>
 	<!-- ハンバーガーメニュー -->
@@ -30,7 +34,11 @@
 	USER ID<br>
 	<input type="text" name="userid" placeholder="USER ID"><br>
 	PASSWORDS<br>
-	<input type="password" name="password" placeholder="PASS"><br>
+	<!-- <input type="password" name="password" placeholder="PASS"><br> -->
+	<span id="fieldPassword">
+	    <input type="password" id="textPassword" name="password" placeholder="PASSWORD">
+	</span>
+		 <span id="buttonEye" class="fa fa-eye" onclick="pushHideButton()"></span><br>
 	NAME<br>
 	<input type="text" name="name" placeholder="NAME"><br>
 	EMAIL<br>
@@ -107,8 +115,13 @@
 
 </body>
 <script>
+	/* ハンバーガーメニュー用 */
 	document.querySelector('.menu-btn').addEventListener('click', function(){
 	document.querySelector('.menu').classList.toggle('is-active');
 	});
+
+
 </script>
+<!-- マスク用 -->
+<script src="/TRex/js/mask.js"></script>
 </html>

@@ -1,1 +1,92 @@
 @charset "UTF-8";
+/*全体*/
+		.wrapper{
+		    max-width: 600px;
+		    margin: 0 auto;
+		    color: #666;
+		}
+		#header {
+		    text-align: center;
+		    font-size: 28px;
+		    width: 100%;
+		    margin: 1rem 0 0;
+            font-family: Times ;
+           /* margin-top: 60px;*/
+           position: relative;
+           top: 50px;
+		}
+
+		/*カレンダー*/
+		#calendar {
+		    text-align: center;
+		    width: 100%;
+
+
+		}
+		table {
+		    outline: 2px solid #ddd;
+		    border-collapse: collapse;
+		    width: 100%;
+		}
+		th {
+		    color: #000;
+
+		}
+		th, td {
+		    outline: 1px solid #ddd;
+		    padding-top: 20px;
+		    padding-bottom: 30px;
+		    text-align: center;
+            font-family: Times ;
+		}
+		/*日曜日*/
+		td:first-child {
+		    color: red;
+		}
+		/*土曜日*/
+		td:last-child {
+		    color: blue;
+		}
+		/*前後月の日付*/
+		td.disabled {
+		    color: #ccc;
+		}
+		/*本日*/
+		td.today {
+		    background-color: #D65E72;
+		    color: #fff;
+		}
+
+		/*ボタン*/
+		#next-prev-button {
+		    position: relative;
+		}
+		#next-prev-button button{
+		    cursor: pointer;
+		    background: #ffc0cb;
+		    color: #fff;
+		    border: 1px solid #db7093;
+		    border-radius: 4px;
+		    font-size: 1rem;
+		    padding: 0.5rem 2rem;
+		    margin: 1rem 0;
+		}
+		#next-prev-button button:hover{
+		    background-color: #ff69b4;
+		    border-color: #ffc0cb;
+		}
+		#prev {
+		    float: left;
+		}
+		#next {
+		    float: right;
+		}
+		/* ハンガーホバーカラー
+		.image-link:hover {
+     color: red;   ホバー時のテキスト色
+     background-color: #696969;   ホバー時の背景色
+
+       }*/
+       td :hover{
+       background-color: #696969;
+       }
