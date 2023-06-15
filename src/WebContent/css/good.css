@@ -1,32 +1,13 @@
 @charset "UTF-8";
 
-.check-box {
-  cursor: pointer;
+#checkboxImage {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(../img/good.png);
+  background-size: cover;
 }
-.check-text {
-  /* チェックボックスとテキストの上下を中央に */
-  align-items: center;
-  display: flex;
-}
-.check-box input {
-  display: none; /* デフォルトのチェックボックスを非表示 */
-}
-.check-box input + .check-text::before {
-  /* チェック入れる前のチェックボックス画像 */
-  background-image: url(./img/good.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  content: "";
-  height: 30px;
-  position: relative;
-  width: 30px;
-}
-.check-box input:checked + .check-text::before {
-  /* チェック入れた後のチェックボックス画像 */
-  background-image: url(./img/good.png);
-}
-/* レイアウトのためのcss */
-p {
-  font-size: 24px;
+
+#myCheckbox:checked ~ #checkboxImage {
+  background-image: url(../img/good_change.png);
 }

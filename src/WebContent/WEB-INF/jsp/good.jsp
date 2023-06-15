@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>C²A</title>
-<link rel="stylesheet" href="/TRex/css/common.css">
 <link rel="stylesheet" href="/TRex/css/hamburger.css">
 <link rel="stylesheet" href="/TRex/css/good.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -30,9 +29,10 @@
 </header>
 <body>
 	<input type="hidden" name="clothesID" value="${clothesID}" id="cl">
-	<img alt="good" src="./img/good.png">
-	<input type="checkbox" id="iine">
-
+ 	<label for="myCheckbox">
+  <input type="checkbox" id="myCheckbox">
+  <span id="checkboxImage"></span>
+</label>
 
 	<script>
 		var ch = document.getElementById('iine');

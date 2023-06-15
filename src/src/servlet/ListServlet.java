@@ -28,20 +28,4 @@ public class ListServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//doGet(request, response);
-		request.setCharacterEncoding("UTF-8");
-		String colthes_id = request.getParameter("");
-		String uid = request.getParameter("");
-
-	GoodDao igood = new GoodDao();
-		String good=igood,isgoodOK(clothesid,uid)
-		if (good != null) {
-			//いいね成功
-			//１ならいいね成功
-			//0ならいいね失敗
-		}
-	}
-
 }
