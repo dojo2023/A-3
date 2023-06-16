@@ -23,7 +23,7 @@ public class GoodServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 登録ページにフォワードする
+		// いいねページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/good.jsp");
 		dispatcher.forward(request, response);
 	}

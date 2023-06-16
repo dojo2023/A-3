@@ -20,7 +20,7 @@ public class MypageCalendarServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 登録ページにフォワードする
+		// カレンダーページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage_calendar.jsp");
 		dispatcher.forward(request, response);
 	}
