@@ -8,6 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import model.LoginUser;
+import model.Users;
 
 /**
  * Servlet implementation class LoginServlet
@@ -31,6 +35,28 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+
+		// リクエストパラメーターを取得する
+		request.setCharacterEncoding("UTF-8");
+		String id = request.getParameter("ID");
+		String pw =  request.getParameter("PW");
+
+		// ログイン処理を行う
+		UsersDao iDao = new UsersDao();
+		if (iDao.isLoginOK(new Users(id, pw))) { // ログイン成功
+			// セッションスコープにIDを格納する
+			HttpSession session = request.getSession();
+			session.setAttribute("id", new LoginUser(id));
+
+			// メニューサーブレットにリダイレクトする
+			response.sendRedirect("/TRex/TopServlet");
+		}
+		else {									// ログイン失敗
+			// リクエストスコープに、タイトル、メッセージ、戻り先を格納する
+			request.setAttribute("result",
+			new Result("ログイン失敗！", "IDまたはPWに間違いがあります。", "/TRex/LoginServlet"));
+		}
+
 	}
 
 }
