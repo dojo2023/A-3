@@ -20,7 +20,7 @@ public class ListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 登録ページにフォワードする
+		// 一覧ページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/list.jsp");
 				dispatcher.forward(request, response);
 			}
