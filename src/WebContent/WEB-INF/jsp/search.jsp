@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>C²A</title>
+<link rel ="stylesheet" href="/TRex/css/search.css">
 <link rel="stylesheet" href="/TRex/css/hamburger.css">
 </head>
 <header>

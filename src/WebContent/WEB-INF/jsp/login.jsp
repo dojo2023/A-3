@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<title>C²A | LOGIN</title>
 	<!-- スタイルシートの挿入 -->
-	<link rel="stylesheet" href="/login/css/style.css">
+	<link rel="stylesheet" href="/TRex/css/login.css">
 	<link rel="stylesheet" href="/TRex/css/hamburger.css">
 </head>
 <header>
@@ -26,6 +26,7 @@
       <div class="menu__item">REGISTER</div>
       <div class="menu__item">LOGOUT</div>
     </div>
+    <hr>
 </header>
 <body>
 

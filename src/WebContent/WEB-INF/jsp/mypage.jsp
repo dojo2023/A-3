@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>C²A | マイページ</title>
+<link rel ="stylesheet" href="/TRex/css/mypage.css">
 <link rel="stylesheet" href="/TRex/css/hamburger.css">
 </head>
 <body>
