@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("id", new Users(id));
 
-			// メニューサーブレットにリダイレクトする
+			// トップサーブレットにリダイレクトする
 			response.sendRedirect("/TRex/TopServlet");
 		}
 		else {									// ログイン失敗

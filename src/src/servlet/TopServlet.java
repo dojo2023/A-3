@@ -20,7 +20,7 @@ public class TopServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 登録ページにフォワードする
+		// トップページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top.jsp");
 				dispatcher.forward(request, response);
 			}
@@ -32,7 +32,10 @@ public class TopServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 
+<<<<<<< HEAD
 		//なにするのかをどんどん書いていく(コメントアウト)
+=======
+>>>>>>> 6f823465be54a458ed44caf87dcca4d7fcaf5d00
 	}
 
 }
