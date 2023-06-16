@@ -24,7 +24,14 @@ public class ListServlet extends HttpServlet {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/list.jsp");
 				dispatcher.forward(request, response);
 			}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
 
+
+		//なにするのかをどんどん書いていく(コメントアウト)
+
+	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

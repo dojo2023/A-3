@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.LoginUser;
+import dao.UsersDao;
 import model.Users;
 
 /**
@@ -44,15 +44,15 @@ public class LoginServlet extends HttpServlet {
 		// ログイン処理を行う
 		UsersDao iDao = new UsersDao();
 		if (iDao.isLoginOK(new Users(id, pw))) { // ログイン成功
-			// セッションスコープにIDを格納する
+			// セッションスコープにIDを格納する→Usersの箱を格納すればよい
 			HttpSession session = request.getSession();
-			session.setAttribute("id", new LoginUser(id));
+			session.setAttribute("id", new Users(id));
 
 			// メニューサーブレットにリダイレクトする
 			response.sendRedirect("/TRex/TopServlet");
 		}
 		else {									// ログイン失敗
-			// リクエストスコープに、タイトル、メッセージ、戻り先を格納する
+			// doGetを持ってきてアラートは表示させる
 			request.setAttribute("result",
 			new Result("ログイン失敗！", "IDまたはPWに間違いがあります。", "/TRex/LoginServlet"));
 		}
