@@ -48,7 +48,7 @@ public class SearchServlet extends HttpServlet {
 
 		// 検索処理を行う（投稿されたものの中から捜索）
 		RegisterDao rDao = new RegisterDao();
-		List<Registers> searchList = rDao.select(new Registers(gender, clothes, tag));
+		List<Registers> searchList = rDao.select(new Registers());
 
 
 		// 検索結果をリクエストスコープに格納する
