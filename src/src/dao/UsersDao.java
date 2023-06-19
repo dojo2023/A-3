@@ -3,10 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import model.Users;
 
@@ -100,15 +97,15 @@ public class UsersDao{
 
 				// SQL文を完成させる
 					pStmt.setString(1, user.getId());
-					pStmt.setString(2, user.getMail());
+					pStmt.setString(2, user.getPw());
 					pStmt.setString(3, user.getName());
-					pStmt.setString(4, user.getPass());
-					pStmt.setString(5, user.getGender());
+					pStmt.setString(4, user.getEmail());
+					pStmt.setInt(5, user.getGender());
 					pStmt.setString(6, user.getAddress());
-					pStmt.setString(7, user.Barth());
-					pStmt.setString(8, user.getHeight());
-					pStmt.setString(9, user.getWeight());
-					pStmt.setString(10, user.getManagement());
+					pStmt.setString(7, user.Birth());
+					pStmt.setInt(8, user.getHeight());
+					pStmt.setInt(9, user.getWeight());
+					pStmt.setInt(10, user.getManagement());
 
 				// SQL文を実行する
 				if (pStmt.executeUpdate() == 1) {
@@ -160,8 +157,8 @@ public class UsersDao{
 				else {
 					pStmt.setString(1, null);
 				}
-				if (user.getMail() != null && !user.getMail().equals("")) {
-					pStmt.setString(2, user.getMail());
+				if (user.getEmail() != null && !user.getEmail().equals("")) {
+					pStmt.setString(2, user.getEmail());
 				}
 				else {
 					pStmt.setString(2, null);
@@ -172,14 +169,14 @@ public class UsersDao{
 				else {
 					pStmt.setString(3, null);
 				}
-				if (user.getPass() != null && !user.getPass().equals("")) {
-					pStmt.setString(4, user.getPass());
+				if (user.getPw() != null && !user.getPw().equals("")) {
+					pStmt.setString(4, user.getPw());
 				}
 				else {
 					pStmt.setString(4, null);
 				}
 				if (user.getGender() != null && !user.getGender().equals("")) {
-					pStmt.setString(5, user.getGender());
+					pStmt.setInt(5, user.getGender());
 				}
 				else {
 					pStmt.setString(5, null);
@@ -190,20 +187,20 @@ public class UsersDao{
 				else {
 					pStmt.setString(6, null);
 				}
-				if (user.getBarth() != null && !user.getBarth().equals("")) {
-					pStmt.setString(7, user.getBarth());
+				if (user.getBirth() != null && !user.getBirth().equals("")) {
+					pStmt.setString(7, user.getBirth());
 				}
 				else {
 					pStmt.setString(7, null);
 				}
 				if (user.getHeight() != null && !user.getHeight().equals("")) {
-					pStmt.setString(8, user.getHeight());
+					pStmt.setInt(8, user.getHeight());
 				}
 				else {
 					pStmt.setString(8, null);
 				}
 				if (user.getWeight() != null && !user.getWeight().equals("")) {
-					pStmt.setString(9, user.getWeight());
+					pStmt.setInt(9, user.getWeight());
 				}
 				else {
 					pStmt.setString(9, null);
@@ -285,5 +282,3 @@ public class UsersDao{
 			return result;
 		}
 	}
-
-}
