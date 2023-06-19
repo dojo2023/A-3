@@ -110,4 +110,9 @@ public class RegisterServlet extends HttpServlet {
 		}
 
 	}
+
+	private String getFileName(Part part) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
 }

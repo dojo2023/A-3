@@ -27,7 +27,7 @@
       <div class="menu__item">LOGOUT</div>
     </div>
 	<hr>
-	<form id = "mypage_form" action="">
+	<form id = "mypage_form" action="/TRex/MypageNewServlet">
 		  <input type="file" name="icon">
 		  <button type="submit">送信する</button>
 	<div>

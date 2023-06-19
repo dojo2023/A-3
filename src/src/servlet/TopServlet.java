@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 /**
  * Servlet implementation class TopServlet
@@ -31,11 +32,32 @@ public class TopServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
 
-<<<<<<< HEAD
-		//なにするのかをどんどん書いていく(コメントアウト)
-=======
->>>>>>> 6f823465be54a458ed44caf87dcca4d7fcaf5d00
+		Part part = request.getPart("IMAGE"); // getPartで取得
+
+		String image = this.getFileName(part);
+		request.setAttribute("image", image);
+		// サーバの指定のファイルパスへファイルを保存
+        //場所はクラス名↑の上に指定してある
+		part.write(image);
+        //ディスパッチ
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+		dispatcher.forward(request, response);
+    }
+
+	//ファイルの名前を取得してくる
+	private String getFileName(Part part) {
+        String name = null;
+        for (String dispotion : part.getHeader("Content-Disposition").split(";")) {
+            if (dispotion.trim().startsWith("filename")) {
+                name = dispotion.substring(dispotion.indexOf("=") + 1).replace("\"", "").trim();
+                name = name.substring(name.lastIndexOf("\\") + 1);
+                break;
+            }
+        }		// TODO 自動生成されたメソッド・スタブ
+		return name;
+
 	}
 
 }
