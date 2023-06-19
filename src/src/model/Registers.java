@@ -34,13 +34,13 @@ public class Registers implements Serializable {
 	private int skestraight;
 	private int skenatural;
 	private int repeat;
-	private int img;
+	private String img;
 
 
 	public Registers(String id, int outer, int tops, int bottoms, int dress, int socks, int shose, int acce, int spring,
 			int summer, int autum, int winter, int cute, int casual, int simple, int stripe, int check, int dot,
 			int beauty, int mode, int natural, int conserva, int cool, int lowheight, int mens, int lowprice,
-			int monotone, int skewave, int skestraight, int skenatural, int repeat, int img) {
+			int monotone, int skewave, int skestraight, int skenatural, int repeat, String img) {
 		super();
 		this.id = id;
 		this.outer = outer;
@@ -110,7 +110,7 @@ public class Registers implements Serializable {
 		this.skestraight = 0;
 		this.skenatural = 0;
 		this.repeat = 0;
-		this.img = 0;
+		this.img = "";
 	}
 
 
@@ -424,12 +424,12 @@ public class Registers implements Serializable {
 	}
 
 
-	public int getImg() {
+	public String getImg() {
 		return img;
 	}
 
 
-	public void setImg(int img) {
+	public void setImg(String img) {
 		this.img = img;
 	}
 
