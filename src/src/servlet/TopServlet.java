@@ -36,7 +36,7 @@ public class TopServlet extends HttpServlet {
 
 		Part part = request.getPart("IMAGE"); // getPartで取得
 
-		String image = this.getFileName(part);
+		String image = this.getImg(part);
 		request.setAttribute("image", image);
 		// サーバの指定のファイルパスへファイルを保存
         //場所はクラス名↑の上に指定してある
@@ -47,7 +47,7 @@ public class TopServlet extends HttpServlet {
     }
 
 	//ファイルの名前を取得してくる
-	private String getFileName(Part part) {
+	private String getImg(Part part) {
         String name = null;
         for (String dispotion : part.getHeader("Content-Disposition").split(";")) {
             if (dispotion.trim().startsWith("filename")) {
