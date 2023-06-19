@@ -102,7 +102,7 @@ public class UsersDao{
 					pStmt.setString(4, user.getEmail());
 					pStmt.setInt(5, user.getGender());
 					pStmt.setString(6, user.getAddress());
-					pStmt.setString(7, user.Birth());
+					pStmt.setString(7, user.getBirth());
 					pStmt.setInt(8, user.getHeight());
 					pStmt.setInt(9, user.getWeight());
 					pStmt.setInt(10, user.getManagement());
@@ -175,7 +175,7 @@ public class UsersDao{
 				else {
 					pStmt.setString(4, null);
 				}
-				if (user.getGender() != null && !user.getGender().equals("")) {
+				if (user.getGender() != null && !user.getGender() == ("")) {
 					pStmt.setInt(5, user.getGender());
 				}
 				else {
@@ -193,13 +193,13 @@ public class UsersDao{
 				else {
 					pStmt.setString(7, null);
 				}
-				if (user.getHeight() != null && !user.getHeight().equals("")) {
+				if (user.getHeight() != null && !user.getHeight() == ("")) {
 					pStmt.setInt(8, user.getHeight());
 				}
 				else {
-					pStmt.setString(8, null);
+					pStmt.setInt(8, null);
 				}
-				if (user.getWeight() != null && !user.getWeight().equals("")) {
+				if (user.getWeight() != null && !user.getWeight() == ("")) {
 					pStmt.setInt(9, user.getWeight());
 				}
 				else {
