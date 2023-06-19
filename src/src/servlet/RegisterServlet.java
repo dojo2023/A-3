@@ -20,7 +20,7 @@ public class RegisterServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 登録ページにフォワードする
+		// 投稿ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/register.jsp");
 		dispatcher.forward(request, response);
 	}
@@ -34,6 +34,12 @@ public class RegisterServlet extends HttpServlet {
 
 
 		//なにするのかをどんどん書いていく(コメントアウト)
+		// リクエストパラメータを取得する
+		//投稿処理を行う
+		//インサート文でSQLを挿入
+		//投稿が完了したらトップページにフォワードする
+		//投稿が失敗してら投稿ページにフォワードする
+
 
 	}
 
