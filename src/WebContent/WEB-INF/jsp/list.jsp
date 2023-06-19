@@ -31,7 +31,8 @@
 </header>
 
 <body>
-
+	<%--画像表示 --%>
+	<img src="${'/Nyample/images/'+=image}" id="gazo">
 </body>
 <script>
 	document.querySelector('.menu-btn').addEventListener('click', function(){
