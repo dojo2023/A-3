@@ -14,7 +14,7 @@ public class TopimageDao {
 
   Connection conn = null;
 
-    public List<Topimages> getTopImages() throws SQLException {
+    public List<Topimages> getTopImages()  {
         List<Topimages> imageList = new ArrayList<>();
         try {
 
@@ -82,8 +82,8 @@ public class TopimageDao {
         PreparedStatement pStmt = conn.prepareStatement(sql);
 
         //SQL文を完成させる
-        pStmt.setInt(1, image.getTopid());
-        pStmt.setString(2, image.getTopimg());
+       // pStmt.setInt(1, image.getTopid());
+       // pStmt.setString(2, image.getTopimg());
 
      // SQL文を実行する
 		if (pStmt.executeUpdate() == 1) {

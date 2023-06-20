@@ -42,7 +42,7 @@
   <!--スライドショー-->
     <div id = "area" class="wrap slide-paused" ontouchstart="">
 <ul class="slideshow" id="images">
-    <li class="content content-hover"><img src="${'/TRex/UploadPhoto/'+=image}" id="gazo"></li>
+    <li class="content content-hover"><img src="/TRex/UploadPhoto/${list[0].image}" id="gazo"></li>
     <li class="content content-hover"></li>
     <li class="content content-hover"></li>
     <li class="content content-hover"></li>
