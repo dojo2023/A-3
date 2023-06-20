@@ -50,9 +50,9 @@ public class RegisterServlet extends HttpServlet {
 		String SOCKS= request.getParameter("SOCKS");
 		String SHOSE= request.getParameter("SHOSE");
 		String ACCE= request.getParameter("ACCE");
-		
+
 		//サブカテゴリ
-		
+
 		//タグ
 		String SPRING= request.getParameter("SPRING");
 		String SUMMER= request.getParameter("SUMMER");
@@ -96,7 +96,7 @@ public class RegisterServlet extends HttpServlet {
 		request.setAttribute("result",
 		new Registers());
 		}
-
+	}
 		//ファイルの名前を取得してくる
 		private String getImg(Part part) {
 	        String name = null;
@@ -115,5 +115,5 @@ public class RegisterServlet extends HttpServlet {
 //	private String getImg(Part part) {
 		// TODO 自動生成されたメソッド・スタブ
 //		return null;
-	}
+
 }

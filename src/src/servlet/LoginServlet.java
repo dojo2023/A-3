@@ -25,8 +25,8 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// ログインページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
-		dispatcher.forward(request, response);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+				dispatcher.forward(request, response);
 	}
 
 	/**
@@ -43,18 +43,23 @@ public class LoginServlet extends HttpServlet {
 
 		// ログイン処理を行う
 		UsersDao iDao = new UsersDao();
-		if (iDao.isLoginOK(new Users(id, pw))) { // ログイン成功
+
+		Users user = iDao.login(id,pw);
+		if (user!=null) { // ログイン成功
 			// セッションスコープにIDを格納する→Usersの箱を格納すればよい
 			HttpSession session = request.getSession();
-			session.setAttribute("id", new Users(id));
+			session.setAttribute("user", user);
 
 			// トップサーブレットにリダイレクトする
 			response.sendRedirect("/TRex/TopServlet");
 		}
 		else {									// ログイン失敗
 			// doGetを持ってきてアラートは表示させる
-			request.setAttribute("result",
-			new Result("ログイン失敗！", "IDまたはPWに間違いがあります。", "/TRex/LoginServlet"));
+			request.setAttribute("result","IDまたはPWに間違いがあります。");
+
+			// ログインページにフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+			dispatcher.forward(request, response);
 		}
 
 	}

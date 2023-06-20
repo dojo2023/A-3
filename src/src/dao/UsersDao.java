@@ -3,6 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.Users;
@@ -10,74 +11,68 @@ import model.Users;
 public class UsersDao{
 
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
-//		public List<Users> select(Users param) {
-//			Connection conn = null;
-//			Users user = null;
+		public Users login(String id,String pw) {
+			Connection conn = null;
+			Users user = null;
 
-//			try {
+			try {
 				// JDBCドライバを読み込む
-//				Class.forName("org.h2.Driver");
+				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-//				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/TRex", "sa", "sa");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/TRex", "sa", "sa");
 
 				// SQL文を準備する（何で検索することが多いかを考える）
 				//検索
-//				String sql = "select * from USERS WHERE ID LIKE ? AND MAIL LIKE ? AND ADDRESS LIKE ? ORDER BY NUMBER";
-//				PreparedStatement pStmt = conn.prepareStatement(sql);
+				String sql = "select * from USERS WHERE ID= ? AND PW = ?";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
 
-				// SQL文を完成させる
+//				 SQL文を完成させる
 				//検索値がnullにはならないから
-//					pStmt.setString(1, "%" + param.getId() + "%");
-//					pStmt.setString(2, "%" + param.getMail() + "%");
-//					pStmt.setString(3, "%" + param.getAddress() + "%");
+					pStmt.setString(1, id);
+					pStmt.setString(2, pw);
+
 
 				// SQL文を実行し、結果表を取得する
-//				ResultSet rs = pStmt.executeQuery();
+				ResultSet rs = pStmt.executeQuery();
 
 				// 結果表をコレクションにコピーする
 				//引数に合わせる(今回は11個）
-//				while (rs.next()){
-//					user= new Users();
-//					user.setId(rs.getString("ID"));
-//					user.setEmail(rs.getString("MAIL"));
-//					user.setName(rs.getString("NAME"));
+				while (rs.next()){
+					user= new Users();
+					user.setId(rs.getString("ID"));
+					user.setEmail(rs.getString("MAIL"));
+					user.setName(rs.getString("NAME"));
 
-//					rs.getString("PASS"),
-//					rs.getString("GENDER"),
-//					rs.getString("ADDRESS"),
-//					rs.getString("BARTH"),
-//					rs.getString("HEIGHT"),
-//					rs.getString("WEIGHT"),
-//					rs.getString("COLOR"),
-//					rs.getString("MANAGEMENT")
-
-
-
-//			}
-//			catch (SQLException e) {
-//				e.printStackTrace();
-//				user = null;
-//			}
-//			catch (ClassNotFoundException e) {
-//				e.printStackTrace();
-//				new Users();			}
-//			finally {
+					user.setGender(rs.getInt("GENDER"));
+					user.setAddress(rs.getString("ADDRESS"));
+					user.setBirth(rs.getString("BARTH"));
+					user.setHeight(rs.getInt("HEIGHT"));
+					user.setWeight(rs.getInt("WEIGHT"));
+					user.setManagement(rs.getInt("MANAGEMENT"));
+				}
+			}catch (SQLException e) {
+				e.printStackTrace();
+				user = null;
+			}catch (ClassNotFoundException s) {
+				s.printStackTrace();
+				new Users();
+			}finally {
 				// データベースを切断
-//				if (conn != null) {
-//					try {
-//						conn.close();
-//					}
-//					catch (SQLException e) {
-//						e.printStackTrace();
-//						new Users(); = null;
-//					}
-//				}
-//			}
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+					e.printStackTrace();
+
+					}
+				}
+			}
 
 			// 結果を返す
-//			return user;
-//		}
+			return user;
+		}
 
 		// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
 		public boolean insert(Users user) {
