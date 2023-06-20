@@ -66,7 +66,7 @@ public class TopimageDao {
 
              //INSERT
         //引数imageで指定されたレコードを登録し、成功したらtrueを返す
-   public boolean insert(Topimages image) {
+   public boolean insert(String image) {
 	  Connection conn = null;
 	  boolean result = false;
 

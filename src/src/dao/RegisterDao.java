@@ -115,47 +115,47 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 
 				pStmt.setString(36, "%" + param.getAutum() + "%");
 
-				pStmt.setString(38, "%" + param.getWinter() + "%");
+				pStmt.setString(37, "%" + param.getWinter() + "%");
 
-				pStmt.setString(39, "%" + param.getCute() + "%");
+				pStmt.setString(38, "%" + param.getCute() + "%");
 
-				pStmt.setString(40, "%" + param.getCasual() + "%");
+				pStmt.setString(39, "%" + param.getCasual() + "%");
 
-				pStmt.setString(41, "%" + param.getSimple() + "%");
+				pStmt.setString(40, "%" + param.getSimple() + "%");
 
-				pStmt.setString(42, "%" + param.getStripe() + "%");
+				pStmt.setString(41, "%" + param.getStripe() + "%");
 
-				pStmt.setString(43, "%" + param.getCheck() + "%");
+				pStmt.setString(42, "%" + param.getCheck() + "%");
 
-				pStmt.setString(44, "%" + param.getDot() + "%");
+				pStmt.setString(43, "%" + param.getDot() + "%");
 
-				pStmt.setString(45, "%" + param.getBeauty() + "%");
+				pStmt.setString(44, "%" + param.getBeauty() + "%");
 
-				pStmt.setString(46, "%" + param.getMode() + "%");
+				pStmt.setString(45, "%" + param.getMode() + "%");
 
-				pStmt.setString(47, "%" + param.getNatural() + "%");
+				pStmt.setString(46, "%" + param.getNatural() + "%");
 
-				pStmt.setString(48, "%" + param.getConserva() + "%");
+				pStmt.setString(47, "%" + param.getConserva() + "%");
 
-				pStmt.setString(49, "%" + param.getCool() + "%");
+				pStmt.setString(48, "%" + param.getCool() + "%");
 
-				pStmt.setString(50, "%" + param.getLowheight() + "%");
+				pStmt.setString(49, "%" + param.getLowheight() + "%");
 
-				pStmt.setString(51, "%" + param.getMens() + "%");
+				pStmt.setString(50, "%" + param.getMens() + "%");
 
-				pStmt.setString(52, "%" + param.getLowprice() + "%");
+				pStmt.setString(51, "%" + param.getLowprice() + "%");
 
-				pStmt.setString(53, "%" + param.getMonotone() + "%");
+				pStmt.setString(52, "%" + param.getMonotone() + "%");
 
-				pStmt.setString(54, "%" + param.getSkewave() + "%");
+				pStmt.setString(53, "%" + param.getSkewave() + "%");
 
-				pStmt.setString(55, "%" + param.getSkestraight() + "%");
+				pStmt.setString(54, "%" + param.getSkestraight() + "%");
 
-				pStmt.setString(56, "%" + param.getSkenatural() + "%");
+				pStmt.setString(55, "%" + param.getSkenatural() + "%");
 
-				pStmt.setString(57, "%" + param.getRepeat() + "%");
+				pStmt.setString(56, "%" + param.getRepeat() + "%");
 
-				pStmt.setString(58, "%" + param.getImg() + "%");
+				pStmt.setString(57, "%" + param.getImg() + "%");
 
 
 			// SQL文を実行し、結果表を取得する
@@ -164,66 +164,66 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
 				//引数がありのBcメソッドを動かしている。
-				Registers postlist = new Registers();
-				postlist.setId(rs.getString("ID"));
-				postlist.setOuter(rs.getString("OUTER"));
-				postlist.setTops(rs.getString("TOPS"));
-				postlist.setBottoms(rs.getString("BOTTOMS"));
-				postlist.setDress(rs.getString("DRESS"));
-				postlist.setSocks(rs.getString("SOCKS"));
-				postlist.setShose(rs.getString("SHOSE"));
-				postlist.setAcce(rs.getString("ACCE"));
-				postlist.setCoat(rs.getString("COAT"));
-				postlist.setJacket(rs.getString("JACKET"));
-				postlist.setShirt(rs.getString("SHIRT"));
-				postlist.setPolo(rs.getString("POLO"));
-				postlist.setKnit(rs.getString("KNIT"));
-				postlist.setVest(rs.getString("VEST"));
-				postlist.setCardigan(rs.getString("CARDIGAN"));
-				postlist.setStraight(rs.getString("STRAIGHT"));
-				postlist.setSlacks(rs.getString("SLACKS"));
-				postlist.setTapered(rs.getString("TAPERED"));
-				postlist.setSkinny(rs.getString("SKINNY"));
-				postlist.setChino(rs.getString("CHINO"));
-				postlist.setLongskirt(rs.getString("LONG"));
-				postlist.setShirtdress(rs.getString("SHIRTDRESS"));
-				postlist.setJumperdress(rs.getString("JUMPERDRESS"));
-				postlist.setKneedress(rs.getString("KNEEDRESS"));
-				postlist.setPumps(rs.getString("PUMPS"));
-				postlist.setLoafre(rs.getString("LOAFRE"));
-				postlist.setSneaker(rs.getString("SNEAKER"));
-				postlist.setBoots(rs.getString("BOOTS"));
-				postlist.setSlip(rs.getString("SLIP"));
-				postlist.setNecllace(rs.getString("NECLLACE"));
-				postlist.setPiercr(rs.getString("PIERCR"));
-				postlist.setEarring(rs.getString("EARRING"));
-				postlist.setBelt(rs.getString("BELT"));
-				postlist.setSpring(rs.getString("SPRING"));
-				postlist.setSummer(rs.getString("SUMMER"));
-				postlist.setAutum(rs.getString("AUTUM"));
-				postlist.setWinter(rs.getString("WINTER"));
-				postlist.setCute(rs.getString("CUTE"));
-				postlist.setCasual(rs.getString("CASUAL"));
-				postlist.setSimple(rs.getString("SIMPLE"));
-				postlist.setStripe(rs.getString("STRIPE"));
-				postlist.setCheck(rs.getString("CHEC"));
-				postlist.setDot(rs.getString("DOT"));
-				postlist.setBeauty(rs.getString("BEAUTY"));
-				postlist.setMode(rs.getString("MODE"));
-				postlist.setNatural(rs.getString("NATURA"));
-				postlist.setConserva(rs.getString("CONSERVA"));
-				postlist.setCool(rs.getString("COOL"));
-				postlist.setLowheight(rs.getString("LOWHEIGHT"));
-				postlist.setMens(rs.getString("MENS"));
-				postlist.setLowprice(rs.getString("LOWPRICE"));
-				postlist.setMonotone(rs.getString("MONOTONE"));
-				postlist.setSkewave(rs.getString("SKEWAVE"));
-				postlist.setSkestraight(rs.getString("SKESTRAIGHT"));
-				postlist.setSkenatural(rs.getString("SKENATURAL"));
-				postlist.setRepeat(rs.getString("REPEAT"));
-				postlist.setImg(rs.getString("IMG"));
+				Registers poster = new Registers();
+				poster.setId(rs.getString("ID"));
+				poster.setOuter(rs.getString("OUTER"));
+				poster.setTops(rs.getString("TOPS"));
+				poster.setBottoms(rs.getString("BOTTOMS"));
+				poster.setDress(rs.getString("DRESS"));
+				poster.setSocks(rs.getString("SOCKS"));
+				poster.setShose(rs.getString("SHOSE"));
+				poster.setAcce(rs.getString("ACCE"));
+				poster.setCoat(rs.getString("COAT"));
+				poster.setJacket(rs.getString("JACKET"));
+				poster.setShirt(rs.getString("SHIRT"));
+				poster.setPolo(rs.getString("POLO"));
+				poster.setKnit(rs.getString("KNIT"));
+				poster.setVest(rs.getString("VEST"));
+				poster.setCardigan(rs.getString("CARDIGAN"));
+				poster.setStraight(rs.getString("STRAIGHT"));
+				poster.setSlacks(rs.getString("SLACKS"));
+				poster.setTapered(rs.getString("TAPERED"));
+				poster.setSkinny(rs.getString("SKINNY"));
+				poster.setChino(rs.getString("CHINO"));
+				poster.setLongskirt(rs.getString("LONG"));
+				poster.setShirtdress(rs.getString("SHIRTDRESS"));
+				poster.setJumperdress(rs.getString("JUMPERDRESS"));
+				poster.setKneedress(rs.getString("KNEEDRESS"));
+				poster.setPumps(rs.getString("PUMPS"));
+				poster.setLoafre(rs.getString("LOAFRE"));
+				poster.setSneaker(rs.getString("SNEAKER"));
+				poster.setBoots(rs.getString("BOOTS"));
+				poster.setSlip(rs.getString("SLIP"));
+				poster.setNecllace(rs.getString("NECLLACE"));
+				poster.setPiercr(rs.getString("PIERCR"));
+				poster.setEarring(rs.getString("EARRING"));
+				poster.setBelt(rs.getString("BELT"));
+				poster.setSpring(rs.getString("SPRING"));
+				poster.setSummer(rs.getString("SUMMER"));
+				poster.setAutum(rs.getString("AUTUM"));
+				poster.setWinter(rs.getString("WINTER"));
+				poster.setCute(rs.getString("CUTE"));
+				poster.setCasual(rs.getString("CASUAL"));
+				poster.setSimple(rs.getString("SIMPLE"));
+				poster.setStripe(rs.getString("STRIPE"));
+				poster.setCheck(rs.getString("CHEC"));
+				poster.setDot(rs.getString("DOT"));
+				poster.setBeauty(rs.getString("BEAUTY"));
+				poster.setMode(rs.getString("MODE"));
+				poster.setNatural(rs.getString("NATURA"));
+				poster.setConserva(rs.getString("CONSERVA"));
+				poster.setCool(rs.getString("COOL"));
+				poster.setLowheight(rs.getString("LOWHEIGHT"));
+				poster.setMens(rs.getString("MENS"));
+				poster.setLowprice(rs.getString("LOWPRICE"));
+				poster.setMonotone(rs.getString("MONOTONE"));
+				poster.setSkewave(rs.getString("SKEWAVE"));
+				poster.setSkestraight(rs.getString("SKESTRAIGHT"));
+				poster.setSkenatural(rs.getString("SKENATURAL"));
+				poster.setRepeat(rs.getString("REPEAT"));
+				poster.setImg(rs.getString("IMG"));
 
-				postList.add(postlist);
+				postList.add(poster);
 
 			}
 		}
@@ -348,47 +348,47 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 
 			pStmt.setString(36, "%" + postlist.getAutum() + "%");
 
-			pStmt.setString(38, "%" + postlist.getWinter() + "%");
+			pStmt.setString(37, "%" + postlist.getWinter() + "%");
 
-			pStmt.setString(39, "%" + postlist.getCute() + "%");
+			pStmt.setString(38, "%" + postlist.getCute() + "%");
 
-			pStmt.setString(40, "%" + postlist.getCasual() + "%");
+			pStmt.setString(39, "%" + postlist.getCasual() + "%");
 
-			pStmt.setString(41, "%" + postlist.getSimple() + "%");
+			pStmt.setString(40, "%" + postlist.getSimple() + "%");
 
-			pStmt.setString(42, "%" + postlist.getStripe() + "%");
+			pStmt.setString(41, "%" + postlist.getStripe() + "%");
 
-			pStmt.setString(43, "%" + postlist.getCheck() + "%");
+			pStmt.setString(42, "%" + postlist.getCheck() + "%");
 
-			pStmt.setString(44, "%" + postlist.getDot() + "%");
+			pStmt.setString(43, "%" + postlist.getDot() + "%");
 
-			pStmt.setString(45, "%" + postlist.getBeauty() + "%");
+			pStmt.setString(44, "%" + postlist.getBeauty() + "%");
 
-			pStmt.setString(46, "%" + postlist.getMode() + "%");
+			pStmt.setString(45, "%" + postlist.getMode() + "%");
 
-			pStmt.setString(47, "%" + postlist.getNatural() + "%");
+			pStmt.setString(46, "%" + postlist.getNatural() + "%");
 
-			pStmt.setString(48, "%" + postlist.getConserva() + "%");
+			pStmt.setString(47, "%" + postlist.getConserva() + "%");
 
-			pStmt.setString(49, "%" + postlist.getCool() + "%");
+			pStmt.setString(48, "%" + postlist.getCool() + "%");
 
-			pStmt.setString(50, "%" + postlist.getLowheight() + "%");
+			pStmt.setString(49, "%" + postlist.getLowheight() + "%");
 
-			pStmt.setString(51, "%" + postlist.getMens() + "%");
+			pStmt.setString(50, "%" + postlist.getMens() + "%");
 
-			pStmt.setString(52, "%" + postlist.getLowprice() + "%");
+			pStmt.setString(51, "%" + postlist.getLowprice() + "%");
 
-			pStmt.setString(53, "%" + postlist.getMonotone() + "%");
+			pStmt.setString(52, "%" + postlist.getMonotone() + "%");
 
-			pStmt.setString(54, "%" + postlist.getSkewave() + "%");
+			pStmt.setString(53, "%" + postlist.getSkewave() + "%");
 
-			pStmt.setString(55, "%" + postlist.getSkestraight() + "%");
+			pStmt.setString(54, "%" + postlist.getSkestraight() + "%");
 
-			pStmt.setString(56, "%" + postlist.getSkenatural() + "%");
+			pStmt.setString(55, "%" + postlist.getSkenatural() + "%");
 
-			pStmt.setString(57, "%" + postlist.getRepeat() + "%");
+			pStmt.setString(56, "%" + postlist.getRepeat() + "%");
 
-			pStmt.setString(58, "%" + postlist.getImg() + "%");
+			pStmt.setString(57, "%" + postlist.getImg() + "%");
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
@@ -440,119 +440,405 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
+			if (postlist.getId() != null && !postlist.getId().equals("")) {
 			pStmt.setString(1,postlist.getId());
+			}
+			else {
+				pStmt.setString(1, null);
+			}
 
+			if (postlist.getOuter() != null && !postlist.getOuter().equals("")) {
 			pStmt.setString(2,postlist.getOuter());
+			}
+			else {
+				pStmt.setString(2, null);
+			}
 
+			if (postlist.getTops() != null && !postlist.getTops().equals("")) {
 			pStmt.setString(3,postlist.getTops());
+			}
+			else {
+				pStmt.setString(3, null);
+			}
 
+			if (postlist.getBottoms() != null && !postlist.getBottoms().equals("")) {
 			pStmt.setString(4,postlist.getBottoms());
+			}
+			else {
+				pStmt.setString(4, null);
+			}
 
+			if (postlist.getDress() != null && !postlist.getDress().equals("")) {
 			pStmt.setString(5,postlist.getDress());
+			}
+			else {
+				pStmt.setString(5, null);
+			}
 
+			if (postlist.getSocks() != null && !postlist.getSocks().equals("")) {
 			pStmt.setString(6,postlist.getSocks());
+			}
+			else {
+				pStmt.setString(6, null);
+			}
 
+			if (postlist.getShose() != null && !postlist.getShose().equals("")) {
 			pStmt.setString(7,postlist.getShose());
+			}
+			else {
+				pStmt.setString(7, null);
+			}
 
+			if (postlist.getAcce() != null && !postlist.getAcce().equals("")) {
 			pStmt.setString(8,postlist.getAcce());
+			}
+			else {
+				pStmt.setString(8, null);
+			}
 
+			if (postlist.getCoat() != null && !postlist.getCoat().equals("")) {
 			pStmt.setString(9,postlist.getCoat());
+			}
+			else {
+				pStmt.setString(9, null);
+			}
 
+			if (postlist.getJacket() != null && !postlist.getJacket().equals("")) {
 			pStmt.setString(10,postlist.getJacket());
+			}
+			else {
+				pStmt.setString(10, null);
+			}
 
+			if (postlist.getShirt() != null && !postlist.getShirt().equals("")) {
 			pStmt.setString(11,postlist.getShirt());
+			}
+			else {
+				pStmt.setString(11, null);
+			}
 
+			if (postlist.getPolo() != null && !postlist.getPolo().equals("")) {
 			pStmt.setString(12,postlist.getPolo());
+			}
+			else {
+				pStmt.setString(12, null);
+			}
 
+			if (postlist.getKnit() != null && !postlist.getKnit().equals("")) {
 			pStmt.setString(13, postlist.getKnit());
+			}
+			else {
+				pStmt.setString(13, null);
+			}
 
+			if (postlist.getVest() != null && !postlist.getVest().equals("")) {
 			pStmt.setString(14,postlist.getVest());
+			}
+			else {
+				pStmt.setString(14, null);
+			}
 
+			if (postlist.getCardigan() != null && !postlist.getCardigan().equals("")) {
 			pStmt.setString(15,postlist.getCardigan());
+			}
+			else {
+				pStmt.setString(15, null);
+			}
 
+			if (postlist.getStraight() != null && !postlist.getStraight().equals("")) {
 			pStmt.setString(16,postlist.getStraight());
+			}
+			else {
+				pStmt.setString(16, null);
+			}
 
+			if (postlist.getSlacks() != null && !postlist.getSlacks().equals("")) {
 			pStmt.setString(17,postlist.getSlacks());
+			}
+			else {
+				pStmt.setString(17, null);
+			}
 
+			if (postlist.getTapered() != null && !postlist.getTapered().equals("")) {
 			pStmt.setString(18,postlist.getTapered());
+			}
+			else {
+				pStmt.setString(18, null);
+			}
 
+			if (postlist.getSkinny() != null && !postlist.getSkinny().equals("")) {
 			pStmt.setString(19,postlist.getSkinny());
+			}
+			else {
+				pStmt.setString(19, null);
+			}
 
+			if (postlist.getChino() != null && !postlist.getChino().equals("")) {
 			pStmt.setString(20,postlist.getChino());
+			}
+			else {
+				pStmt.setString(20, null);
+			}
 
+			if (postlist.getLongskirt() != null && !postlist.getLongskirt().equals("")) {
 			pStmt.setString(21,postlist.getLongskirt());
+			}
+			else {
+				pStmt.setString(21, null);
+			}
 
+			if (postlist.getShirtdress() != null && !postlist.getShirtdress().equals("")) {
 			pStmt.setString(22,postlist.getShirtdress());
+			}
+			else {
+				pStmt.setString(22, null);
+			}
 
+			if (postlist.getJumperdress() != null && !postlist.getJumperdress().equals("")) {
 			pStmt.setString(23,postlist.getJumperdress());
+			}
+			else {
+				pStmt.setString(23, null);
+			}
 
+			if (postlist.getKneedress() != null && !postlist.getKneedress().equals("")) {
 			pStmt.setString(24,postlist.getKneedress());
+			}
+			else {
+				pStmt.setString(24, null);
+			}
 
+			if (postlist.getPumps() != null && !postlist.getPumps().equals("")) {
 			pStmt.setString(25,postlist.getPumps());
+			}
+			else {
+				pStmt.setString(25, null);
+			}
 
+			if (postlist.getLoafre() != null && !postlist.getLoafre().equals("")) {
 			pStmt.setString(26,postlist.getLoafre());
+			}
+			else {
+				pStmt.setString(26, null);
+			}
 
+			if (postlist.getSneaker() != null && !postlist.getSneaker().equals("")) {
 			pStmt.setString(27,postlist.getSneaker());
+			}
+			else {
+				pStmt.setString(27, null);
+			}
 
+			if (postlist.getBoots() != null && !postlist.getBoots().equals("")) {
 			pStmt.setString(28,postlist.getBoots());
+			}
+			else {
+				pStmt.setString(28, null);
+			}
 
+			if (postlist.getSlip() != null && !postlist.getSlip().equals("")) {
 			pStmt.setString(29,postlist.getSlip());
+			}
+			else {
+				pStmt.setString(29, null);
+			}
 
+			if (postlist.getNecllace() != null && !postlist.getNecllace().equals("")) {
 			pStmt.setString(30,postlist.getNecllace());
+			}
+			else {
+				pStmt.setString(30, null);
+			}
 
+			if (postlist.getPiercr() != null && !postlist.getPiercr().equals("")) {
 			pStmt.setString(31,postlist.getPiercr());
+			}
+			else {
+				pStmt.setString(31, null);
+			}
 
+			if (postlist.getEarring() != null && !postlist.getEarring().equals("")) {
 			pStmt.setString(32,postlist.getEarring());
+			}
+			else {
+				pStmt.setString(32, null);
+			}
 
+			if (postlist.getBelt() != null && !postlist.getBelt().equals("")) {
 			pStmt.setString(33,postlist.getBelt());
+			}
+			else {
+				pStmt.setString(33, null);
+			}
 
+			if (postlist.getSpring() != null && !postlist.getSpring().equals("")) {
 			pStmt.setString(34,postlist.getSpring());
+			}
+			else {
+				pStmt.setString(34, null);
+			}
 
+			if (postlist.getSummer() != null && !postlist.getSummer().equals("")) {
 			pStmt.setString(35,postlist.getSummer());
+			}
+			else {
+				pStmt.setString(35, null);
+			}
 
+			if (postlist.getAutum() != null && !postlist.getAutum().equals("")) {
 			pStmt.setString(36,postlist.getAutum());
+			}
+			else {
+				pStmt.setString(36, null);
+			}
 
-			pStmt.setString(38,postlist.getWinter());
+			if (postlist.getWinter() != null && !postlist.getWinter().equals("")) {
+			pStmt.setString(37,postlist.getWinter());
+			}
+			else {
+				pStmt.setString(37, null);
+			}
 
-			pStmt.setString(39,postlist.getCute());
+			if (postlist.getCute() != null && !postlist.getCute().equals("")) {
+			pStmt.setString(38,postlist.getCute());
+			}
+			else {
+				pStmt.setString(38, null);
+			}
 
-			pStmt.setString(40,postlist.getCasual());
+			if (postlist.getCasual() != null && !postlist.getCasual().equals("")) {
+			pStmt.setString(39,postlist.getCasual());
+			}
+			else {
+				pStmt.setString(39, null);
+			}
 
-			pStmt.setString(41,postlist.getSimple());
+			if (postlist.getSimple() != null && !postlist.getSimple().equals("")) {
+			pStmt.setString(40,postlist.getSimple());
+			}
+			else {
+				pStmt.setString(40, null);
+			}
 
-			pStmt.setString(42,postlist.getStripe());
+			if (postlist.getStripe() != null && !postlist.getStripe().equals("")) {
+			pStmt.setString(41,postlist.getStripe());
+			}
+			else {
+				pStmt.setString(41, null);
+			}
 
-			pStmt.setString(43,postlist.getCheck());
+			if (postlist.getCheck() != null && !postlist.getCheck().equals("")) {
+			pStmt.setString(42,postlist.getCheck());
+			}
+			else {
+				pStmt.setString(42, null);
+			}
 
-			pStmt.setString(44, postlist.getDot());
+			if (postlist.getDot() != null && !postlist.getDot().equals("")) {
+			pStmt.setString(43, postlist.getDot());
+			}
+			else {
+				pStmt.setString(43, null);
+			}
 
-			pStmt.setString(45,postlist.getBeauty());
+			if (postlist.getBeauty() != null && !postlist.getBeauty().equals("")) {
+			pStmt.setString(44,postlist.getBeauty());
+			}
+			else {
+				pStmt.setString(44, null);
+			}
 
-			pStmt.setString(46, postlist.getMode());
+			if (postlist.getMode() != null && !postlist.getMode().equals("")) {
+			pStmt.setString(45, postlist.getMode());
+			}
+			else {
+				pStmt.setString(45, null);
+			}
 
-			pStmt.setString(47,postlist.getNatural());
+			if (postlist.getNatural() != null && !postlist.getNatural().equals("")) {
+			pStmt.setString(46,postlist.getNatural());
+			}
+			else {
+				pStmt.setString(46, null);
+			}
 
-			pStmt.setString(48, postlist.getConserva());
+			if (postlist.getConserva() != null && !postlist.getConserva().equals("")) {
+			pStmt.setString(47, postlist.getConserva());
+			}
+			else {
+				pStmt.setString(47, null);
+			}
 
-			pStmt.setString(49,postlist.getCool());
+			if (postlist.getCool() != null && !postlist.getCool().equals("")) {
+			pStmt.setString(48,postlist.getCool());
+			}
+			else {
+				pStmt.setString(48, null);
+			}
 
-			pStmt.setString(50,postlist.getLowheight());
+			if (postlist.getLowheight() != null && !postlist.getLowheight().equals("")) {
+			pStmt.setString(49,postlist.getLowheight());
+			}
+			else {
+				pStmt.setString(49, null);
+			}
 
-			pStmt.setString(51,postlist.getMens());
+			if (postlist.getMens() != null && !postlist.getMens().equals("")) {
+			pStmt.setString(50,postlist.getMens());
+			}
+			else {
+				pStmt.setString(50, null);
+			}
 
-			pStmt.setString(52,postlist.getLowprice());
+			if (postlist.getLowprice() != null && !postlist.getLowprice().equals("")) {
+			pStmt.setString(51,postlist.getLowprice());
+			}
+			else {
+				pStmt.setString(51, null);
+			}
 
-			pStmt.setString(53,postlist.getMonotone());
+			if (postlist.getMonotone() != null && !postlist.getMonotone().equals("")) {
+			pStmt.setString(52,postlist.getMonotone());
+			}
+			else {
+				pStmt.setString(52, null);
+			}
 
-			pStmt.setString(54,postlist.getSkewave());
+			if (postlist.getSkewave() != null && !postlist.getSkewave().equals("")) {
+			pStmt.setString(53,postlist.getSkewave());
+			}
+			else {
+				pStmt.setString(53, null);
+			}
 
-			pStmt.setString(55,postlist.getSkestraight());
+			if (postlist.getSkestraight() != null && !postlist.getSkestraight().equals("")) {
+			pStmt.setString(54,postlist.getSkestraight());
+			}
+			else {
+				pStmt.setString(54, null);
+			}
 
-			pStmt.setString(56,postlist.getSkenatural());
+			if (postlist.getSkenatural() != null && !postlist.getSkenatural().equals("")) {
+			pStmt.setString(55,postlist.getSkenatural());
+			}
+			else {
+				pStmt.setString(55, null);
+			}
 
-			pStmt.setString(57,postlist.getRepeat());
+			if (postlist.getRepeat() != null && !postlist.getRepeat().equals("")) {
+			pStmt.setString(56,postlist.getRepeat());
+			}
+			else {
+				pStmt.setString(56, null);
+			}
 
-			pStmt.setString(58,postlist.getImg());
+			if (postlist.getImg() != null && !postlist.getImg().equals("")) {
+			pStmt.setString(57,postlist.getImg());
+			}
+			else {
+				pStmt.setString(57, null);
+			}
+
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {

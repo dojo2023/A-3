@@ -163,7 +163,6 @@
 				<tr>
 					<td>
 						<div>
-							<div style="color:#ff0000;" class="contents" id="error_message"></div>
 							<input type = "submit" name = "register" value = "REGISTER">
 						</div>
 					</td>
