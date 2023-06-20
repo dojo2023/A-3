@@ -30,6 +30,7 @@
 <body>
 	<div class = "wrapper">
 		<form id = "register" method = "POST" action = "/TRex/RegisterServlet"enctype="multipart/form-data">
+			<input type="hidden" name="ID" value="005">
 			<table>
 				<tr>
 					<td>

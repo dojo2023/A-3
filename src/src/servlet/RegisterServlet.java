@@ -18,7 +18,7 @@ import model.Registers;
 /**
  * Servlet implementation class RegisterServlet
  */
-@MultipartConfig(location = "C:\\pleiades\\workspace\\Nyample\\WebContent\\images") // アップロードファイルの一時的な保存先
+@MultipartConfig(location = "C:\\dojo6\\src\\WebContent\\UploadPhoto") // アップロードファイルの一時的な保存先
 @WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -41,75 +41,52 @@ public class RegisterServlet extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		//主キー
-		String ID= request.getParameter("ID");
+		String id= request.getParameter("ID");
 		//アイテムカテゴリ
-		String OUTER= request.getParameter("OUTER");
-		String TOPS= request.getParameter("TOPS");
-		String BOTTOMS= request.getParameter("BOTTOMS");
-		String DRESS= request.getParameter("DRESS");
-		String SOCKS= request.getParameter("SOCKS");
-		String SHOSE= request.getParameter("SHOSE");
-		String ACCE= request.getParameter("ACCE");
-
-		//サブカテゴリ
+		String clothes[]=request.getParameterValues("clothes");
+//		for(String n: clothes) {
+//			if(n.equals("outer")) {
+//				pStmt.setInt(2,1);
+//			}else {
+//				pStmt.setInt(2,0);
+//			}
+//		}
 		//アウター
-		String COAT= request.getParameter("COAT");
-		String JACKET= request.getParameter("JACKET");
+		String subOuter= request.getParameter("sub_outer");
+		//String jacket= request.getParameter("sub_outer");
 		//トップス
-		String SHIRT= request.getParameter("SHIRT");
-		String BROWSE= request.getParameter("BROWSE");
-		String POLOSHIRT= request.getParameter("POLOSHIRT");
-		String KNIT= request.getParameter("KNIT");
-		String SWEATER= request.getParameter("SWEATER");
-		String VEST= request.getParameter("VEST");
-		String CARDIGAN= request.getParameter("CARDIGAN");
+		String subTops= request.getParameter("sub_tops");
+//		String browse= request.getParameter("BROWSE");
+//		String poloshirt= request.getParameter("POLOSHIRT");
+//		String knit= request.getParameter("KNIT");
+//		String sweater= request.getParameter("SWEATER");
+//		String vest= request.getParameter("VEST");
+//		String cardigan= request.getParameter("CARDIGAN");
 		//ボトムス
-		String STRAIGHTPANTS= request.getParameter("STRAIGHTPANTS");
-		String SLACKS= request.getParameter("SLACKS");
-		String TAPEREDPANTS= request.getParameter("TAPEREDPANTS");
-		String SKINNYPANTS= request.getParameter("SKINNYPANTS");
-		String CHINOPANTS= request.getParameter("CHINOPANTS");
-		String LONGSKIRT= request.getParameter("LONGSKIRT");
+		String subBottoms= request.getParameter("sub_bottoms");
+//		String slacks= request.getParameter("SLACKS");
+//		String taperedpants= request.getParameter("TAPEREDPANTS");
+//		String skinnypants= request.getParameter("SKINNYPANTS");
+//		String chinopants= request.getParameter("CHINOPANTS");
+//		String longskirt= request.getParameter("LONGSKIRT");
 		//ドレス
-		String SHIRTDRESS= request.getParameter("SHIRTDRESS");
-		String JUMPERSKIRT= request.getParameter("JUMPERSKIRT");
-		String KNEELENGTHDRESS= request.getParameter("KNEELENGTHDRESS");
+		String subDress= request.getParameter("sub_dress");
+//		String jumperdress= request.getParameter("JUMPERSKIRT");
+//		String kneelengthdress= request.getParameter("KNEELENGTHDRESS");
 		//靴
-		String PUMPS= request.getParameter("PUMPS");
-		String LOAFERS= request.getParameter("LOAFERS");
-		String SNEAKERS= request.getParameter("SNEAKERS");
-		String BOOTS= request.getParameter("BOOTS");
+		String subShoes= request.getParameter("sub_shoes");
+//		String loafers= request.getParameter("LOAFERS");
+//		String sneakers= request.getParameter("SNEAKERS");
+//		String boots= request.getParameter("BOOTS");
+//		String slip= request.getParameter("SLIP");
 		//アクセサリー
-		String NECKLACE= request.getParameter("NECKLACE");
-		String EARRINGS= request.getParameter("EARRINGS");
-		String PIERCE= request.getParameter("PIERCE");
-		String BELT= request.getParameter("BELT");
-
+		String subAcce= request.getParameter("sub_acce");
+//		String earring= request.getParameter("EARRINGS");
+//		String pierce= request.getParameter("PIERCE");
+//		String belt= request.getParameter("BELT");
 		//タグ
-		String SPRING= request.getParameter("SPRING");
-		String SUMMER= request.getParameter("SUMMER");
-		String AUTUM= request.getParameter("AUTUM");
-		String WINTER= request.getParameter("WINTER");
-		String CUTE= request.getParameter("CUTE");
-		String CASUAL= request.getParameter("CASUAL");
-		String SIMPLE= request.getParameter("SIMPLE");
-		String STRIPE= request.getParameter("STRIPE");
-		String CHECK= request.getParameter("CHECK");
-		String DOT= request.getParameter("DOT");
-		String BEAUTY= request.getParameter("BEAUTY");
-		String MODE= request.getParameter("MODE");
-		String NATURAL= request.getParameter("NATURAL");
-		String CONSERVA= request.getParameter("CONSERVA");
-		String COOL= request.getParameter("COOL");
-		String LOWHEIGHT= request.getParameter("LOWHEIGHT");
-		String MENS= request.getParameter("MENS");
-		String LOWPRICE= request.getParameter("LOWPRICE");
-		String MONOTONE= request.getParameter("MONOTONE");
-		String SKEWAVWINTER= request.getParameter("WINTER");
-		String SKESTRAIGHT= request.getParameter("SKESTRAIGHT");
-		String SKENATURAL= request.getParameter("SKENATURAL");
-		String REPEAT= request.getParameter("WINTER");
-		String IMG = request.getParameter("IMG ");
+		String tag[]=request.getParameterValues("tag");
+
 
 		//画像アップロード
 		Part part = request.getPart("IMAGE"); // getPartで取得
@@ -118,9 +95,13 @@ public class RegisterServlet extends HttpServlet {
 		// サーバの指定のファイルパスへファイルを保存
         //場所はクラス名↑の上に指定してある
 		part.write(image);
-
+		//Daoに書き直す
+		//データベースも書き直す
 		RegisterDao rDao = new RegisterDao();
-		if (rDao.insert(new Registers())) {	// 登録成功
+		Registers register = new Registers( id,  clothes,  subOuter,  subTops,  subBottoms,  subDress,
+				 subShoes,  subAcce, tag,  image);
+
+		if (rDao.insert(register)) {	// 登録成功
 		request.setAttribute("result",
 		new Registers());
 		}
