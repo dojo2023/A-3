@@ -143,10 +143,10 @@ public class RegisterServlet extends HttpServlet {
 			return name;
 		}
 
-	}
 
-	private String getImg(Part part) {
+
+//	private String getImg(Part part) {
 		// TODO 自動生成されたメソッド・スタブ
-		return null;
+//		return null;
 	}
 }
