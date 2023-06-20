@@ -60,6 +60,11 @@ public class TopServlet extends HttpServlet {
 		dispatcher.forward(request, response);
     }
 
+	private String getimage(Part part) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
 	//ファイルの名前を取得してくる
 	private String getTopImg(Part part) {
         String name = null;
