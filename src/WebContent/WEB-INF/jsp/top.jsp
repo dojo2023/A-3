@@ -57,11 +57,10 @@
 		画像:<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);"><br>
 		<canvas id="preview" style="max-width:100px;"></canvas><br>
 		<input type="submit" value="送信">
-		<img src="./UploadPhoto/メンズ夏1.jpg">
+		<%--<img src="./UploadPhoto/メンズ夏1.jpg"> --%>
 
-<img src="${'/TRex/UploadPhoto/'+=image}" id="gazo">
+<%--<img src="${'/TRex/UploadPhoto/'+=image}" id="gazo"> --%>
 </form>
-</body>
 <script>
 	function previewImage(obj){
 
@@ -88,19 +87,12 @@
 		console.log(fileReader.result) // ← (確認用)null
 	}
 </script>
- <script type="text/javascript" src="TRex/mamewaza_weather/mamewaza_weather.min.js"></script>
-<script type="text/javascript">
-$.mamewaza_weather( {
-	selector: "#mamewaza_weather",
-	region:"120000",
-	layout:"horizontalMini",
-	when:"1day"
-} );
-=======
->>>>>>> Stashed changes
+
+</body>
 <script>
 	document.querySelector('.menu-btn').addEventListener('click', function(){
 	document.querySelector('.menu').classList.toggle('is-active');
 	});
 </script>
+
 </html>

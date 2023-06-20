@@ -39,7 +39,7 @@ public class TopServlet extends HttpServlet {
 
 		Part part = request.getPart("IMAGE"); // getPartで取得
 
-		String image = this.getImg(part);
+		String image = this.getimage(part);
 		String Topimg = "./UploadPhoto/"+image;
 		TopimageDao dao = new TopimageDao();
 		boolean ans =dao.insert(Topimg);
