@@ -52,6 +52,38 @@ public class RegisterServlet extends HttpServlet {
 		String ACCE= request.getParameter("ACCE");
 
 		//サブカテゴリ
+		//アウター
+		String COAT= request.getParameter("COAT");
+		String JACKET= request.getParameter("JACKET");
+		//トップス
+		String SHIRT= request.getParameter("SHIRT");
+		String BROWSE= request.getParameter("BROWSE");
+		String POLOSHIRT= request.getParameter("POLOSHIRT");
+		String KNIT= request.getParameter("KNIT");
+		String SWEATER= request.getParameter("SWEATER");
+		String VEST= request.getParameter("VEST");
+		String CARDIGAN= request.getParameter("CARDIGAN");
+		//ボトムス
+		String STRAIGHTPANTS= request.getParameter("STRAIGHTPANTS");
+		String SLACKS= request.getParameter("SLACKS");
+		String TAPEREDPANTS= request.getParameter("TAPEREDPANTS");
+		String SKINNYPANTS= request.getParameter("SKINNYPANTS");
+		String CHINOPANTS= request.getParameter("CHINOPANTS");
+		String LONGSKIRT= request.getParameter("LONGSKIRT");
+		//ドレス
+		String SHIRTDRESS= request.getParameter("SHIRTDRESS");
+		String JUMPERSKIRT= request.getParameter("JUMPERSKIRT");
+		String KNEELENGTHDRESS= request.getParameter("KNEELENGTHDRESS");
+		//靴
+		String PUMPS= request.getParameter("PUMPS");
+		String LOAFERS= request.getParameter("LOAFERS");
+		String SNEAKERS= request.getParameter("SNEAKERS");
+		String BOOTS= request.getParameter("BOOTS");
+		//アクセサリー
+		String NECKLACE= request.getParameter("NECKLACE");
+		String EARRINGS= request.getParameter("EARRINGS");
+		String PIERCE= request.getParameter("PIERCE");
+		String BELT= request.getParameter("BELT");
 
 		//タグ
 		String SPRING= request.getParameter("SPRING");
