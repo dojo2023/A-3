@@ -50,8 +50,9 @@ public class RegisterServlet extends HttpServlet {
 		String SOCKS= request.getParameter("SOCKS");
 		String SHOSE= request.getParameter("SHOSE");
 		String ACCE= request.getParameter("ACCE");
+		
 		//サブカテゴリ
-
+		
 		//タグ
 		String SPRING= request.getParameter("SPRING");
 		String SUMMER= request.getParameter("SUMMER");
