@@ -37,11 +37,21 @@
 <body>
 <h1>今週のトレンド</h1>
 
-<div class="">
+
   <!-- 枠とスライドが入ります -->
+  <!--スライドショー-->
+    <div id = "area" class="wrap slide-paused" ontouchstart="">
+<ul class="slideshow" id="images">
+    <li class="content content-hover"><img src="${'/TRex/UploadPhoto/'+=image}" id="gazo"></li>
+    <li class="content content-hover"></li>
+    <li class="content content-hover"></li>
+    <li class="content content-hover"></li>
+</ul>
+
+
 </div>
 
-  </div>
+
 <input type="button" value="今日のコーデ一覧はこちら" href='/TRex/ListServlet.java'>
 <form action="/TRex/TopServlet" method="post" enctype="multipart/form-data">
 		画像:<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);"><br>
