@@ -276,119 +276,119 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 
 			// SQL文を完成させる
 
-			pStmt.setString(1, "%" + postlist.getId() + "%");
+			pStmt.setString(1,postlist.getId());
 
-			pStmt.setString(2, "%" + postlist.getOuter() + "%");
+			pStmt.setString(2,postlist.getOuter());
 
-			pStmt.setString(3, "%" + postlist.getTops() + "%");
+			pStmt.setString(3,postlist.getTops());
 
-			pStmt.setString(4, "%" + postlist.getBottoms() + "%");
+			pStmt.setString(4,postlist.getBottoms());
 
-			pStmt.setString(5, "%" + postlist.getDress() + "%");
+			pStmt.setString(5,postlist.getDress());
 
-			pStmt.setString(6, "%" + postlist.getSocks() + "%");
+			pStmt.setString(6,postlist.getSocks());
 
-			pStmt.setString(7, "%" + postlist.getShose() + "%");
+			pStmt.setString(7, postlist.getShose());
 
-			pStmt.setString(8, "%" + postlist.getAcce() + "%");
+			pStmt.setString(8,postlist.getAcce());
 
-			pStmt.setString(9, "%" + postlist.getCoat() + "%");
+			pStmt.setString(9,postlist.getCoat());
 
-			pStmt.setString(10, "%" + postlist.getJacket() + "%");
+			pStmt.setString(10,postlist.getJacket());
 
-			pStmt.setString(11, "%" + postlist.getShirt() + "%");
+			pStmt.setString(11,postlist.getShirt());
 
-			pStmt.setString(12, "%" + postlist.getPolo() + "%");
+			pStmt.setString(12,postlist.getPolo());
 
-			pStmt.setString(13, "%" + postlist.getKnit() + "%");
+			pStmt.setString(13,postlist.getKnit());
 
-			pStmt.setString(14, "%" + postlist.getVest() + "%");
+			pStmt.setString(14,postlist.getVest());
 
-			pStmt.setString(15, "%" + postlist.getCardigan() + "%");
+			pStmt.setString(15,postlist.getCardigan());
 
-			pStmt.setString(16, "%" + postlist.getStraight() + "%");
+			pStmt.setString(16,postlist.getStraight());
 
-			pStmt.setString(17, "%" + postlist.getSlacks() + "%");
+			pStmt.setString(17,postlist.getSlacks());
 
-			pStmt.setString(18, "%" + postlist.getTapered() + "%");
+			pStmt.setString(18,postlist.getTapered());
 
-			pStmt.setString(19, "%" + postlist.getSkinny() + "%");
+			pStmt.setString(19,postlist.getSkinny());
 
-			pStmt.setString(20, "%" + postlist.getChino() + "%");
+			pStmt.setString(20,postlist.getChino());
 
-			pStmt.setString(21, "%" + postlist.getLongskirt() + "%");
+			pStmt.setString(21,postlist.getLongskirt());
 
-			pStmt.setString(22, "%" + postlist.getShirtdress() + "%");
+			pStmt.setString(22,postlist.getShirtdress());
 
-			pStmt.setString(23, "%" + postlist.getJumperdress() + "%");
+			pStmt.setString(23,postlist.getJumperdress());
 
-			pStmt.setString(24, "%" + postlist.getKneedress() + "%");
+			pStmt.setString(24,postlist.getKneedress());
 
-			pStmt.setString(25, "%" + postlist.getPumps() + "%");
+			pStmt.setString(25,postlist.getPumps());
 
-			pStmt.setString(26, "%" + postlist.getLoafre() + "%");
+			pStmt.setString(26,postlist.getLoafre());
 
-			pStmt.setString(27, "%" + postlist.getSneaker() + "%");
+			pStmt.setString(27,postlist.getSneaker());
 
-			pStmt.setString(28, "%" + postlist.getBoots() + "%");
+			pStmt.setString(28,postlist.getBoots());
 
-			pStmt.setString(29, "%" + postlist.getSlip() + "%");
+			pStmt.setString(29,postlist.getSlip());
 
-			pStmt.setString(30, "%" + postlist.getNecllace() + "%");
+			pStmt.setString(30,postlist.getNecllace());
 
-			pStmt.setString(31, "%" + postlist.getPiercr() + "%");
+			pStmt.setString(31,postlist.getPiercr());
 
-			pStmt.setString(32, "%" + postlist.getEarring() + "%");
+			pStmt.setString(32,postlist.getEarring());
 
-			pStmt.setString(33, "%" + postlist.getBelt() + "%");
+			pStmt.setString(33,postlist.getBelt());
 
-			pStmt.setString(34, "%" + postlist.getSpring() + "%");
+			pStmt.setString(34,postlist.getSpring());
 
-			pStmt.setString(35, "%" + postlist.getSummer() + "%");
+			pStmt.setString(35,postlist.getSummer());
 
-			pStmt.setString(36, "%" + postlist.getAutum() + "%");
+			pStmt.setString(36,postlist.getAutum());
 
-			pStmt.setString(37, "%" + postlist.getWinter() + "%");
+			pStmt.setString(37,postlist.getWinter());
 
-			pStmt.setString(38, "%" + postlist.getCute() + "%");
+			pStmt.setString(38,postlist.getCute());
 
-			pStmt.setString(39, "%" + postlist.getCasual() + "%");
+			pStmt.setString(39,postlist.getCasual());
 
-			pStmt.setString(40, "%" + postlist.getSimple() + "%");
+			pStmt.setString(40,postlist.getSimple());
 
-			pStmt.setString(41, "%" + postlist.getStripe() + "%");
+			pStmt.setString(41,postlist.getStripe());
 
-			pStmt.setString(42, "%" + postlist.getCheck() + "%");
+			pStmt.setString(42,postlist.getCheck());
 
-			pStmt.setString(43, "%" + postlist.getDot() + "%");
+			pStmt.setString(43,postlist.getDot());
 
-			pStmt.setString(44, "%" + postlist.getBeauty() + "%");
+			pStmt.setString(44,postlist.getBeauty());
 
-			pStmt.setString(45, "%" + postlist.getMode() + "%");
+			pStmt.setString(45,postlist.getMode());
 
-			pStmt.setString(46, "%" + postlist.getNatural() + "%");
+			pStmt.setString(46,postlist.getNatural());
 
-			pStmt.setString(47, "%" + postlist.getConserva() + "%");
+			pStmt.setString(47,postlist.getConserva());
 
-			pStmt.setString(48, "%" + postlist.getCool() + "%");
+			pStmt.setString(48,postlist.getCool());
 
-			pStmt.setString(49, "%" + postlist.getLowheight() + "%");
+			pStmt.setString(49,postlist.getLowheight());
 
-			pStmt.setString(50, "%" + postlist.getMens() + "%");
+			pStmt.setString(50,postlist.getMens());
 
-			pStmt.setString(51, "%" + postlist.getLowprice() + "%");
+			pStmt.setString(51,postlist.getLowprice());
 
-			pStmt.setString(52, "%" + postlist.getMonotone() + "%");
+			pStmt.setString(52,postlist.getMonotone());
 
-			pStmt.setString(53, "%" + postlist.getSkewave() + "%");
+			pStmt.setString(53,postlist.getSkewave());
 
-			pStmt.setString(54, "%" + postlist.getSkestraight() + "%");
+			pStmt.setString(54,postlist.getSkestraight());
 
-			pStmt.setString(55, "%" + postlist.getSkenatural() + "%");
+			pStmt.setString(55,postlist.getSkenatural());
 
-			pStmt.setString(56, "%" + postlist.getRepeat() + "%");
+			pStmt.setString(56,postlist.getRepeat());
 
-			pStmt.setString(57, "%" + postlist.getImg() + "%");
+			pStmt.setString(57,postlist.getImg());
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
