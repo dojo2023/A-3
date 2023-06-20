@@ -59,104 +59,103 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 
 				pStmt.setString(8, "%" + param.getAcce() + "%");
 
+				pStmt.setString(9, "%" + param.getCoat() + "%");
 
+				pStmt.setString(10, "%" + param.getJacket() + "%");
 
-				pStmt.setString(1, "%" + param.getCoat() + "%");
+				pStmt.setString(11, "%" + param.getShirt() + "%");
 
-				pStmt.setString(2, "%" + param.getOuter() + "%");
+				pStmt.setString(12, "%" + param.getPolo() + "%");
 
-				pStmt.setString(3, "%" + param.getTops() + "%");
+				pStmt.setString(13, "%" + param.getKnit() + "%");
 
-				pStmt.setString(4, "%" + param.getBottoms() + "%");
+				pStmt.setString(14, "%" + param.getVest() + "%");
 
-				pStmt.setString(5, "%" + param.getDress() + "%");
+				pStmt.setString(15, "%" + param.getCardigan() + "%");
 
-				pStmt.setString(6, "%" + param.getSocks() + "%");
+				pStmt.setString(16, "%" + param.getStraight() + "%");
 
-				pStmt.setString(7, "%" + param.getShose() + "%");
+				pStmt.setString(17, "%" + param.getSlacks() + "%");
 
-				pStmt.setString(8, "%" + param.getAcce() + "%");
+				pStmt.setString(18, "%" + param.getTapered() + "%");
 
-				pStmt.setString(1, "%" + param.getId() + "%");
+				pStmt.setString(19, "%" + param.getSkinny() + "%");
 
-				pStmt.setString(2, "%" + param.getOuter() + "%");
+				pStmt.setString(20, "%" + param.getChino() + "%");
 
-				pStmt.setString(3, "%" + param.getTops() + "%");
+				pStmt.setString(21, "%" + param.getLongskirt() + "%");
 
-				pStmt.setString(4, "%" + param.getBottoms() + "%");
+				pStmt.setString(22, "%" + param.getShirtdress() + "%");
 
-				pStmt.setString(5, "%" + param.getDress() + "%");
+				pStmt.setString(23, "%" + param.getJumperdress() + "%");
 
-				pStmt.setString(6, "%" + param.getSocks() + "%");
+				pStmt.setString(24, "%" + param.getKneedress() + "%");
 
-				pStmt.setString(7, "%" + param.getShose() + "%");
+				pStmt.setString(25, "%" + param.getPumps() + "%");
 
-				pStmt.setString(8, "%" + param.getAcce() + "%");
+				pStmt.setString(26, "%" + param.getLoafre() + "%");
 
-				pStmt.setString(1, "%" + param.getId() + "%");
+				pStmt.setString(27, "%" + param.getSneaker() + "%");
 
-				pStmt.setString(2, "%" + param.getOuter() + "%");
+				pStmt.setString(28, "%" + param.getBoots() + "%");
 
-				pStmt.setString(3, "%" + param.getTops() + "%");
+				pStmt.setString(29, "%" + param.getSlip() + "%");
 
-				pStmt.setString(4, "%" + param.getBottoms() + "%");
+				pStmt.setString(30, "%" + param.getNecllace() + "%");
 
-				pStmt.setString(5, "%" + param.getDress() + "%");
+				pStmt.setString(31, "%" + param.getPiercr() + "%");
 
-				pStmt.setString(6, "%" + param.getSocks() + "%");
+				pStmt.setString(32, "%" + param.getEarring() + "%");
 
-				pStmt.setString(7, "%" + param.getShose() + "%");
+				pStmt.setString(33, "%" + param.getBelt() + "%");
 
-				pStmt.setString(8, "%" + param.getAcce() + "%");
+				pStmt.setString(34, "%" + param.getSpring() + "%");
 
+				pStmt.setString(35, "%" + param.getSummer() + "%");
 
-				pStmt.setString(9, "%" + param.getSpring() + "%");
+				pStmt.setString(36, "%" + param.getAutum() + "%");
 
-				pStmt.setString(10, "%" + param.getSummer() + "%");
+				pStmt.setString(38, "%" + param.getWinter() + "%");
 
-				pStmt.setString(11, "%" + param.getAutum() + "%");
+				pStmt.setString(39, "%" + param.getCute() + "%");
 
-				pStmt.setString(12, "%" + param.getWinter() + "%");
+				pStmt.setString(40, "%" + param.getCasual() + "%");
 
-				pStmt.setString(13, "%" + param.getCute() + "%");
+				pStmt.setString(41, "%" + param.getSimple() + "%");
 
-				pStmt.setString(14, "%" + param.getCasual() + "%");
+				pStmt.setString(42, "%" + param.getStripe() + "%");
 
-				pStmt.setString(15, "%" + param.getSimple() + "%");
+				pStmt.setString(43, "%" + param.getCheck() + "%");
 
-				pStmt.setString(16, "%" + param.getStripe() + "%");
+				pStmt.setString(44, "%" + param.getDot() + "%");
 
-				pStmt.setString(17, "%" + param.getCheck() + "%");
+				pStmt.setString(45, "%" + param.getBeauty() + "%");
 
-				pStmt.setString(18, "%" + param.getDot() + "%");
+				pStmt.setString(46, "%" + param.getMode() + "%");
 
-				pStmt.setString(19, "%" + param.getBeauty() + "%");
+				pStmt.setString(47, "%" + param.getNatural() + "%");
 
-				pStmt.setString(20, "%" + param.getMode() + "%");
+				pStmt.setString(48, "%" + param.getConserva() + "%");
 
-				pStmt.setString(21, "%" + param.getNatural() + "%");
+				pStmt.setString(49, "%" + param.getCool() + "%");
 
-				pStmt.setString(22, "%" + param.getConserva() + "%");
+				pStmt.setString(50, "%" + param.getLowheight() + "%");
 
-				pStmt.setString(23, "%" + param.getCool() + "%");
+				pStmt.setString(51, "%" + param.getMens() + "%");
 
-				pStmt.setString(24, "%" + param.getLowheight() + "%");
+				pStmt.setString(52, "%" + param.getLowprice() + "%");
 
-				pStmt.setString(25, "%" + param.getMens() + "%");
+				pStmt.setString(53, "%" + param.getMonotone() + "%");
 
-				pStmt.setString(26, "%" + param.getLowprice() + "%");
+				pStmt.setString(54, "%" + param.getSkewave() + "%");
 
-				pStmt.setString(27, "%" + param.getMonotone() + "%");
+				pStmt.setString(55, "%" + param.getSkestraight() + "%");
 
-				pStmt.setString(28, "%" + param.getSkewave() + "%");
+				pStmt.setString(56, "%" + param.getSkenatural() + "%");
 
-				pStmt.setString(29, "%" + param.getSkestraight() + "%");
+				pStmt.setString(57, "%" + param.getRepeat() + "%");
 
-				pStmt.setString(30, "%" + param.getSkenatural() + "%");
-
-				pStmt.setString(31, "%" + param.getRepeat() + "%");
-
-				pStmt.setString(32, "%" + param.getImg() + "%");
+				pStmt.setString(58, "%" + param.getImg() + "%");
 
 
 			// SQL文を実行し、結果表を取得する
@@ -174,6 +173,31 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 				postlist.setSocks(rs.getString("SOCKS"));
 				postlist.setShose(rs.getString("SHOSE"));
 				postlist.setAcce(rs.getString("ACCE"));
+				postlist.setCoat(rs.getString("COAT"));
+				postlist.setJacket(rs.getString("JACKET"));
+				postlist.setShirt(rs.getString("SHIRT"));
+				postlist.setPolo(rs.getString("POLO"));
+				postlist.setKnit(rs.getString("KNIT"));
+				postlist.setVest(rs.getString("VEST"));
+				postlist.setCardigan(rs.getString("CARDIGAN"));
+				postlist.setStraight(rs.getString("STRAIGHT"));
+				postlist.setSlacks(rs.getString("SLACKS"));
+				postlist.setTapered(rs.getString("TAPERED"));
+				postlist.setSkinny(rs.getString("SKINNY"));
+				postlist.setChino(rs.getString("CHINO"));
+				postlist.setLongskirt(rs.getString("LONG"));
+				postlist.setShirtdress(rs.getString("SHIRTDRESS"));
+				postlist.setJumperdress(rs.getString("JUMPERDRESS"));
+				postlist.setKneedress(rs.getString("KNEEDRESS"));
+				postlist.setPumps(rs.getString("PUMPS"));
+				postlist.setLoafre(rs.getString("LOAFRE"));
+				postlist.setSneaker(rs.getString("SNEAKER"));
+				postlist.setBoots(rs.getString("BOOTS"));
+				postlist.setSlip(rs.getString("SLIP"));
+				postlist.setNecllace(rs.getString("NECLLACE"));
+				postlist.setPiercr(rs.getString("PIERCR"));
+				postlist.setEarring(rs.getString("EARRING"));
+				postlist.setBelt(rs.getString("BELT"));
 				postlist.setSpring(rs.getString("SPRING"));
 				postlist.setSummer(rs.getString("SUMMER"));
 				postlist.setAutum(rs.getString("AUTUM"));
@@ -241,7 +265,10 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/TRex", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "insert into REGISTER (ID,OUTER,TOPS,BOTTOMS,DRESS,SOCKS,SHOSE,ACCE,SPRIPNG,SUMMER,AUTUM,"
+			String sql = "insert into REGISTER (ID,OUTER,TOPS,BOTTOMS,DRESS,SOCKS,SHOSE,ACCE,"
+					+ "COAT,JACKET,SHIRT,POLO,KNIT,VEST,CARDIGAN,STRAIGHT,SLACKS,TAPERED,SKINNY,CHINO"
+					+ "LONG,SHIRTDRESS,JUMPERDRESS,KNEEDRESS,PUMPS,LOAFRE,SNEAKER,BOOTS,SLIP,NECLLACE "
+					+ "PIERCR,EARRING,BELT,SPRIPNG,SUMMER,AUTUM,"
 					+ "WINTER,CUTE,CASUAL,SIMPLE,STRIPE,CHEC,DOT,BEAUTY,MODE,NATURA,CONSERVA,COOL,LOWHEIGHT,"
 					+ "MENS,LOWPRICE,MONOTONE,SKEWAVE,SKESTRAIGHT,SKENATURAL,REPEAT,Img)"
 					+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?)";			//全ての列名で提示することでオートインクリメントに対応できる。
@@ -265,53 +292,103 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 
 			pStmt.setString(8, "%" + postlist.getAcce() + "%");
 
-			pStmt.setString(9, "%" + postlist.getSpring() + "%");
+			pStmt.setString(9, "%" + postlist.getCoat() + "%");
 
-			pStmt.setString(10, "%" + postlist.getSummer() + "%");
+			pStmt.setString(10, "%" + postlist.getJacket() + "%");
 
-			pStmt.setString(11, "%" + postlist.getAutum() + "%");
+			pStmt.setString(11, "%" + postlist.getShirt() + "%");
 
-			pStmt.setString(12, "%" + postlist.getWinter() + "%");
+			pStmt.setString(12, "%" + postlist.getPolo() + "%");
 
-			pStmt.setString(13, "%" + postlist.getCute() + "%");
+			pStmt.setString(13, "%" + postlist.getKnit() + "%");
 
-			pStmt.setString(14, "%" + postlist.getCasual() + "%");
+			pStmt.setString(14, "%" + postlist.getVest() + "%");
 
-			pStmt.setString(15, "%" + postlist.getSimple() + "%");
+			pStmt.setString(15, "%" + postlist.getCardigan() + "%");
 
-			pStmt.setString(16, "%" + postlist.getStripe() + "%");
+			pStmt.setString(16, "%" + postlist.getStraight() + "%");
 
-			pStmt.setString(17, "%" + postlist.getCheck() + "%");
+			pStmt.setString(17, "%" + postlist.getSlacks() + "%");
 
-			pStmt.setString(18, "%" + postlist.getDot() + "%");
+			pStmt.setString(18, "%" + postlist.getTapered() + "%");
 
-			pStmt.setString(19, "%" + postlist.getBeauty() + "%");
+			pStmt.setString(19, "%" + postlist.getSkinny() + "%");
 
-			pStmt.setString(20, "%" + postlist.getMode() + "%");
+			pStmt.setString(20, "%" + postlist.getChino() + "%");
 
-			pStmt.setString(21, "%" + postlist.getNatural() + "%");
+			pStmt.setString(21, "%" + postlist.getLongskirt() + "%");
 
-			pStmt.setString(22, "%" + postlist.getConserva() + "%");
+			pStmt.setString(22, "%" + postlist.getShirtdress() + "%");
 
-			pStmt.setString(23, "%" + postlist.getCool() + "%");
+			pStmt.setString(23, "%" + postlist.getJumperdress() + "%");
 
-			pStmt.setString(24, "%" + postlist.getLowheight() + "%");
+			pStmt.setString(24, "%" + postlist.getKneedress() + "%");
 
-			pStmt.setString(25, "%" + postlist.getMens() + "%");
+			pStmt.setString(25, "%" + postlist.getPumps() + "%");
 
-			pStmt.setString(26, "%" + postlist.getLowprice() + "%");
+			pStmt.setString(26, "%" + postlist.getLoafre() + "%");
 
-			pStmt.setString(27, "%" + postlist.getMonotone() + "%");
+			pStmt.setString(27, "%" + postlist.getSneaker() + "%");
 
-			pStmt.setString(28, "%" + postlist.getSkewave() + "%");
+			pStmt.setString(28, "%" + postlist.getBoots() + "%");
 
-			pStmt.setString(29, "%" + postlist.getSkestraight() + "%");
+			pStmt.setString(29, "%" + postlist.getSlip() + "%");
 
-			pStmt.setString(30, "%" + postlist.getSkenatural() + "%");
+			pStmt.setString(30, "%" + postlist.getNecllace() + "%");
 
-			pStmt.setString(31, "%" + postlist.getRepeat() + "%");
+			pStmt.setString(31, "%" + postlist.getPiercr() + "%");
 
-			pStmt.setString(32, "%" + postlist.getImg() + "%");
+			pStmt.setString(32, "%" + postlist.getEarring() + "%");
+
+			pStmt.setString(33, "%" + postlist.getBelt() + "%");
+
+			pStmt.setString(34, "%" + postlist.getSpring() + "%");
+
+			pStmt.setString(35, "%" + postlist.getSummer() + "%");
+
+			pStmt.setString(36, "%" + postlist.getAutum() + "%");
+
+			pStmt.setString(38, "%" + postlist.getWinter() + "%");
+
+			pStmt.setString(39, "%" + postlist.getCute() + "%");
+
+			pStmt.setString(40, "%" + postlist.getCasual() + "%");
+
+			pStmt.setString(41, "%" + postlist.getSimple() + "%");
+
+			pStmt.setString(42, "%" + postlist.getStripe() + "%");
+
+			pStmt.setString(43, "%" + postlist.getCheck() + "%");
+
+			pStmt.setString(44, "%" + postlist.getDot() + "%");
+
+			pStmt.setString(45, "%" + postlist.getBeauty() + "%");
+
+			pStmt.setString(46, "%" + postlist.getMode() + "%");
+
+			pStmt.setString(47, "%" + postlist.getNatural() + "%");
+
+			pStmt.setString(48, "%" + postlist.getConserva() + "%");
+
+			pStmt.setString(49, "%" + postlist.getCool() + "%");
+
+			pStmt.setString(50, "%" + postlist.getLowheight() + "%");
+
+			pStmt.setString(51, "%" + postlist.getMens() + "%");
+
+			pStmt.setString(52, "%" + postlist.getLowprice() + "%");
+
+			pStmt.setString(53, "%" + postlist.getMonotone() + "%");
+
+			pStmt.setString(54, "%" + postlist.getSkewave() + "%");
+
+			pStmt.setString(55, "%" + postlist.getSkestraight() + "%");
+
+			pStmt.setString(56, "%" + postlist.getSkenatural() + "%");
+
+			pStmt.setString(57, "%" + postlist.getRepeat() + "%");
+
+			pStmt.setString(58, "%" + postlist.getImg() + "%");
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
@@ -353,74 +430,129 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/TRex", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "update REGISTER set COMPANY=?, DEPARTMENT=?, POSITION=?, NAME=?, ZIPCODE=?, ADDRESS=?, PHONENUMBER=?, EMAIL=?, REMARKS=? where NUMBER=?";
+			String sql = "update REGISTER set (ID,OUTER,TOPS,BOTTOMS,DRESS,SOCKS,SHOSE,ACCE"
+					+ "COAT,JACKET,SHIRT,POLO,KNIT,VEST,CARDIGAN,STRAIGHT,SLACKS,TAPERED,SKINNY,CHINO"
+					+ "LONG,SHIRTDRESS,JUMPERDRESS,KNEEDRESS,PUMPS,LOAFRE,SNEAKER,BOOTS,SLIP,NECLLACE"
+					+ "PIERCR,EARRING,BELT,SPRIPNG,SUMMER,AUTUM"
+					+ "WINTER,CUTE,CASUAL,SIMPLE,STRIPE,CHEC,DOT,BEAUTY,MODE,NATURA,CONSERVA,COOL,LOWHEIGHT"
+					+ "MENS,LOWPRICE,MONOTONE,SKEWAVE,SKESTRAIGHT,SKENATURAL,REPEAT,Img)"
+					+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (card.getCompany() != null && !card.getCompany().equals("")) {
-				pStmt.setString(1, card.getCompany());
-			}
-			else {
-				pStmt.setString(1, null);
-			}
+			pStmt.setString(1,postlist.getId());
 
-			if (card.getDepartment() != null && !card.getDepartment().equals("")) {
-				pStmt.setString(2, card.getDepartment());
-			}
-			else {
-				pStmt.setString(2, null);
-			}
+			pStmt.setString(2,postlist.getOuter());
 
-			if (card.getPosition() != null && !card.getPosition().equals("")) {
-				pStmt.setString(3, card.getPosition());
-			}
-			else {
-				pStmt.setString(3, null);
-			}
+			pStmt.setString(3,postlist.getTops());
 
-			if (card.getName() != null && !card.getName().equals("")) {
-				pStmt.setString(4, card.getName());
-			}
-			else {
-				pStmt.setString(4, null);
-			}
+			pStmt.setString(4,postlist.getBottoms());
 
-			if (card.getZipcode() != null && !card.getZipcode().equals("")) {
-				pStmt.setString(5, card.getZipcode());
-			}
-			else {
-				pStmt.setString(5, null);
-			}
+			pStmt.setString(5,postlist.getDress());
 
-			if (card.getAddress() != null && !card.getAddress().equals("")) {
-				pStmt.setString(6, card.getAddress());
-			}
-			else {
-				pStmt.setString(6, null);
-			}
+			pStmt.setString(6,postlist.getSocks());
 
-			if (card.getPhonenumber() != null && !card.getPhonenumber().equals("")) {
-				pStmt.setString(7, card.getPhonenumber());
-			}
-			else {
-				pStmt.setString(7, null);
-			}
+			pStmt.setString(7,postlist.getShose());
 
-			if (card.getEmail() != null && !card.getEmail().equals("")) {
-				pStmt.setString(8, card.getEmail());
-			}
-			else {
-				pStmt.setString(8, null);
-			}
+			pStmt.setString(8,postlist.getAcce());
 
-			if (card.getRemarks() != null && !card.getRemarks().equals("")) {
-				pStmt.setString(9, card.getRemarks());
-			}
-			else {
-				pStmt.setString(9, null);
-			}
+			pStmt.setString(9,postlist.getCoat());
 
-			pStmt.setString(10, card.getNumber());
+			pStmt.setString(10,postlist.getJacket());
+
+			pStmt.setString(11,postlist.getShirt());
+
+			pStmt.setString(12,postlist.getPolo());
+
+			pStmt.setString(13, postlist.getKnit());
+
+			pStmt.setString(14,postlist.getVest());
+
+			pStmt.setString(15,postlist.getCardigan());
+
+			pStmt.setString(16,postlist.getStraight());
+
+			pStmt.setString(17,postlist.getSlacks());
+
+			pStmt.setString(18,postlist.getTapered());
+
+			pStmt.setString(19,postlist.getSkinny());
+
+			pStmt.setString(20,postlist.getChino());
+
+			pStmt.setString(21,postlist.getLongskirt());
+
+			pStmt.setString(22,postlist.getShirtdress());
+
+			pStmt.setString(23,postlist.getJumperdress());
+
+			pStmt.setString(24,postlist.getKneedress());
+
+			pStmt.setString(25,postlist.getPumps());
+
+			pStmt.setString(26,postlist.getLoafre());
+
+			pStmt.setString(27,postlist.getSneaker());
+
+			pStmt.setString(28,postlist.getBoots());
+
+			pStmt.setString(29,postlist.getSlip());
+
+			pStmt.setString(30,postlist.getNecllace());
+
+			pStmt.setString(31,postlist.getPiercr());
+
+			pStmt.setString(32,postlist.getEarring());
+
+			pStmt.setString(33,postlist.getBelt());
+
+			pStmt.setString(34,postlist.getSpring());
+
+			pStmt.setString(35,postlist.getSummer());
+
+			pStmt.setString(36,postlist.getAutum());
+
+			pStmt.setString(38,postlist.getWinter());
+
+			pStmt.setString(39,postlist.getCute());
+
+			pStmt.setString(40,postlist.getCasual());
+
+			pStmt.setString(41,postlist.getSimple());
+
+			pStmt.setString(42,postlist.getStripe());
+
+			pStmt.setString(43,postlist.getCheck());
+
+			pStmt.setString(44, postlist.getDot());
+
+			pStmt.setString(45,postlist.getBeauty());
+
+			pStmt.setString(46, postlist.getMode());
+
+			pStmt.setString(47,postlist.getNatural());
+
+			pStmt.setString(48, postlist.getConserva());
+
+			pStmt.setString(49,postlist.getCool());
+
+			pStmt.setString(50,postlist.getLowheight());
+
+			pStmt.setString(51,postlist.getMens());
+
+			pStmt.setString(52,postlist.getLowprice());
+
+			pStmt.setString(53,postlist.getMonotone());
+
+			pStmt.setString(54,postlist.getSkewave());
+
+			pStmt.setString(55,postlist.getSkestraight());
+
+			pStmt.setString(56,postlist.getSkenatural());
+
+			pStmt.setString(57,postlist.getRepeat());
+
+			pStmt.setString(58,postlist.getImg());
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
@@ -450,7 +582,7 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 	}
 
 	// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
-	public boolean delete(String number) {
+	public boolean delete(String id) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -462,11 +594,11 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/TRex", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "delete from BC where NUMBER=?";
+			String sql = "delete from REGISTER where ID=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			pStmt.setString(1, number);
+			pStmt.setString(1, id);
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
