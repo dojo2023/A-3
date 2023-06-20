@@ -61,7 +61,7 @@ public class TopServlet extends HttpServlet {
     }
 
 	//ファイルの名前を取得してくる
-	private String getImg(Part part) {
+	private String getTopImg(Part part) {
         String name = null;
         for (String dispotion : part.getHeader("Content-Disposition").split(";")) {
             if (dispotion.trim().startsWith("filename")) {
