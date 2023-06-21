@@ -6,15 +6,14 @@ public class Users implements Serializable {
 	private String pw;
 	private String name;
 	private String email;
-	private int gender;
+	private String gender;
 	private String address;
 	private String birth;
-	private int height;
-	private int weight;
-	private int management;
+	private String height;
+	private String weight;
+	private String management;
 
-	public Users(String id, String pw, String name, String email, int gender, String address,
-			String birth, int height, int weight, int management) {
+	public Users(String id, String pw, String name, String email, String gender, String address,String birth, String height, String weight, String management) {
 		super();
 		this.id = id;
 		this.pw = pw;
@@ -33,13 +32,18 @@ public class Users implements Serializable {
 		this.pw = "";
 		this.name = "";
 		this.email = "";
-		this.gender = 0;
+		this.gender = "";
 		this.address = "";
 		this.birth = "";
-		this.height = 0;
-		this.weight = 0;
-		this.management = 0;
+		this.height = "";
+		this.weight = "";
+		this.management = "";
 	}
+
+	public Users(String id) {
+		this.id = id;
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -52,7 +56,7 @@ public class Users implements Serializable {
 	public String getEmail() {
 		return email;
 	}
-	public int getGender() {
+	public String getGender() {
 		return gender;
 	}
 	public String getAddress() {
@@ -61,13 +65,13 @@ public class Users implements Serializable {
 	public String getBirth() {
 		return birth;
 	}
-	public int getHeight() {
+	public String getHeight() {
 		return height;
 	}
-	public int getWeight() {
+	public String getWeight() {
 		return weight;
 	}
-	public int getManagement() {
+	public String getManagement() {
 		return management;
 	}
 	public void setId(String id) {
@@ -82,7 +86,7 @@ public class Users implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public void setGender(int gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 	public void setAddress(String address) {
@@ -91,13 +95,13 @@ public class Users implements Serializable {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
-	public void setHeight(int height) {
+	public void setHeight(String height) {
 		this.height = height;
 	}
-	public void setWeight(int weight) {
+	public void setWeight(String weight) {
 		this.weight = weight;
 	}
-	public void setManagement(int management) {
+	public void setManagement(String management) {
 		this.management = management;
 	}
 

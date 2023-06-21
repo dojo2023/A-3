@@ -44,12 +44,12 @@ public class UsersDao{
 					user.setEmail(rs.getString("MAIL"));
 					user.setName(rs.getString("NAME"));
 
-					user.setGender(rs.getInt("GENDER"));
+					user.setGender(rs.getString("GENDER"));
 					user.setAddress(rs.getString("ADDRESS"));
 					user.setBirth(rs.getString("BARTH"));
-					user.setHeight(rs.getInt("HEIGHT"));
-					user.setWeight(rs.getInt("WEIGHT"));
-					user.setManagement(rs.getInt("MANAGEMENT"));
+					user.setHeight(rs.getString("HEIGHT"));
+					user.setWeight(rs.getString("WEIGHT"));
+					user.setManagement(rs.getString("MANAGEMENT"));
 				}
 			}catch (SQLException e) {
 				e.printStackTrace();
@@ -84,10 +84,10 @@ public class UsersDao{
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/TRex", "sa", "sa");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
 
 				// SQL文を準備する
-				String sql = "insert into Users values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				String sql = "insert into User values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
@@ -95,12 +95,12 @@ public class UsersDao{
 					pStmt.setString(2, user.getPw());
 					pStmt.setString(3, user.getName());
 					pStmt.setString(4, user.getEmail());
-					pStmt.setInt(5, user.getGender());
+					pStmt.setString(5, user.getGender());
 					pStmt.setString(6, user.getAddress());
 					pStmt.setString(7, user.getBirth());
-					pStmt.setInt(8, user.getHeight());
-					pStmt.setInt(9, user.getWeight());
-					pStmt.setInt(10, user.getManagement());
+					pStmt.setString(8, user.getHeight());
+					pStmt.setString(9, user.getWeight());
+					pStmt.setString(10, user.getManagement());
 
 				// SQL文を実行する
 				if (pStmt.executeUpdate() == 1) {
@@ -139,7 +139,7 @@ public class UsersDao{
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/TRex", "sa", "sa");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
 
 				// SQL文を準備する
 				String sql = "update USERS set ID=?, MAIL=?, NAME=?, PASS=?, GENDER=?, ADDRESS=?, BARTH=?, HEIGHT=?, MANAGEMENT=? where NUMBER=?";
@@ -170,7 +170,7 @@ public class UsersDao{
 				else {
 					pStmt.setString(4, null);
 				}
-				pStmt.setInt(5, user.getGender());
+				pStmt.setString(5, user.getGender());
 
 				if (user.getAddress() != null && !user.getAddress().equals("")) {
 					pStmt.setString(6, user.getAddress());
@@ -184,8 +184,8 @@ public class UsersDao{
 				else {
 					pStmt.setString(7, null);
 				}
-				pStmt.setInt(8, user.getHeight());
-				pStmt.setInt(9, user.getWeight());
+				pStmt.setString(8, user.getHeight());
+				pStmt.setString(9, user.getWeight());
 
 
 
@@ -226,7 +226,7 @@ public class UsersDao{
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/TRex", "sa", "sa");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
 
 				// SQL文を準備する
 				String sql = "delete from USERS where NUMBER=?";

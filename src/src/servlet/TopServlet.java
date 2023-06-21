@@ -47,8 +47,8 @@ public class TopServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 
-		Part part = request.getPart("IMAGE"); // getPartで取得
-
+		/*Part part = request.getPart("IMAGE"); // getPartで取得
+//		int topId = Integer.parseInt(request.getParameter("top_id"));
 		String image = this.getimage(part);
 		String Topimg = "./UploadPhoto/"+image;
 		TopimageDao tdao = new TopimageDao();
@@ -88,6 +88,49 @@ public class TopServlet extends HttpServlet {
         }		// TODO 自動生成されたメソッド・スタブ
 		return name;
 
+	}*/
+
+	//画像アップロード
+			Part part = request.getPart("IMAGE"); // getPartで取得
+			String image = this.getImg(part);
+			request.setAttribute("image", image);
+			System.out.println(image);
+			// サーバの指定のファイルパスへファイルを保存
+	        //場所はクラス名↑の上に指定してある
+			part.write(image);
+			//Daoに書き直す
+			//データベースも書き直す
+			TopimageDao rDao = new TopimageDao();
+//			Topimages Topiamge = new Topimages(topid, topimg, image);
+
+			if (rDao.insert(image)) {	// 登録成功
+			request.setAttribute("result",
+			new Topimages());
+			}
+			else {												// 登録失敗
+			request.setAttribute("result",
+			new Topimages());
+			}
+
+			// トップページにフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top.jsp");
+			dispatcher.forward(request, response);
+
+
+}
+	//ファイルの名前を取得してくる
+	private String getImg(Part part) {
+        String name = null;
+        for (String dispotion : part.getHeader("Content-Disposition").split(";")) {
+            if (dispotion.trim().startsWith("filename")) {
+                name = dispotion.substring(dispotion.indexOf("=") + 1).replace("\"", "").trim();
+                name = name.substring(name.lastIndexOf("\\") + 1);
+                break;
+            }
+        }		// TODO 自動生成されたメソッド・スタブ
+		return name;
 	}
+
+
 
 }
