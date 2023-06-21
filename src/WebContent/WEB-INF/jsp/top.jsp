@@ -7,6 +7,22 @@
 <title>C²A</title>
 <link rel ="stylesheet" href="/TRex/css/top.css">
 <link rel="stylesheet" href="/TRex/css/hamburger.css">
+
+<link rel="stylesheet" href="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.css"/>
+ <script src="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.js"></script>
+ <script>
+    jQuery(function($){
+    	 // デフォルトの設定を変更（日本語化）--------------------
+        $.extend( $.fn.dataTable.defaults, {
+            language: {
+                url: "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json"
+            }
+        });
+    	 //------------------------------------------------
+    	//データテーブルを使用
+        $("#foo-table").DataTable();
+    });
+ </script>
 </head>
 
 
