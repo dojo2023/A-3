@@ -1,0 +1,4 @@
+2023-06-21 11:09:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "REGISTER" が見つかりません
+Table "REGISTER" not found; SQL statement:
+insert into REGISTER (ID, CLOTHES, SUBOUTER, SUBTOPS, SUBBOTTOMS, SUBDRESS, SUBSHOES, SUBACCE, TAG, IMAGE)values (?, ?, ?, ?, ?, ?, ?, ?, ?,?,) [42102-199]

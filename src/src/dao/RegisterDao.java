@@ -262,16 +262,31 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/TRex", "sa", "sa");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "insert into REGISTER (ID, CLOTHES, SUBOUTER, SUBTOPS, SUBBOTTOMS, SUBDRESS, SUBSHOES, SUBACCE, TAG, IMAGE)"
-					+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?,?,)";
+			String sql = "insert into REGISTER (ID, OUTER, TOPS, BOTTOMS, DRESS, SOCKS, SHOES, ACCE, SUBOUTER,"
+					+ " SUBTOPS, SUBBOTTOMS, SUBDRESS, SUBSHOES, SUBACCE,  SUPRING, SUMMER, AUTUM, WINTER,"
+					+ " CUTE, CASUAL, SIMPLE, STRIPE, CHEC, DOT, BEAUTY, MODE, NATURA, CONSERVA,"
+					+ " COOL, LOWHEIGHT, MENS, LOWPRICE, MONOTONE, SKEWAVE, SKESTRAIGHT, SKENATURAL, REPEAT, IMAGE)"
+					+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+					+ 		  "?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+					+		  "?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+					+         "?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
 
 			pStmt.setString(1,postlist.getId());
+//			pStmt.setString(2,postlist.getClothes());
+			pStmt.setString(9,postlist.getSubOuter());
+			pStmt.setString(10,postlist.getSubTops());
+			pStmt.setString(11,postlist.getSubBottoms());
+			pStmt.setString(12,postlist.getSubDress());
+			pStmt.setString(13,postlist.getSubShoes());
+			pStmt.setString(14,postlist.getSubAcce());
+//			pStmt.setString(9,postlist.getTag());
+			pStmt.setString(38,postlist.getImg());
 
 			for(String n: postlist.getClothes()) {
 				if(n.equals("outer")) {
@@ -310,179 +325,179 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 					pStmt.setString(8,"0");
 				}
 			}
-
-
-
-			pStmt.setString(9,postlist.getCoat());
-
-			pStmt.setString(10,postlist.getJacket());
-
-			pStmt.setString(11,postlist.getShirt());
-
-			pStmt.setString(12,postlist.getPolo());
-
-			pStmt.setString(13,postlist.getKnit());
-
-			pStmt.setString(14,postlist.getVest());
-
-			pStmt.setString(15,postlist.getCardigan());
-
-			pStmt.setString(16,postlist.getStraight());
-
-			pStmt.setString(17,postlist.getSlacks());
-
-			pStmt.setString(18,postlist.getTapered());
-
-			pStmt.setString(19,postlist.getSkinny());
-
-			pStmt.setString(20,postlist.getChino());
-
-			pStmt.setString(21,postlist.getLongskirt());
-
-			pStmt.setString(22,postlist.getShirtdress());
-
-			pStmt.setString(23,postlist.getJumperdress());
-
-			pStmt.setString(24,postlist.getKneedress());
-
-			pStmt.setString(25,postlist.getPumps());
-
-			pStmt.setString(26,postlist.getLoafre());
-
-			pStmt.setString(27,postlist.getSneaker());
-
-			pStmt.setString(28,postlist.getBoots());
-
-			pStmt.setString(29,postlist.getSlip());
-
-			pStmt.setString(30,postlist.getNecllace());
-
-			pStmt.setString(31,postlist.getPiercr());
-
-			pStmt.setString(32,postlist.getEarring());
-
-			pStmt.setString(33,postlist.getBelt());
-
-
+//
+//
+//
+//			pStmt.setString(9,postlist.getCoat());
+//
+//			pStmt.setString(10,postlist.getJacket());
+//
+//			pStmt.setString(11,postlist.getShirt());
+//
+//			pStmt.setString(12,postlist.getPolo());
+//
+//			pStmt.setString(13,postlist.getKnit());
+//
+//			pStmt.setString(14,postlist.getVest());
+//
+//			pStmt.setString(15,postlist.getCardigan());
+//
+//			pStmt.setString(16,postlist.getStraight());
+//
+//			pStmt.setString(17,postlist.getSlacks());
+//
+//			pStmt.setString(18,postlist.getTapered());
+//
+//			pStmt.setString(19,postlist.getSkinny());
+//
+//			pStmt.setString(20,postlist.getChino());
+//
+//			pStmt.setString(21,postlist.getLongskirt());
+//
+//			pStmt.setString(22,postlist.getShirtdress());
+//
+//			pStmt.setString(23,postlist.getJumperdress());
+//
+//			pStmt.setString(24,postlist.getKneedress());
+//
+//			pStmt.setString(25,postlist.getPumps());
+//
+//			pStmt.setString(26,postlist.getLoafre());
+//
+//			pStmt.setString(27,postlist.getSneaker());
+//
+//			pStmt.setString(28,postlist.getBoots());
+//
+//			pStmt.setString(29,postlist.getSlip());
+//
+//			pStmt.setString(30,postlist.getNecllace());
+//
+//			pStmt.setString(31,postlist.getPiercr());
+//
+//			pStmt.setString(32,postlist.getEarring());
+//
+//			pStmt.setString(33,postlist.getBelt());
+//
+//
 			for(String n: postlist.getTag()) {
 				if(n.equals("spring")) {
+					pStmt.setString(15,"1");
+				}else {
+					pStmt.setString(15,"0");
+				}
+				if(n.equals("summer")) {
+					pStmt.setString(16,"1");
+				}else {
+					pStmt.setString(16,"0");
+				}
+				if(n.equals("autum")) {
+					pStmt.setString(17,"1");
+				}else {
+					pStmt.setString(17,"0");
+				}
+				if(n.equals("winter")) {
+					pStmt.setString(18,"1");
+				}else {
+					pStmt.setString(18,"0");
+				}
+				if(n.equals("cute")) {
+					pStmt.setString(19,"1");
+				}else {
+					pStmt.setString(19,"0");
+				}
+				if(n.equals("casual")) {
+					pStmt.setString(20,"1");
+				}else {
+					pStmt.setString(20,"0");
+				}
+				if(n.equals("simple")) {
+					pStmt.setString(21,"1");
+				}else {
+					pStmt.setString(21,"0");
+				}
+				if(n.equals("stripe")) {
+					pStmt.setString(22,"1");
+				}else {
+					pStmt.setString(22,"0");
+				}
+				if(n.equals("check")) {
+					pStmt.setString(23,"1");
+				}else {
+					pStmt.setString(23,"0");
+				}
+				if(n.equals("dot")) {
+					pStmt.setString(24,"1");
+				}else {
+					pStmt.setString(24,"0");
+				}
+				if(n.equals("beauty")) {
+					pStmt.setString(25,"1");
+				}else {
+					pStmt.setString(25,"0");
+				}
+				if(n.equals("mode")) {
+					pStmt.setString(26,"1");
+				}else {
+					pStmt.setString(26,"0");
+				}
+				if(n.equals("natural")) {
+					pStmt.setString(27,"1");
+				}else {
+					pStmt.setString(27,"0");
+				}
+				if(n.equals("conserva")) {
+					pStmt.setString(28,"1");
+				}else {
+					pStmt.setString(28,"0");
+				}
+				if(n.equals("cool")) {
+					pStmt.setString(29,"1");
+				}else {
+					pStmt.setString(29,"0");
+				}
+				if(n.equals("lowheight")) {
+					pStmt.setString(30,"1");
+				}else {
+					pStmt.setString(30,"0");
+				}
+				if(n.equals("mens")) {
+					pStmt.setString(31,"1");
+				}else {
+					pStmt.setString(31,"0");
+				}
+				if(n.equals("lowprice")) {
+					pStmt.setString(32,"1");
+				}else {
+					pStmt.setString(32,"0");
+				}
+				if(n.equals("monotone")) {
+					pStmt.setString(33,"1");
+				}else {
+					pStmt.setString(33,"0");
+				}
+				if(n.equals("skewave")) {
 					pStmt.setString(34,"1");
 				}else {
 					pStmt.setString(34,"0");
 				}
-				if(n.equals("summer")) {
+				if(n.equals("skestraight")) {
 					pStmt.setString(35,"1");
 				}else {
 					pStmt.setString(35,"0");
 				}
-				if(n.equals("autum")) {
+				if(n.equals("skenatural")) {
 					pStmt.setString(36,"1");
 				}else {
 					pStmt.setString(36,"0");
 				}
-				if(n.equals("winter")) {
+				if(n.equals("repeat")) {
 					pStmt.setString(37,"1");
 				}else {
 					pStmt.setString(37,"0");
 				}
-				if(n.equals("cute")) {
-					pStmt.setString(38,"1");
-				}else {
-					pStmt.setString(38,"0");
-				}
-				if(n.equals("casual")) {
-					pStmt.setString(39,"1");
-				}else {
-					pStmt.setString(39,"0");
-				}
-				if(n.equals("simple")) {
-					pStmt.setString(40,"1");
-				}else {
-					pStmt.setString(40,"0");
-				}
-				if(n.equals("stripe")) {
-					pStmt.setString(41,"1");
-				}else {
-					pStmt.setString(41,"0");
-				}
-				if(n.equals("check")) {
-					pStmt.setString(42,"1");
-				}else {
-					pStmt.setString(42,"0");
-				}
-				if(n.equals("dot")) {
-					pStmt.setString(43,"1");
-				}else {
-					pStmt.setString(43,"0");
-				}
-				if(n.equals("beauty")) {
-					pStmt.setString(44,"1");
-				}else {
-					pStmt.setString(44,"0");
-				}
-				if(n.equals("mode")) {
-					pStmt.setString(45,"1");
-				}else {
-					pStmt.setString(45,"0");
-				}
-				if(n.equals("natural")) {
-					pStmt.setString(46,"1");
-				}else {
-					pStmt.setString(46,"0");
-				}
-				if(n.equals("conserva")) {
-					pStmt.setString(47,"1");
-				}else {
-					pStmt.setString(47,"0");
-				}
-				if(n.equals("cool")) {
-					pStmt.setString(48,"1");
-				}else {
-					pStmt.setString(48,"0");
-				}
-				if(n.equals("lowheight")) {
-					pStmt.setString(49,"1");
-				}else {
-					pStmt.setString(49,"0");
-				}
-				if(n.equals("mens")) {
-					pStmt.setString(50,"1");
-				}else {
-					pStmt.setString(50,"0");
-				}
-				if(n.equals("lowprice")) {
-					pStmt.setString(51,"1");
-				}else {
-					pStmt.setString(51,"0");
-				}
-				if(n.equals("monotone")) {
-					pStmt.setString(52,"1");
-				}else {
-					pStmt.setString(52,"0");
-				}
-				if(n.equals("skewave")) {
-					pStmt.setString(53,"1");
-				}else {
-					pStmt.setString(53,"0");
-				}
-				if(n.equals("skestraight")) {
-					pStmt.setString(54,"1");
-				}else {
-					pStmt.setString(54,"0");
-				}
-				if(n.equals("skenatural")) {
-					pStmt.setString(55,"1");
-				}else {
-					pStmt.setString(55,"0");
-				}
-				if(n.equals("repeat")) {
-					pStmt.setString(56,"1");
-				}else {
-					pStmt.setString(56,"0");
-				}
 			}
-			pStmt.setString(57,postlist.getImg());
-
+//			pStmt.setString(57,postlist.getImg());
+//
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
 				result = true;
