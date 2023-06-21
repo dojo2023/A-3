@@ -8,6 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.List;
+
 import dao.RegisterDao;
 import model.Registers;
 
@@ -26,13 +29,10 @@ public class ListServlet extends HttpServlet {
 		// 検索処理を行う
 				RegisterDao bDao = new RegisterDao();
 
-				List<Registers> cardList = bDao.select(new Registers());
-		​
-				// 検索結果をリクエストスコープに格納する
-				request.setAttribute("cardList", cardList);
-		​
-
-		// 一覧ページにフォワードする
+				List<Registers>postList = bDao.select(new Registers());
+				request.setAttribute("postList",postList);
+				​
+				// 一覧ページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/list.jsp");
 				dispatcher.forward(request, response);
 			}
