@@ -78,12 +78,13 @@ public class TopimageDao {
 		conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
 
 		// SQL文を準備する
-		String sql = "INSERT INTO TOP (TOPIMG) VALUES (?)";
+		String sql = "INSERT INTO TOP (TOPIMG,IMAGE) VALUES (?,?)";
         PreparedStatement pStmt = conn.prepareStatement(sql);
 
         //SQL文を完成させる
 //       pStmt.setInt(1, topId);
        pStmt.setString(1, image);
+       pStmt.setString(2, image);
 
      // SQL文を実行する
 		if (pStmt.executeUpdate() == 1) {
