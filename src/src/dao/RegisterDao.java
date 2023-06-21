@@ -265,18 +265,8 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/TRex", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "insert into REGISTER (ID,OUTER,TOPS,BOTTOMS,DRESS,SOCKS,SHOSE,ACCE,"
-					+ "COAT,JACKET,SHIRT,POLO,KNIT,VEST,CARDIGAN,STRAIGHT,SLACKS,TAPERED,SKINNY,CHINO,"
-					+ "LONG,SHIRTDRESS,JUMPERDRESS,KNEEDRESS,PUMPS,LOAFRE,SNEAKER,BOOTS,SLIP,NECLLACE, "
-					+ "PIERCR,EARRING,BELT,SPRING,SUMMER,AUTUM,"
-					+ "WINTER,CUTE,CASUAL,SIMPLE,STRIPE,CHEC,DOT,BEAUTY,MODE,NATURA,CONSERVA,COOL,LOWHEIGHT,"
-					+ "MENS,LOWPRICE,MONOTONE,SKEWAVE,SKESTRAIGHT,SKENATURAL,REPEAT,Img)"
-					+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?,?,"
-					+ 			"?, ?, ?, ?, ?, ?, ?, ?,?, ?,"
-					+ 			" ?, ?, ?, ?, ?, ?, ?,?, ?, ?, "
-					+ 			" ?, ?, ?, ?, ?, ?, ?,?, ?, ?, "
-					+ 			" ?, ?, ?, ?, ?, ?, ?,?, ?, ?, "
-					+				 "?, ?,?,?,?,?,?)";			//全ての列名で提示することでオートインクリメントに対応できる。
+			String sql = "insert into REGISTER (ID, CLOTHES, SUBOUTER, SUBTOPS, SUBBOTTOMS, SUBDRESS, SUBSHOES, SUBACCE, TAG, IMAGE)"
+					+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?,?,)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
