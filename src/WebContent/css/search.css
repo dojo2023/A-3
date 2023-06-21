@@ -20,3 +20,146 @@ display: none;
 .ww_cond{
 	font-size:13px;
 }
+/*ラジオボタン*/
+.gender {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3em 2em;
+    border: none;
+}
+
+.gender label {
+    display: flex;
+    align-items: center;
+    gap: 0 .5em;
+    position: relative;
+    cursor: pointer;
+}
+
+.gender label::before,
+.gender label::after {
+    border-radius: 50%;
+    content: '';
+}
+
+.gender label::before {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #dee5eb;
+    box-sizing: border-box;
+}
+
+.gender label::after {
+    position: absolute;
+    top: 50%;
+    left: 9px;
+    transform: translate(-50%, -50%);
+    width: 9px;
+    height: 9px;
+    background-color: #dee5eb;
+}
+
+.gender label:has(:checked)::after {
+    background-color: #d4b5d3;
+    animation: anim-radio-002 .3s linear;
+}
+
+@keyframes anim-gender {
+    0% {
+        box-shadow: 0 0 0 1px transparent;
+    }
+    50% {
+        box-shadow: 0 0 0 10px #d4b5d333;
+    }
+    100% {
+        box-shadow: 0 0 0 10px transparent;
+    }
+}
+
+.gender input {
+    display: none;
+}
+/*チェックボックス*/
+.clothes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em 2em;
+    border: none;
+}
+
+.clothes label {
+    display: flex;
+    align-items: center;
+    gap: 0 .5em;
+    position: relative;
+    cursor: pointer;
+}
+
+.clothes label::before,
+.clothes label:has(:checked)::after {
+    content: '';
+}
+
+.clothes label::before {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background-color: #e6edf3;
+}
+
+.clothes label:has(:checked)::before {
+    background-color: #2589d0;
+}
+
+.clothes label:has(:checked)::after {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    transform: rotate(45deg);
+    width: 4px;
+    height: 8px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+}
+
+.clothes input {
+    display: none;
+}
+/*送信ボタン*/
+.button-030 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 250px;
+    margin:0 auto;
+    padding: .9em 2em;
+    border: 1px solid #b88eb1;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #b88eb1;
+    font-size: 1em;
+}
+
+.button-030:hover {
+    animation: anima-button-030 1s;
+}
+
+@keyframes anima-button-030 {
+    0% {
+        box-shadow: 0 0 0 0 rgb(184 142 177 / 50%);
+    }
+    100% {
+        box-shadow: 0 0 0 1.2em rgb(0 0 0 / 0%);
+    }
+}
+
+.button-030::after {
+    transform: rotate(45deg);
+    width: 5px;
+    height: 5px;
+    margin-left: 10px;
+    border-top: 2px solid #b88eb1;
+    border-right: 2px solid #b88eb1;
+    content: '';
+}

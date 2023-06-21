@@ -262,7 +262,9 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
+
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
+
 
 			// SQL文を準備する
 			String sql = "insert into REGISTER (ID, OUTER, TOPS, BOTTOMS, DRESS, SOCKS, SHOES, ACCE, SUBOUTER,"
