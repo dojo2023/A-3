@@ -22,7 +22,7 @@ public class TopimageDao {
             Class.forName("org.h2.Driver");
 
             // データベースに接続する
-            conn = DriverManager.getConnection("jdbc:h2:file:C:\\dojo6\\data", "sa", "sa");
+            conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/TRex", "sa", "sa");
 
 
 	        // SQL文を準備する
@@ -75,7 +75,7 @@ public class TopimageDao {
 		Class.forName("org.h2.Driver");
 
 		// データベースに接続する
-		conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data", "sa", "sa");
+		conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/TRex", "sa", "sa");
 
 		// SQL文を準備する
 		String sql = "INSERT INTO TOP (TOPID, TOPIMG) VALUES (?, ?)";
@@ -171,7 +171,7 @@ public class TopimageDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/TRex", "sa", "sa");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/TRex", "sa", "sa");
 			//SQL文を準備する
 			String sql = "DELETE FROM TOP WHERE TOPID = ?"; //TOPからTOPIDが指定された値と一致するレコードを削除
             PreparedStatement pStmt = conn.prepareStatement(sql);

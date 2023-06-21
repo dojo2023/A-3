@@ -51,9 +51,10 @@ public class TopServlet extends HttpServlet {
 
 		String image = this.getimage(part);
 		String Topimg = "./UploadPhoto/"+image;
-		TopimageDao dao = new TopimageDao();
-		boolean ans =dao.insert(Topimg);
-		if(ans) {
+		TopimageDao tdao = new TopimageDao();
+		boolean ans =tdao.insert(image);
+		if(ans
+				) {
 			//成功のときの処理
 			ans = true;
 		}else {
