@@ -22,7 +22,7 @@ public class TopimageDao {
             Class.forName("org.h2.Driver");
 
             // データベースに接続する
-            conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/TRex", "sa", "sa");
+            conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
 
 
 	        // SQL文を準備する
@@ -66,7 +66,7 @@ public class TopimageDao {
 
              //INSERT
         //引数imageで指定されたレコードを登録し、成功したらtrueを返す
-   public boolean insert(Topimages image) {
+   public boolean insert(String image) {
 	  Connection conn = null;
 	  boolean result = false;
 
@@ -75,15 +75,15 @@ public class TopimageDao {
 		Class.forName("org.h2.Driver");
 
 		// データベースに接続する
-		conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/TRex", "sa", "sa");
+		conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
 
 		// SQL文を準備する
-		String sql = "INSERT INTO TOP (TOPID, TOPIMG) VALUES (?, ?)";
+		String sql = "INSERT INTO TOP (TOPIMG) VALUES (?)";
         PreparedStatement pStmt = conn.prepareStatement(sql);
 
         //SQL文を完成させる
-       pStmt.setInt(1, image.getTopid());
-       pStmt.setString(2, image.getImage());
+//       pStmt.setInt(1, topId);
+       pStmt.setString(1, image);
 
      // SQL文を実行する
 		if (pStmt.executeUpdate() == 1) {
@@ -123,7 +123,7 @@ public class TopimageDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/TRex", "sa", "sa");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
 
 			// SQL文を準備する
 			String sql = "UPDATE TOP SET TOPIMG = ? WHERE TOPID = ?";
@@ -171,7 +171,7 @@ public class TopimageDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/TRex", "sa", "sa");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
 			//SQL文を準備する
 			String sql = "DELETE FROM TOP WHERE TOPID = ?"; //TOPからTOPIDが指定された値と一致するレコードを削除
             PreparedStatement pStmt = conn.prepareStatement(sql);

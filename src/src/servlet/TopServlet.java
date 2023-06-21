@@ -48,7 +48,7 @@ public class TopServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		Part part = request.getPart("IMAGE"); // getPartで取得
-
+//		int topId = Integer.parseInt(request.getParameter("top_id"));
 		String image = this.getimage(part);
 		String Topimg = "./UploadPhoto/"+image;
 		TopimageDao tdao = new TopimageDao();
