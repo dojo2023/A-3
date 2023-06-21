@@ -34,20 +34,22 @@
   		<input type="search" name="search" placeholder="キーワードを入力">
   		</div>
 		<div>
-		<label>GENDER<br>
-		<input type="radio" name="gender" value="MEN">MEN
-		<input type="radio" name="gender" value="WOMAN">WOMAN
-		<input type="radio" name="gender" value="OTHERS">OTHERS</label>
+		<label>GENDER<br></label>
+		<fieldset class="gender">
+		<label><input type="radio" name="gender" value="MEN"checked>MEN</label>
+		<label><input type="radio" name="gender" value="WOMAN">WOMAN</label>
+		<label><input type="radio" name="gender" value="OTHERS">OTHERS</label>
 		</div>
 		<div>
-		<label>ITEM<br>
-		<input type="checkbox" name="clothes"value="outer">outer
-		<input type="checkbox" name="clothes"value="tops">tops
-		<input type="checkbox" name="clothes"value="bottoms">bottoms
-		<input type="checkbox" name="clothes"value="dress">dress
-		<input type="checkbox" name="clothes"value="socks">socks
-		<input type="checkbox" name="clothes"value="shoes">shoes
-		<input type="checkbox" name="clothes"value="accessory">accessory</label>
+		<label>ITEM<br></label>
+		<fieldset class="clothes">
+		<label><input type="checkbox" name="clothes"value="outer" checked/>outer</label>
+		<label><input type="checkbox" name="clothes"value="tops">tops</label>
+		<label><input type="checkbox" name="clothes"value="bottoms">bottoms</label>
+		<label><input type="checkbox" name="clothes"value="dress">dress</label>
+		<label><input type="checkbox" name="clothes"value="socks">socks</label>
+		<label><input type="checkbox" name="clothes"value="shoes">shoes</label>
+		<label><input type="checkbox" name="clothes"value="accessory">accessory</label>
 		</div>
 		<label>SUB CATEGORY</label><br>
 		<div>
@@ -138,7 +140,7 @@
 			</label>
 		</div>
 		<div>
-		<input type="submit"name="submit" value="検索">
+		<input type="submit"name="submit" value="検索"class="button-030">
 		</div>
 	</form>
 
