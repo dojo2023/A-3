@@ -8,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import dao.UsersDao;
 import model.Users;
@@ -53,15 +52,17 @@ public class MypageNewServlet extends HttpServlet {
 
 		// ユーザー情報の登録処理を行う
 		UsersDao uDao = new UsersDao();
-		if (uDao.UsersDao(new Users(id, pw,name,email,gender,address,birth,height,weight,management))) { // ログイン成功
-			// セッションスコープにIDを格納する→Usersの箱を格納すればよい
-			HttpSession session = request.getSession();
-			session.setAttribute("id", new Users(id));
-		// 登録が成功したらトップページへ遷移する
-		// 登録が成功しなかったら、必須入力項目が漏れていた場合エラー表示し、パスワード欄に文字列記述があった際には
-		//パスワードのみ削除
+		Users user = new Users(id, pw,name,email,gender,address,birth,height,weight,management);
+		if (uDao.insert(user)) {	// 登録成功成功したらトップページへ遷移する
+			request.setAttribute("result",
+			new Users());
+			}
+			else {		// 登録失敗必須入力項目が漏れていた場合エラー表示し、パスワード欄に文字列記述があった際には
+			request.setAttribute("result",
+			new Users());
+			}
 
-	}
+
 
 	}
 }
