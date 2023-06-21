@@ -61,14 +61,23 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 				//引数がありのRegistersメソッドを動かしている。
 				Registers poster = new Registers();
 				poster.setId(rs.getString("ID"));
-				poster.setClothes(rs.getString("CLOTHES"));
-				poster.setSubTops(rs.getString("SUBTOPS"));
+				String[] clothes = {rs.getString("OUTER"),rs.getString("TOPS"),
+						rs.getString("BOTTOMS"),rs.getString("DRESS"),rs.getString("SCOKS"),
+						rs.getString("SHOES"),rs.getString("ACCE")};
+				poster.setClothes(clothes);
+			    poster.setSubTops(rs.getString("SUBTOPS"));
 				poster.setSubOuter(rs.getString("SUBOUTER"));
 				poster.setSubBottoms(rs.getString("SUBBOTTOMS"));
 				poster.setSubDress(rs.getString("SUBDRESS"));
 				poster.setSubShoes(rs.getString("SUBSHOSE"));
 				poster.setSubAcce(rs.getString("SUBACCE"));
-				poster.setTag(rs.getString("TAG"));
+				String[] tag = {rs.getString("SUPRING"),rs.getString("SUMMER"),rs.getString("AUTUM"),
+						rs.getString("WINTER"),rs.getString("CUTE"),rs.getString("CASUAL"),rs.getString("SIMPLE")
+						,rs.getString("STRIPE"),rs.getString("CHEC"),rs.getString("DOT"),rs.getString("BEAUTY")
+						,rs.getString("MODE"),rs.getString("NATURA"),rs.getString("CONSERVA"),rs.getString("COOL")
+						,rs.getString("LOWHEIGHT"),rs.getString("MENS"),rs.getString("LOWPRICE"),rs.getString("MONOTONE")
+						,rs.getString("SKEWAVE"),rs.getString("SKESTRAIGHT"),rs.getString("SKENATURAL"),rs.getString("REPEAT")};
+				poster.setTag(tag);
 				poster.setImg(rs.getString("IMG"));
 
 				postList.add(poster);
