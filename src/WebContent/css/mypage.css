@@ -20,3 +20,27 @@ display: none;
 .ww_cond{
 	font-size:13px;
 }
+
+.mypageinfo{
+	width: 500%;
+	position: absolute;          /* 位置指定 */
+	padding: 20px;               /* 余白指定 */
+	top:  0;                     /* 位置指定 */
+	bottom:  0;                  /* 位置指定 */
+	left:  0;                    /* 位置指定 */
+	right:  0;                   /* 位置指定 */
+	margin:  auto;               /* 中央寄せ */
+	width:  150px;               /* 幅指定 */
+	height: 80px;
+
+
+}
+
+.mypagemenu{
+	float: right;
+	display: flex;
+	justify-content:flex-end;
+	width: 700px;
+
+
+}
