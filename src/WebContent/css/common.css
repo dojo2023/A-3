@@ -1,8 +1,17 @@
 @charset "UTF-8";
 body {
-   background-image: url(); /* 画像 */
+   background-image:url(../img/1160181.jpg); /* 画像 */
    background-size: cover;               /* 全画面 */
    background-attachment: fixed;         /* 固定 */
    background-position: center center;   /* 縦横中央 */
-   text-align: center;
+}
+.Header {
+position: fixed; /* ヘッダーを固定する */
+top: 0; /* 上部から配置の基準位置を決める */
+left: 0; /* 左から配置の基準位置を決める */
+width: 100%; /* ヘッダーの横幅を指定する */
+height: 35px; /* ヘッダーの高さを指定する */
+padding: 10px; /* ヘッダーの余白を指定する(上下左右) */
+background-color: #31a9ee; /* ヘッダーの背景色を指定する */
+color: #000000; /* フォントの色を指定する */
 }

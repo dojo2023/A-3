@@ -3,254 +3,101 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.Registers;
 
 public class RegisterDao{// 引数paramで検索項目を指定し、検索結果のリストを返す
-//	public List<Registers> select(Registers param) {
-//		Connection conn = null;
-//		List<Registers> postList = new ArrayList<Registers>();	//resultsetをArrayListに入れ直して返す
+	public List<Registers> select(Registers param) {
+		Connection conn = null;
+	List<Registers> postList = new ArrayList<Registers>();	//resultsetをArrayListに入れ直して返す
 
-//		try {
-//			// JDBCドライバを読み込む
-//			Class.forName("org.h2.Driver");
-//
-//			// データベースに接続する
-//			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data", "sa", "sa");
-//			                                      //jdbc:h2:file:C:\dojo6\data
-//			// SQL文を準備する
-//			String sql = "select * from REGISTER "
-//					+ "WHERE ID LIKE ? AND OUTER LIKE ? AND TOPS LIKE ? AND BOTTOMS LIKE ? AND DRESS LIKE ? AND "
-//					+ "SOCKS LIKE ? AND SHOSE LIKE ? AND ACCE LIKE ?  AND COAT LIKE ? AND JACKET LIKE ? AND"
-//					+ "SHIRT LIKE ? AND POLO LIKE ? AND KNIT LIKE ? AND VEST LIKE ? AND CARDIGAN LIKE ? AND"
-//					+ "STRAIGHT LIKE ? AND SLACKS LIKE ? AND TAPERED LIKE ? AND SKINNY LIKE ? AND CHINO LIKE ? AND"
-//					+ "LONG LIKE ? AND SHIRTDRESS LIKE ? AND JUMPERDRESS LIKE ? AND KNEEDRESS LIKE ? AND"
-//					+ "PUMPS LIKE ? AND LOAFRE LIKE ? AND SNEAKER LIKE ? AND BOOTS LIKE ? AND SLIP LIKE ? AND"
-//					+ "NECLLACE LIKE ? AND PIERCR LIKE ? AND EARRING LIKE ? AND BELT LIKE ? AND SPRIPNG LIKE ? AND "
-//					+ "SUMMER LIKE ? AND AUTUM LIKE ? AND WINTER LIKE ? AND CUTE LIKE ? AND CASUAL LIKE ? AND "
-//					+ "SIMPLE LIKE ? AND STRIPE LIKE ? AND CHEC LIKE ? AND DOT LIKE ? AND BEAUTY LIKE ?  AND "
-//					+ "MODE LIKE ? AND NATURA LIKE ? AND CONSERVA LIKE ? AND COOL LIKE ? AND LOWHEIGHT LIKE ? AND "
-//					+ "MENS LIKE ? AND LOWPRICE LIKE ? AND MONOTONE LIKE ? AND SKEWAVE LIKE ? AND "
-//					+ "SKESTRAIGHT LIKE ? AND SKENATURAL LIKE ?  AND REPEAT LIKE ?  AND Img LIKE ?  ";
-//
-//
-//
-//
-//			PreparedStatement pStmt = conn.prepareStatement(sql);
-//
-//			// SQL文を完成させる
-//				pStmt.setString(1, "%" + param.getId() + "%");
-//
-//				pStmt.setInt(2, "%" + param.getOuter() + "%");
-//
-//				pStmt.setString(3, "%" + param.getTops() + "%");
-//
-//				pStmt.setString(4, "%" + param.getBottoms() + "%");
-//
-//				pStmt.setString(5, "%" + param.getDress() + "%");
-//
-//				pStmt.setString(6, "%" + param.getSocks() + "%");
-//
-//				pStmt.setString(7, "%" + param.getShose() + "%");
-//
-//				pStmt.setString(8, "%" + param.getAcce() + "%");
-//
-//				pStmt.setString(9, "%" + param.getCoat() + "%");
-//
-//				pStmt.setString(10, "%" + param.getJacket() + "%");
-//
-//				pStmt.setString(11, "%" + param.getShirt() + "%");
-//
-//				pStmt.setString(12, "%" + param.getPolo() + "%");
-//
-//				pStmt.setString(13, "%" + param.getKnit() + "%");
-//
-//				pStmt.setString(14, "%" + param.getVest() + "%");
-//
-//				pStmt.setString(15, "%" + param.getCardigan() + "%");
-//
-//				pStmt.setString(16, "%" + param.getStraight() + "%");
-//
-//				pStmt.setString(17, "%" + param.getSlacks() + "%");
-//
-//				pStmt.setString(18, "%" + param.getTapered() + "%");
-//
-//				pStmt.setString(19, "%" + param.getSkinny() + "%");
-//
-//				pStmt.setString(20, "%" + param.getChino() + "%");
-//
-//				pStmt.setString(21, "%" + param.getLongskirt() + "%");
-//
-//				pStmt.setString(22, "%" + param.getShirtdress() + "%");
-//
-//				pStmt.setString(23, "%" + param.getJumperdress() + "%");
-//
-//				pStmt.setString(24, "%" + param.getKneedress() + "%");
-//
-//				pStmt.setString(25, "%" + param.getPumps() + "%");
-//
-//				pStmt.setString(26, "%" + param.getLoafre() + "%");
-//
-//				pStmt.setString(27, "%" + param.getSneaker() + "%");
-//
-//				pStmt.setString(28, "%" + param.getBoots() + "%");
-//
-//				pStmt.setString(29, "%" + param.getSlip() + "%");
-//
-//				pStmt.setString(30, "%" + param.getNecllace() + "%");
-//
-//				pStmt.setString(31, "%" + param.getPiercr() + "%");
-//
-//				pStmt.setString(32, "%" + param.getEarring() + "%");
-//
-//				pStmt.setString(33, "%" + param.getBelt() + "%");
-//
-//				pStmt.setString(34, "%" + param.getSpring() + "%");
-//
-//				pStmt.setString(35, "%" + param.getSummer() + "%");
-//
-//				pStmt.setString(36, "%" + param.getAutum() + "%");
-//
-//				pStmt.setString(37, "%" + param.getWinter() + "%");
-//
-//				pStmt.setString(38, "%" + param.getCute() + "%");
-//
-//				pStmt.setString(39, "%" + param.getCasual() + "%");
-//
-//				pStmt.setString(40, "%" + param.getSimple() + "%");
-//
-//				pStmt.setString(41, "%" + param.getStripe() + "%");
-//
-//				pStmt.setString(42, "%" + param.getCheck() + "%");
-//
-//				pStmt.setString(43, "%" + param.getDot() + "%");
-//
-//				pStmt.setString(44, "%" + param.getBeauty() + "%");
-//
-//				pStmt.setString(45, "%" + param.getMode() + "%");
-//
-//				pStmt.setString(46, "%" + param.getNatural() + "%");
-//
-//				pStmt.setString(47, "%" + param.getConserva() + "%");
-//
-//				pStmt.setString(48, "%" + param.getCool() + "%");
-//
-//				pStmt.setString(49, "%" + param.getLowheight() + "%");
-//
-//				pStmt.setString(50, "%" + param.getMens() + "%");
-//
-//				pStmt.setString(51, "%" + param.getLowprice() + "%");
-//
-//				pStmt.setString(52, "%" + param.getMonotone() + "%");
-//
-//				pStmt.setString(53, "%" + param.getSkewave() + "%");
-//
-//				pStmt.setString(54, "%" + param.getSkestraight() + "%");
-//
-//				pStmt.setString(55, "%" + param.getSkenatural() + "%");
-//
-//				pStmt.setString(56, "%" + param.getRepeat() + "%");
-//
-//				pStmt.setString(57, "%" + param.getImg() + "%");
-//
-//
-//			// SQL文を実行し、結果表を取得する
-//			ResultSet rs = pStmt.executeQuery();
-//
-//			// 結果表をコレクションにコピーする
-//			while (rs.next()) {
-//				//引数がありのBcメソッドを動かしている。
-//				Registers poster = new Registers();
-//				poster.setId(rs.getString("ID"));
-//				poster.setOuter(rs.getInt("OUTER"));
-//				poster.setTops(rs.getString("TOPS"));
-//				poster.setBottoms(rs.getString("BOTTOMS"));
-//				poster.setDress(rs.getString("DRESS"));
-//				poster.setSocks(rs.getString("SOCKS"));
-//				poster.setShose(rs.getString("SHOSE"));
-//				poster.setAcce(rs.getString("ACCE"));
-//				poster.setCoat(rs.getString("COAT"));
-//				poster.setJacket(rs.getString("JACKET"));
-//				poster.setShirt(rs.getString("SHIRT"));
-//				poster.setPolo(rs.getString("POLO"));
-//				poster.setKnit(rs.getString("KNIT"));
-//				poster.setVest(rs.getString("VEST"));
-//				poster.setCardigan(rs.getString("CARDIGAN"));
-//				poster.setStraight(rs.getString("STRAIGHT"));
-//				poster.setSlacks(rs.getString("SLACKS"));
-//				poster.setTapered(rs.getString("TAPERED"));
-//				poster.setSkinny(rs.getString("SKINNY"));
-//				poster.setChino(rs.getString("CHINO"));
-//				poster.setLongskirt(rs.getString("LONG"));
-//				poster.setShirtdress(rs.getString("SHIRTDRESS"));
-//				poster.setJumperdress(rs.getString("JUMPERDRESS"));
-//				poster.setKneedress(rs.getString("KNEEDRESS"));
-//				poster.setPumps(rs.getString("PUMPS"));
-//				poster.setLoafre(rs.getString("LOAFRE"));
-//				poster.setSneaker(rs.getString("SNEAKER"));
-//				poster.setBoots(rs.getString("BOOTS"));
-//				poster.setSlip(rs.getString("SLIP"));
-//				poster.setNecllace(rs.getString("NECLLACE"));
-//				poster.setPiercr(rs.getString("PIERCR"));
-//				poster.setEarring(rs.getString("EARRING"));
-//				poster.setBelt(rs.getString("BELT"));
-//				poster.setTag(rs.getString("TAG"));
-////				poster.setSummer(rs.getString("SUMMER"));
-////				poster.setAutum(rs.getString("AUTUM"));
-////				poster.setWinter(rs.getString("WINTER"));
-////				poster.setCute(rs.getString("CUTE"));
-////				poster.setCasual(rs.getString("CASUAL"));
-////				poster.setSimple(rs.getString("SIMPLE"));
-////				poster.setStripe(rs.getString("STRIPE"));
-////				poster.setCheck(rs.getString("CHEC"));
-////				poster.setDot(rs.getString("DOT"));
-////				poster.setBeauty(rs.getString("BEAUTY"));
-////				poster.setMode(rs.getString("MODE"));
-////				poster.setNatural(rs.getString("NATURA"));
-////				poster.setConserva(rs.getString("CONSERVA"));
-////				poster.setCool(rs.getString("COOL"));
-////				poster.setLowheight(rs.getString("LOWHEIGHT"));
-////				poster.setMens(rs.getString("MENS"));
-////				poster.setLowprice(rs.getString("LOWPRICE"));
-////				poster.setMonotone(rs.getString("MONOTONE"));
-////				poster.setSkewave(rs.getString("SKEWAVE"));
-////				poster.setSkestraight(rs.getString("SKESTRAIGHT"));
-////				poster.setSkenatural(rs.getString("SKENATURAL"));
-////				poster.setRepeat(rs.getString("REPEAT"));
-//				poster.setImg(rs.getString("IMG"));
-//
-//				postList.add(poster);
-//
-//			}
-//		}
-//		catch (SQLException e) {
-//			e.printStackTrace();
-//			//postList = null;
-//			System.out.print("できたよー");
-//		}
-//		catch (ClassNotFoundException e) {
-//			e.printStackTrace();
-//			//postList = null;
-//			System.out.print("できたよー2");
-//		}
-//		finally {
-//			// データベースを切断
-//			if (conn != null) {
-//				try {
-//					conn.close();
-//				}
-//				catch (SQLException e) {
-//					e.printStackTrace();
-//					//postList = null;
-//					System.out.print("できたよー3");
-//				}
-//			}
-//		}
-//
-//		// 結果を返す
-//		return postList;
-//	}
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+		// データベースに接続する
+		conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
+
+
+			// SQL文を準備する
+			String sql = "select * from REGISTER ";
+
+
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+				pStmt.setString(1, "%" + param.getId() + "%");
+
+				pStmt.setString(2, "%" + param.getClothes() + "%");
+
+				pStmt.setString(3, "%" + param.getSubOuter() + "%");
+
+				pStmt.setString(4, "%" + param.getSubTops() + "%");
+
+				pStmt.setString(5, "%" + param.getSubBottoms() + "%");
+
+				pStmt.setString(6, "%" + param.getSubDress() + "%");
+
+				pStmt.setString(7, "%" + param.getSubDress() + "%");
+
+				pStmt.setString(8, "%" + param.getSubShoes() + "%");
+
+				pStmt.setString(9, "%" + param.getSubAcce() + "%");
+
+				pStmt.setString(10, "%" + param.getTag() + "%");
+
+				pStmt.setString(11, "%" + param.getImg() + "%");
+
+
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			// 結果表をコレクションにコピーする
+			while (rs.next()) {
+				//引数がありのRegistersメソッドを動かしている。
+				Registers poster = new Registers();
+				poster.setId(rs.getString("ID"));
+				poster.setClothes(rs.getString("CLOTHES"));
+				poster.setSubTops(rs.getString("SUBTOPS"));
+				poster.setSubOuter(rs.getString("SUBOUTER"));
+				poster.setSubBottoms(rs.getString("SUBBOTTOMS"));
+				poster.setSubDress(rs.getString("SUBDRESS"));
+				poster.setSubShoes(rs.getString("SUBSHOSE"));
+				poster.setSubAcce(rs.getString("SUBACCE"));
+				poster.setTag(rs.getString("TAG"));
+				poster.setImg(rs.getString("IMG"));
+
+				postList.add(poster);
+
+			}
+		}
+
+		catch (SQLException e) {			e.printStackTrace();
+			postList = null;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			postList = null;
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return postList;
+	}
 
 	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
 	public boolean insert(Registers postlist) {
