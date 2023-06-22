@@ -36,13 +36,13 @@
 				<label for="user_id">USER_ID</label>
 			</div>
 			<div>
-				<input type="text" id="user_id" name="ID" required />
+				<input type="text" id="user_id" name="id" required />
 			</div>
 			<div>
 				<label for="password">PASSWORD</label>
 			</div>
 			<div>
-				<input type="password" id="password" name="PW" required oninput="CheckUser_id(this)" />
+				<input type="password" id="password" name="pw" required oninput="CheckUser_id(this)" />
 			</div>
 			<p>
 				<input type="submit" id="submit" value="LOGIN">

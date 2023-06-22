@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.UsersDao;
+import model.Result;
 import model.Users;
 
 /**
@@ -34,12 +35,12 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+
 
 		// リクエストパラメーターを取得する
 		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("ID");
-		String pw =  request.getParameter("PW");
+		String id = request.getParameter("id");
+		String pw =  request.getParameter("pw");
 
 		// ログイン処理を行う
 		UsersDao iDao = new UsersDao();
@@ -55,10 +56,11 @@ public class LoginServlet extends HttpServlet {
 		}
 		else {									// ログイン失敗
 			// doGetを持ってきてアラートは表示させる
-			request.setAttribute("result","IDまたはPWに間違いがあります。");
+			request.setAttribute("result",
+			new Result("ログイン失敗！", "IDまたはPWに間違いがあります。", "/TRex/LoginServlet"));
 
 			// ログインページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
 			dispatcher.forward(request, response);
 		}
 

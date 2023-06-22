@@ -20,11 +20,11 @@ public class UsersDao{
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/TRex", "sa", "sa");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
 
 				// SQL文を準備する（何で検索することが多いかを考える）
 				//検索
-				String sql = "select * from USERS WHERE ID= ? AND PW = ?";
+				String sql = "select * from USER WHERE ID= ? AND PW = ?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 //				 SQL文を完成させる
@@ -41,12 +41,12 @@ public class UsersDao{
 				while (rs.next()){
 					user= new Users();
 					user.setId(rs.getString("ID"));
-					user.setEmail(rs.getString("MAIL"));
+					user.setEmail(rs.getString("EMAIL"));
 					user.setName(rs.getString("NAME"));
 
 					user.setGender(rs.getString("GENDER"));
 					user.setAddress(rs.getString("ADDRESS"));
-					user.setBirth(rs.getString("BARTH"));
+					user.setBirth(rs.getString("BIRTH"));
 					user.setHeight(rs.getString("HEIGHT"));
 					user.setWeight(rs.getString("WEIGHT"));
 					user.setManagement(rs.getString("MANAGEMENT"));
@@ -87,7 +87,7 @@ public class UsersDao{
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
 
 				// SQL文を準備する
-				String sql = "insert into User values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				String sql = "insert into USER values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
