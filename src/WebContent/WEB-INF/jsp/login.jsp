@@ -49,7 +49,7 @@
 			</p>
 			<span id="error_massage"></span>
 			<p>パスワードを忘れた方はこちら<br>
-			<p>新規登録は<a href="MypageNewServlet.java">こちら</a>
+			<p>新規登録は<a href="/TRex/MypageNewServlet">こちら</a>
 
 		  <!--  USER_ID<input type="text" name="ID"><br>
 			PASSWORD<input type="password" name="PW"><br>

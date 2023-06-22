@@ -28,6 +28,7 @@ public class MypageServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		UsersDao uDao = new UsersDao();
 		List<Users> postList = uDao.select(new Users());
+		System.out.println(postList.size()+"aaaaaa");
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("postList", postList);
