@@ -24,6 +24,14 @@ public class MypageServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		request.setCharacterEncoding("UTF-8");
+		UsersDao uDao = new UsersDao();
+		List<Users> postList = uDao.select(new Users());
+
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("postList", postList);
+
 		// マイページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
 		dispatcher.forward(request, response);
@@ -35,17 +43,6 @@ public class MypageServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		//なにするのかをどんどん書いていく(コメントアウト)
-		request.setCharacterEncoding("UTF-8");
-		UsersDao uDao = new UsersDao();
-		List<Users> postList = uDao.select(new Users());
-
-		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("cardList", postList);
-
-		// 結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/list.jsp");
-		dispatcher.forward(request, response);
 	}
 
 }

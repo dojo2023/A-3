@@ -144,10 +144,10 @@ public class UsersDao{
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
 
 				// SQL文を準備する
-				String sql = "select USER set ID=?, EMAIL=?, NAME=?, PASS=?, GENDER=?, ADDRESS=?, BIRTH=?, HEIGHT=?, MANAGEMENT=? where NUMBER=?";
+				String sql = "select * from  USER  ";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
-				// SQL文を完成させる
+				/*// SQL文を完成させる
 				if (user.getId() != null && !user.getId().equals("")) {
 					pStmt.setString(1, user.getId());
 				}
@@ -187,14 +187,22 @@ public class UsersDao{
 					pStmt.setString(7, null);
 				}
 				pStmt.setString(8, user.getHeight());
-				pStmt.setString(9, user.getWeight());
+				pStmt.setString(9, user.getWeight());*/
 
+				ResultSet rs =pStmt.executeQuery();
 
-
-				// SQL文を実行する
-				if (pStmt.executeUpdate() == 1) {
-					postList = null;
+				while(rs.next()) {
+					Users users = new Users();
+					users.setName(rs.getString("name"));
+					users.setName(rs.getString("email"));
+					users.setName(rs.getString("address"));
+					users.setName(rs.getString("gender"));
+					users.setName(rs.getString("birth"));
+					users.setName(rs.getString("height"));
+					users.setName(rs.getString("weight"));
 				}
+
+
 			}
 			catch (SQLException e) {
 				e.printStackTrace();
