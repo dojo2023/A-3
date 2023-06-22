@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.UsersDao;
+import model.Result;
 import model.Users;
 
 /**
@@ -52,16 +53,17 @@ public class MypageNewServlet extends HttpServlet {
 		// ユーザー情報の登録処理を行う
 		UsersDao uDao = new UsersDao();
 		Users user = new Users(id, pw,name,email,gender,address,birth,height,weight,management);
-		if (uDao.insert(user)) {	// 登録成功成功したらトップページへ遷移する
+		if (uDao.insert(user)) {
 			request.setAttribute("result",
-			new Users());
-			}
-			else {		// 登録失敗必須入力項目が漏れていた場合エラー表示し、パスワード欄に文字列記述があった際には
-			request.setAttribute("result",
-			new Users());
-			}
+			new Result("登録成功！", "レコードを登録しました。", "/TRex/TopServlet"));
+						}
+						else {												// 登録失敗
+							request.setAttribute("result",
+							new Result("登録失敗！", "レコードを登録できませんでした。", "/TRex/TopServlet"));
+						}
 
-
-
+						// 結果ページにフォワードする
+						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+						dispatcher.forward(request, response);
 	}
 }
