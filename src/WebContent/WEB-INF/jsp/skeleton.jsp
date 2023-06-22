@@ -6,18 +6,19 @@
 	<meta charset="UTF-8">
 	<title>C²A | skeleton</title>
 	<!-- スタイルシートの挿入 -->
-<<<<<<< Updated upstream
 	<!--<link rel="stylesheet" href="/skeleton/css/style.css">  -->
-=======
 	<link rel="stylesheet" href="/skeleton/css/style.css">
 	<link rel="stylesheet" href="/TRex/css/hamburger.css">
->>>>>>> Stashed changes
+    <link rel ="stylesheet" href="/TRex/css/common.css">
 </head>
 <header>
+<div class = "container">
 <!-- 天気 -->
  <div id="ww_4872ca99eaffb" v='1.3' loc='id' a='{"t":"horizontal","lang":"ja","sl_lpl":1,"ids":[],"font":"Times","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3,"el_whr":3}'>Weather Data Source: <a href="https://oneweather.org/ja/tokyo/14_days/" id="ww_4872ca99eaffb_u" target="_blank">東京天気予報14日間</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_4872ca99eaffb"></script>
 	<!-- 天気、サイトロゴ、ハンバーガーメニュー -->
-	<h1>骨格診断</h1>
+	<h1>SKELETAL DIAGNOSIS</h1>
+	<h2>C²A</h2>
+	</div>
 	<!-- ハンバーガーメニュー -->
 	<button type="button" class="menu-btn">
     <i class="fa fa-bars" aria-hidden="true"></i>

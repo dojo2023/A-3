@@ -8,7 +8,8 @@
 <title>C²A</title>
 <link rel ="stylesheet" href="/TRex/css/list.css">
 <link rel="stylesheet" href="/TRex/css/hamburger.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.css"/>
+<link rel ="stylesheet" href="/TRex/css/common.css">
+<!--  <link rel="stylesheet" href="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.css"/>
  <script src="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.js"></script>
  <script>
     jQuery(function($){
@@ -23,14 +24,17 @@
         $("#foo-table").DataTable();
     });
  </script>
+ -->
 </head>
 
 <header>
+<div class="container">
 <!-- 天気　ロゴ　ハンバーガーメニュー -->
 <!-- 天気 -->
  <div id="ww_4872ca99eaffb" v='1.3' loc='id' a='{"t":"horizontal","lang":"ja","sl_lpl":1,"ids":[],"font":"Times","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3,"el_whr":3}'>Weather Data Source: <a href="https://oneweather.org/ja/tokyo/14_days/" id="ww_4872ca99eaffb_u" target="_blank">東京天気予報14日間</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_4872ca99eaffb"></script>
-	<h1>C²A</h1>
-	<h2>LIST</h2>
+	<h1>List</h1>
+	<h2>C²A</h2>
+	</div>
 	<!-- ハンバーガーメニュー -->
 	<button type="button" class="menu-btn">
     <i class="fa fa-bars" aria-hidden="true"></i>
