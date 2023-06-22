@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,8 +48,9 @@
 
 <body>
 	<%--画像表示 (横5枚　縦にスクロール)--%>
-	<img src="${'/TRex/UploadPhoto/'+=image}" id="gazo">
-
+	 <c:forEach var="e" items="${list}" >
+		 <img src="/TRex/UploadPhoto/${e.img}" id="gazo">
+	 </c:forEach>
 
 </body>
 <script>

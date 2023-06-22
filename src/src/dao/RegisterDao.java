@@ -29,28 +29,28 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			// SQL文を完成させる
-				pStmt.setString(1, "%" + param.getId() + "%");
-
-				pStmt.setString(2, "%" + param.getClothes() + "%");
-
-				pStmt.setString(3, "%" + param.getSubOuter() + "%");
-
-				pStmt.setString(4, "%" + param.getSubTops() + "%");
-
-				pStmt.setString(5, "%" + param.getSubBottoms() + "%");
-
-				pStmt.setString(6, "%" + param.getSubDress() + "%");
-
-				pStmt.setString(7, "%" + param.getSubDress() + "%");
-
-				pStmt.setString(8, "%" + param.getSubShoes() + "%");
-
-				pStmt.setString(9, "%" + param.getSubAcce() + "%");
-
-				pStmt.setString(10, "%" + param.getTag() + "%");
-
-				pStmt.setString(11, "%" + param.getImg() + "%");
+//			// SQL文を完成させる
+//				pStmt.setString(1, "%" + param.getId() + "%");
+//
+//				pStmt.setString(2, "%" + param.getClothes() + "%");
+//
+//				pStmt.setString(3, "%" + param.getSubOuter() + "%");
+//
+//				pStmt.setString(4, "%" + param.getSubTops() + "%");
+//
+//				pStmt.setString(5, "%" + param.getSubBottoms() + "%");
+//
+//				pStmt.setString(6, "%" + param.getSubDress() + "%");
+//
+//				pStmt.setString(7, "%" + param.getSubDress() + "%");
+//
+//				pStmt.setString(8, "%" + param.getSubShoes() + "%");
+//
+//				pStmt.setString(9, "%" + param.getSubAcce() + "%");
+//
+//				pStmt.setString(10, "%" + param.getTag() + "%");
+//
+//				pStmt.setString(11, "%" + param.getImg() + "%");
 
 
 			// SQL文を実行し、結果表を取得する
@@ -62,23 +62,23 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 				Registers poster = new Registers();
 				poster.setId(rs.getString("ID"));
 				String[] clothes = {rs.getString("OUTER"),rs.getString("TOPS"),
-						rs.getString("BOTTOMS"),rs.getString("DRESS"),rs.getString("SCOKS"),
+						rs.getString("BOTTOMS"),rs.getString("DRESS"),rs.getString("SOCKS"),
 						rs.getString("SHOES"),rs.getString("ACCE")};
 				poster.setClothes(clothes);
 			    poster.setSubTops(rs.getString("SUBTOPS"));
 				poster.setSubOuter(rs.getString("SUBOUTER"));
 				poster.setSubBottoms(rs.getString("SUBBOTTOMS"));
 				poster.setSubDress(rs.getString("SUBDRESS"));
-				poster.setSubShoes(rs.getString("SUBSHOSE"));
+				poster.setSubShoes(rs.getString("SUBSHOES"));
 				poster.setSubAcce(rs.getString("SUBACCE"));
-				String[] tag = {rs.getString("SUPRING"),rs.getString("SUMMER"),rs.getString("AUTUM"),
+				String[] tag = {rs.getString("SPRING"),rs.getString("SUMMER"),rs.getString("AUTUM"),
 						rs.getString("WINTER"),rs.getString("CUTE"),rs.getString("CASUAL"),rs.getString("SIMPLE")
 						,rs.getString("STRIPE"),rs.getString("CHEC"),rs.getString("DOT"),rs.getString("BEAUTY")
 						,rs.getString("MODE"),rs.getString("NATURA"),rs.getString("CONSERVA"),rs.getString("COOL")
 						,rs.getString("LOWHEIGHT"),rs.getString("MENS"),rs.getString("LOWPRICE"),rs.getString("MONOTONE")
 						,rs.getString("SKEWAVE"),rs.getString("SKESTRAIGHT"),rs.getString("SKENATURAL"),rs.getString("REPEAT")};
 				poster.setTag(tag);
-				poster.setImg(rs.getString("IMG"));
+				poster.setImg(rs.getString("IMAGE"));
 
 				postList.add(poster);
 
@@ -123,11 +123,11 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 
 
 			// SQL文を準備する
-			String sql = "insert into REGISTER (ID, OUTER, TOPS, BOTTOMS, DRESS, SOCKS, SHOES, ACCE, SUBOUTER,"
-					+ " SUBTOPS, SUBBOTTOMS, SUBDRESS, SUBSHOES, SUBACCE,  SUPRING, SUMMER, AUTUM, WINTER,"
+			String sql = "insert into REGISTER (OUTER, TOPS, BOTTOMS, DRESS, SOCKS, SHOES, ACCE, SUBOUTER,"
+					+ " SUBTOPS, SUBBOTTOMS, SUBDRESS, SUBSHOES, SUBACCE,  SPRING, SUMMER, AUTUM, WINTER,"
 					+ " CUTE, CASUAL, SIMPLE, STRIPE, CHEC, DOT, BEAUTY, MODE, NATURA, CONSERVA,"
 					+ " COOL, LOWHEIGHT, MENS, LOWPRICE, MONOTONE, SKEWAVE, SKESTRAIGHT, SKENATURAL, REPEAT, IMAGE)"
-					+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+					+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?,"
 					+ 		  "?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
 					+		  "?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
 					+         "?, ?, ?, ?, ?, ?, ?, ?)";
@@ -135,52 +135,52 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 
 			// SQL文を完成させる
 
-			pStmt.setString(1,postlist.getId());
+			//pStmt.setString(1,postlist.getId());
 //			pStmt.setString(2,postlist.getClothes());
-			pStmt.setString(9,postlist.getSubOuter());
-			pStmt.setString(10,postlist.getSubTops());
-			pStmt.setString(11,postlist.getSubBottoms());
-			pStmt.setString(12,postlist.getSubDress());
-			pStmt.setString(13,postlist.getSubShoes());
-			pStmt.setString(14,postlist.getSubAcce());
+			pStmt.setString(8,postlist.getSubOuter());
+			pStmt.setString(9,postlist.getSubTops());
+			pStmt.setString(10,postlist.getSubBottoms());
+			pStmt.setString(11,postlist.getSubDress());
+			pStmt.setString(12,postlist.getSubShoes());
+			pStmt.setString(13,postlist.getSubAcce());
 //			pStmt.setString(9,postlist.getTag());
-			pStmt.setString(38,postlist.getImg());
+			pStmt.setString(37,postlist.getImg());
 
 			for(String n: postlist.getClothes()) {
 				if(n.equals("outer")) {
+					pStmt.setString(1,"1");
+				}else {
+					pStmt.setString(1,"0");
+				}
+				if(n.equals("tops")) {
 					pStmt.setString(2,"1");
 				}else {
 					pStmt.setString(2,"0");
 				}
-				if(n.equals("tops")) {
+				if(n.equals("bottoms")) {
 					pStmt.setString(3,"1");
 				}else {
 					pStmt.setString(3,"0");
 				}
-				if(n.equals("bottoms")) {
+				if(n.equals("dress")) {
 					pStmt.setString(4,"1");
 				}else {
 					pStmt.setString(4,"0");
 				}
-				if(n.equals("dress")) {
+				if(n.equals("socks")) {
 					pStmt.setString(5,"1");
 				}else {
 					pStmt.setString(5,"0");
 				}
-				if(n.equals("socks")) {
+				if(n.equals("shoes")) {
 					pStmt.setString(6,"1");
 				}else {
 					pStmt.setString(6,"0");
 				}
-				if(n.equals("shoes")) {
+				if(n.equals("acce")) {
 					pStmt.setString(7,"1");
 				}else {
 					pStmt.setString(7,"0");
-				}
-				if(n.equals("acce")) {
-					pStmt.setString(8,"1");
-				}else {
-					pStmt.setString(8,"0");
 				}
 			}
 //
@@ -239,119 +239,119 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 //
 			for(String n: postlist.getTag()) {
 				if(n.equals("spring")) {
+					pStmt.setString(14,"1");
+				}else {
+					pStmt.setString(14,"0");
+				}
+				if(n.equals("summer")) {
 					pStmt.setString(15,"1");
 				}else {
 					pStmt.setString(15,"0");
 				}
-				if(n.equals("summer")) {
+				if(n.equals("autum")) {
 					pStmt.setString(16,"1");
 				}else {
 					pStmt.setString(16,"0");
 				}
-				if(n.equals("autum")) {
+				if(n.equals("winter")) {
 					pStmt.setString(17,"1");
 				}else {
 					pStmt.setString(17,"0");
 				}
-				if(n.equals("winter")) {
+				if(n.equals("cute")) {
 					pStmt.setString(18,"1");
 				}else {
 					pStmt.setString(18,"0");
 				}
-				if(n.equals("cute")) {
+				if(n.equals("casual")) {
 					pStmt.setString(19,"1");
 				}else {
 					pStmt.setString(19,"0");
 				}
-				if(n.equals("casual")) {
+				if(n.equals("simple")) {
 					pStmt.setString(20,"1");
 				}else {
 					pStmt.setString(20,"0");
 				}
-				if(n.equals("simple")) {
+				if(n.equals("stripe")) {
 					pStmt.setString(21,"1");
 				}else {
 					pStmt.setString(21,"0");
 				}
-				if(n.equals("stripe")) {
+				if(n.equals("check")) {
 					pStmt.setString(22,"1");
 				}else {
 					pStmt.setString(22,"0");
 				}
-				if(n.equals("check")) {
+				if(n.equals("dot")) {
 					pStmt.setString(23,"1");
 				}else {
 					pStmt.setString(23,"0");
 				}
-				if(n.equals("dot")) {
+				if(n.equals("beauty")) {
 					pStmt.setString(24,"1");
 				}else {
 					pStmt.setString(24,"0");
 				}
-				if(n.equals("beauty")) {
+				if(n.equals("mode")) {
 					pStmt.setString(25,"1");
 				}else {
 					pStmt.setString(25,"0");
 				}
-				if(n.equals("mode")) {
+				if(n.equals("natural")) {
 					pStmt.setString(26,"1");
 				}else {
 					pStmt.setString(26,"0");
 				}
-				if(n.equals("natural")) {
+				if(n.equals("conserva")) {
 					pStmt.setString(27,"1");
 				}else {
 					pStmt.setString(27,"0");
 				}
-				if(n.equals("conserva")) {
+				if(n.equals("cool")) {
 					pStmt.setString(28,"1");
 				}else {
 					pStmt.setString(28,"0");
 				}
-				if(n.equals("cool")) {
+				if(n.equals("lowheight")) {
 					pStmt.setString(29,"1");
 				}else {
 					pStmt.setString(29,"0");
 				}
-				if(n.equals("lowheight")) {
+				if(n.equals("mens")) {
 					pStmt.setString(30,"1");
 				}else {
 					pStmt.setString(30,"0");
 				}
-				if(n.equals("mens")) {
+				if(n.equals("lowprice")) {
 					pStmt.setString(31,"1");
 				}else {
 					pStmt.setString(31,"0");
 				}
-				if(n.equals("lowprice")) {
+				if(n.equals("monotone")) {
 					pStmt.setString(32,"1");
 				}else {
 					pStmt.setString(32,"0");
 				}
-				if(n.equals("monotone")) {
+				if(n.equals("skewave")) {
 					pStmt.setString(33,"1");
 				}else {
 					pStmt.setString(33,"0");
 				}
-				if(n.equals("skewave")) {
+				if(n.equals("skestraight")) {
 					pStmt.setString(34,"1");
 				}else {
 					pStmt.setString(34,"0");
 				}
-				if(n.equals("skestraight")) {
+				if(n.equals("skenatural")) {
 					pStmt.setString(35,"1");
 				}else {
 					pStmt.setString(35,"0");
 				}
-				if(n.equals("skenatural")) {
+				if(n.equals("repeat")) {
 					pStmt.setString(36,"1");
 				}else {
 					pStmt.setString(36,"0");
-				}
-				if(n.equals("repeat")) {
-					pStmt.setString(37,"1");
-				}else {
-					pStmt.setString(37,"0");
 				}
 			}
 //			pStmt.setString(57,postlist.getImg());
