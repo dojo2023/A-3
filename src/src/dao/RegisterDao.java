@@ -126,11 +126,11 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 			String sql = "insert into REGISTER (OUTER, TOPS, BOTTOMS, DRESS, SOCKS, SHOES, ACCE, SUBOUTER,"
 					+ " SUBTOPS, SUBBOTTOMS, SUBDRESS, SUBSHOES, SUBACCE,  SPRING, SUMMER, AUTUM, WINTER,"
 					+ " CUTE, CASUAL, SIMPLE, STRIPE, CHEC, DOT, BEAUTY, MODE, NATURA, CONSERVA,"
-					+ " COOL, LOWHEIGHT, MENS, LOWPRICE, MONOTONE, SKEWAVE, SKESTRAIGHT, SKENATURAL, REPEAT, IMAGE)"
+					+ " COOL, LOWHEIGHT, MENS, LOWPRICE, MONOTONE, SKEWAVE, SKESTRAIGHT, SKENATURAL, REPEAT, IMAGE,GENDER)"
 					+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?,"
 					+ 		  "?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
 					+		  "?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-					+         "?, ?, ?, ?, ?, ?, ?, ?)";
+					+         "?, ?, ?, ?, ?, ?, ?, ?,?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -145,6 +145,7 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 			pStmt.setString(13,postlist.getSubAcce());
 //			pStmt.setString(9,postlist.getTag());
 			pStmt.setString(37,postlist.getImg());
+			pStmt.setString(38,postlist.getGender());
 
 			for(String n: postlist.getClothes()) {
 				if(n.equals("outer")) {

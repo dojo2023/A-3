@@ -47,10 +47,22 @@
 </header>
 
 <body>
-	<%--画像表示 (横5枚　縦にスクロール)--%>
+<label class="open" for="pop-up">
+<%--画像表示 (横5枚　縦にスクロール)--%>
 	 <c:forEach var="e" items="${list}" >
 		 <img src="/TRex/UploadPhoto/${e.img}" id="gazo">
 	 </c:forEach>
+</label>
+<input type="checkbox" id="pop-up">
+	<div class="overlay">
+<div class="window">
+<label class="close" for="pop-up"style="width: 50px; height: 20px;"><font size="3">CLOSE</font></label>
+<p>
+<%--ポップアップの中に入れる情報 --%>
+ああああ
+</p>
+</div>
+</div>
 
 </body>
 <script>

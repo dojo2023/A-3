@@ -34,6 +34,7 @@ public class Registers implements Serializable {
 //	private String spring;
 	private String[] tag;
 	private String img;
+	private String gender;
 
 
 
@@ -48,10 +49,11 @@ public class Registers implements Serializable {
 		this.subAcce = "";
 		this.tag = new String[0];
 		this.img = "";
+		this.gender="";
 	}
 
 	public Registers(String id, String[] clothes, String subOuter, String subTops, String subBottoms, String subDress,
-			String subShoes, String subAcce, String[] tag, String img) {
+			String subShoes, String subAcce, String[] tag, String img ,String gender) {
 		super();
 		this.id = id;
 		this.clothes = clothes;
@@ -63,6 +65,7 @@ public class Registers implements Serializable {
 		this.subAcce = subAcce;
 		this.tag = tag;
 		this.img = img;
+		this.gender=gender;
 	}
 
 	public String getId() {
@@ -143,6 +146,14 @@ public class Registers implements Serializable {
 
 	public void setImg(String img) {
 		this.img = img;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 }

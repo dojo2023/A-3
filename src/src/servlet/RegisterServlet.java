@@ -9,10 +9,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import dao.RegisterDao;
 import model.Registers;
+import model.Users;
 
 
 /**
@@ -86,7 +88,9 @@ public class RegisterServlet extends HttpServlet {
 //		String belt= request.getParameter("BELT");
 		//タグ
 		String tag[]=request.getParameterValues("tag");
-
+		HttpSession session = request.getSession();
+		Users user = (Users)session.getAttribute("user");
+		String gender = user.getGender();
 
 		//画像アップロード
 		Part part = request.getPart("IMAGE"); // getPartで取得
@@ -99,7 +103,7 @@ public class RegisterServlet extends HttpServlet {
 		//データベースも書き直す
 		RegisterDao rDao = new RegisterDao();
 		Registers register = new Registers( id,  clothes,  subOuter,  subTops,  subBottoms,  subDress,
-				 subShoes,  subAcce, tag,  image);
+				 subShoes,  subAcce, tag,  image ,gender);
 
 		if (rDao.insert(register)) {	// 登録成功
 		request.setAttribute("result",

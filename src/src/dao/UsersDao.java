@@ -132,7 +132,7 @@ public class UsersDao{
 		}
 
 		// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-		public List<Users> select(Users user) {
+		public List<Users> select(String userId) {
 			Connection conn = null;
 			List<Users> postList = new ArrayList<Users>();
 
@@ -144,8 +144,12 @@ public class UsersDao{
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
 
 				// SQL文を準備する
-				String sql = "select * from  USER  ";
+				String sql = "select * from  USER where id=?  ";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+
+
+					pStmt.setString(1, userId);
 
 				/*// SQL文を完成させる
 				if (user.getId() != null && !user.getId().equals("")) {
@@ -194,12 +198,13 @@ public class UsersDao{
 				while(rs.next()) {
 					Users users = new Users();
 					users.setName(rs.getString("name"));
-					users.setName(rs.getString("email"));
-					users.setName(rs.getString("address"));
-					users.setName(rs.getString("gender"));
-					users.setName(rs.getString("birth"));
-					users.setName(rs.getString("height"));
-					users.setName(rs.getString("weight"));
+					users.setEmail(rs.getString("email"));
+					users.setAddress(rs.getString("address"));
+					users.setGender(rs.getString("gender"));
+					users.setBirth(rs.getString("birth"));
+					users.setHeight(rs.getString("height"));
+					users.setWeight(rs.getString("weight"));
+					postList.add(users);
 				}
 
 
