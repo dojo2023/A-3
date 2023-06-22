@@ -39,38 +39,44 @@
 		</div>
 		<div class="mypageinfo">
 			<table border=1>
+			<c:forEach var="e" items="${postList}" varStatus="status">
 				<tr>
 					<th>USER_ID</th>
-					<th><input type="text" name="USER_ID"></th>
+					<th>${e.id}</th>
 				</tr>
 				<tr>
 					<th>PASSWORD</th>
-					<th><input type="password" name="PASSWORD"></th>
+					<th>${e.pw}</th>
 				</tr>
 				<tr>
 					<th>NAME</th>
-					<th><input type="text" name="NAME"></th>
+					<th>${e.name}</th>
 				</tr>
 				<tr>
 					<th>EMAIL</th>
-					<th><input type="text" name="EMAIL"></th>
+					<th>${e.email}/th>
 				</tr>
 				<tr>
 					<th>GENDER</th>
-					<th><input type="text" name="GENDER"></th>
+					<th>${e.gender}</th>
+				</tr>
+				<tr>
+					<th>ADDRESS</th>
+					<th>${e.address}</th>
+				</tr>
+				<tr>
+					<th>BIRTH</th>
+					<th>${e.birth}</th>
 				</tr>
 				<tr>
 					<th>HEIGHT</th>
-					<th><input type="text" name="HEIGHT"></th>
+					<th>${e.height}</th>
 				<tr>
 					<th>WEIGHT</th>
-					<th><input type="text" name="WEIGHT"></th>
-				</tr>
-				<tr>
-					<th>SKELETON</th>
-					<th><input type="text" name="SKELETON"></th>
+					<th>${e.weight}</th>
 				</tr>
 
+			</c:forEach>
 			</table>
 		</div>
 		<nav class="mypagemenu">

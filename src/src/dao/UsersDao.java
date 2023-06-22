@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.Users;
 
@@ -128,6 +130,94 @@ public class UsersDao{
 			// 結果を返す
 			return result;
 		}
+
+		// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
+		public List<Users> select(Users user) {
+			Connection conn = null;
+			List<Users> postList = new ArrayList<Users>();
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
+
+				// SQL文を準備する
+				String sql = "select USER set ID=?, EMAIL=?, NAME=?, PASS=?, GENDER=?, ADDRESS=?, BIRTH=?, HEIGHT=?, MANAGEMENT=? where NUMBER=?";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+				// SQL文を完成させる
+				if (user.getId() != null && !user.getId().equals("")) {
+					pStmt.setString(1, user.getId());
+				}
+				else {
+					pStmt.setString(1, null);
+				}
+				if (user.getEmail() != null && !user.getEmail().equals("")) {
+					pStmt.setString(2, user.getEmail());
+				}
+				else {
+					pStmt.setString(2, null);
+				}
+				if (user.getName() != null && !user.getName().equals("")) {
+					pStmt.setString(3, user.getName());
+				}
+				else {
+					pStmt.setString(3, null);
+				}
+				if (user.getPw() != null && !user.getPw().equals("")) {
+					pStmt.setString(4, user.getPw());
+				}
+				else {
+					pStmt.setString(4, null);
+				}
+				pStmt.setString(5, user.getGender());
+
+				if (user.getAddress() != null && !user.getAddress().equals("")) {
+					pStmt.setString(6, user.getAddress());
+				}
+				else {
+					pStmt.setString(6, null);
+				}
+				if (user.getBirth() != null && !user.getBirth().equals("")) {
+					pStmt.setString(7, user.getBirth());
+				}
+				else {
+					pStmt.setString(7, null);
+				}
+				pStmt.setString(8, user.getHeight());
+				pStmt.setString(9, user.getWeight());
+
+
+
+				// SQL文を実行する
+				if (pStmt.executeUpdate() == 1) {
+					postList = null;
+				}
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+
+			// 結果を返す
+			return postList;
+		}
+
 
 		// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
 		public boolean update(Users user) {

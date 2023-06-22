@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import dao.UsersDao;
+import model.Users;
 
 /**
  * Servlet implementation class MypageServlet
@@ -32,6 +36,16 @@ public class MypageServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		//なにするのかをどんどん書いていく(コメントアウト)
+		request.setCharacterEncoding("UTF-8");
+		UsersDao uDao = new UsersDao();
+		List<Users> postList = uDao.select(new Users());
+
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("cardList", postList);
+
+		// 結果ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/list.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }
