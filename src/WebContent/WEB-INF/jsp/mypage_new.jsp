@@ -27,16 +27,16 @@
       <div class="menu__item">LOGOUT</div>
     </div>
 	<hr>
-	<form id = "mypage_form" action="/TRex/MypageNewServlet">
+	<form id = "mypage_form" action="/TRex/MypageNewServlet" method="POST">
 		  <input type="file" name="icon">
 		  <button type="submit">送信する</button>
 	<div>
 	USER ID<br>
-	<input type="text" name="userid" placeholder="USER ID"><br>
+	<input type="text" name="id" placeholder="USER ID"><br>
 	PASSWORDS<br>
 	<!-- <input type="password" name="password" placeholder="PASS"><br> -->
 	<span id="fieldPassword">
-	    <input type="password" id="textPassword" name="password" placeholder="PASSWORD">
+	    <input type="password" id="textPassword" name="pw" placeholder="PASSWORD">
 	</span>
 		 <span id="buttonEye" class="fa fa-eye" onclick="pushHideButton()"></span><br>
 	NAME<br>
@@ -55,7 +55,7 @@
 	WEIGHT<br>
 	<input type="text" name="weight" placeholder="weight">kg<br>
 	PRIFECTURE<br>
-		<select name="pref">
+		<select name="address">
 				<option value="">選択してください</option>
 				<option value="北海道">北海道</option>
 				<option value="青森県">青森県</option>
@@ -106,7 +106,7 @@
 				<option value="沖縄県">沖縄県</option>
 				</select><br>
 	BIRTHDAY<br>
-		<input type="date" name="calendar" max="9999-12-31">
+		<input type="date" name="birth" max="9999-12-31">
 	</div>
 	<div>
 		<div style="color:#ff0000;" class="contents" id="error_message"></div>

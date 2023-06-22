@@ -33,22 +33,21 @@ public class MypageNewServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		// TODO Auto-generated method stub
-		doGet(request, response);
+
 
 		//なにするのかをどんどん書いていく(コメントアウト)
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String id= request.getParameter("ID");
-		String pw= request.getParameter("PW");
-		String name= request.getParameter("NAME");
-		String email= request.getParameter("EMAIL");
-		String gender= request.getParameter("GENDER");
-		String address= request.getParameter("ADDRESS");
-		String birth= request.getParameter("BIRTH");
-		String height= request.getParameter("HEIGHT");
-		String weight= request.getParameter("WEIGHT");
-		String management= request.getParameter("MANAGEMENT");
+		String id= request.getParameter("id");
+		String pw= request.getParameter("pw");
+		String name= request.getParameter("name");
+		String email= request.getParameter("email");
+		String gender= request.getParameter("gender");
+		String address= request.getParameter("address");
+		String birth= request.getParameter("birth");
+		String height= request.getParameter("height");
+		String weight= request.getParameter("weight");
+		String management= request.getParameter("management");
 
 		// ユーザー情報の登録処理を行う
 		UsersDao uDao = new UsersDao();

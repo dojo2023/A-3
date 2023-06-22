@@ -100,7 +100,7 @@ public class UsersDao{
 					pStmt.setString(7, user.getBirth());
 					pStmt.setString(8, user.getHeight());
 					pStmt.setString(9, user.getWeight());
-					pStmt.setString(10, user.getManagement());
+					pStmt.setString(10, "0");
 
 				// SQL文を実行する
 				if (pStmt.executeUpdate() == 1) {
