@@ -15,3 +15,22 @@ padding: 10px; /* ヘッダーの余白を指定する(上下左右) */
 background-color: #31a9ee; /* ヘッダーの背景色を指定する */
 color: #000000; /* フォントの色を指定する */
 }
+/* ヘッダー部分 */
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+h2{
+	margin-left:100px;
+}
+
+/* ここまで */
+
+/* フォント */
+h1{
+    font-family:Algerian;
+    margin-left:100px;
+   text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
