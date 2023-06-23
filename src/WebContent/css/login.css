@@ -1,5 +1,8 @@
 @charset "UTF-8";
-
+.logo{
+	margin-top:50px;
+	margin-left:1000px;
+}
 /*  天気*/
 /*天気の大きさ*/
 .ww-box {
@@ -48,9 +51,11 @@ body {
 /* Form Layout */
 .form-wrapper {
   background: #FFE4E1;
-  margin: 3em auto;
+  margin: 6em auto;
   padding: 0 1em;
   max-width: 370px;
+  border-radius: 20px
+
 }
 
 h3 {
@@ -60,13 +65,23 @@ h3 {
 
 form {
   padding: 0 1.5em;
+
 }
 
 .form-item {
   margin-bottom: 0.75em;
   width: 100%;
+  border-radius: 10px
 }
-
+#user_id{
+	border-radius: 10px
+}
+#password{
+	border-radius: 10px
+}
+#submit.button{
+	border-radius: 10px
+}
 .form-item input {
   background: #fafafa;
   border: none;
@@ -115,12 +130,12 @@ form {
 }
 
 .form-footer a {
-  color: #8c8c8c;
+  color: #DC143C;
   text-decoration: none;
   transition: border-color 0.3s;
 }
 
 .form-footer a:hover {
-  border-bottom: 1px dotted #8c8c8c;
+  border-bottom: 1px dotted #FF0000;
 }
 /* ここまで */
