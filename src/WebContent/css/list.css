@@ -22,17 +22,31 @@ display: none;
 }
 
 
-
-
+#gazo{
+	 display:flex;
+    justify-content: center;
+	width:10%;/*幅を指定*/
+	height:20%;/*高さを指定*/
+}
+/*width: 10%;
+   height: 20%;*/
 	/* リンクのとこにカーソルが当たると */
 	.linkArea:hover{
 		/* でかくなる最大値 */
-		transform: scale(2.2);
+		transform: scale(1.1);
 		/* でかくなる速度 */
- 		transition-duration: 0.5s;
+ 		transition-duration: 1.0s;
 	}
 	a{
 		/* リンクの下線を消す */
 		text-decoration: none;
+		width:200px;/*幅を指定*/
+	height:200px;/*高さを指定*/
+		 display:flex;
+    justify-content: center;
 	}
+.linkArea{
+	width:200px;/*幅を指定*/
+	height:200px;/*高さを指定*/
+}
 
