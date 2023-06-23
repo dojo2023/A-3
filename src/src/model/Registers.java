@@ -7,7 +7,7 @@ public class Registers implements Serializable {
 	private String id;
 	private String[] clothes;
 	private String subOuter;
-	//private String jacket;
+//	private String jacket;
 	private String subTops;
 //	private String polo;
 //	private String knit;

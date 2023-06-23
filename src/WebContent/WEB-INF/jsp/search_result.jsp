@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,6 +38,10 @@
 <!--性別アイコン  -->
 <!-- RESULT :  WOMAN・TOPS  -->
 <input type="button" onclick="window.history.back();" value=SEARCHに戻る>
+
+	 <c:forEach var="e" items="${searchList}" >
+		 <img src="/TRex/UploadPhoto/${e.img}" id="gazo">
+	 </c:forEach>
 
 
 <!-- ここポップアップ部分

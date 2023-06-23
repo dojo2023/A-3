@@ -11,7 +11,7 @@ import java.util.List;
 import model.Registers;
 
 public class RegisterDao{// 引数paramで検索項目を指定し、検索結果のリストを返す
-	public List<Registers> select(Registers param) {
+	public List<Registers> select(Registers param) { //全件検索
 		Connection conn = null;
 	List<Registers> postList = new ArrayList<Registers>();	//resultsetをArrayListに入れ直して返す
 
@@ -107,6 +107,126 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 		// 結果を返す
 		return postList;
 	}
+
+	//検索用のselectメソッド
+	public List<Registers> searchSelect(String id ,String gender,String[] item,String subOuter,String subTops,
+			String subBottoms,String subDress,String subShoes,String subAcce,String[] tags) {
+		Connection conn = null;
+	List<Registers> postList = new ArrayList<Registers>();	//resultsetをArrayListに入れ直して返す
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+		// データベースに接続する
+		conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
+
+
+
+			// SQL文を準備する
+			String sql = "select * from REGISTER "
+					+ "WHERE"
+					+ " gender=? and "
+					+ " subOuter=? and "
+					+ "subTops=? and "
+					+ "subBottoms=? and "
+					+ "subDress=? and "
+					+ "subShoes=?"
+					+ "subAcce=? ";
+					for(int i=0;i<item.length;i++) {
+						sql+= "and item="+"\'"+item[i]+"\' ";
+					}
+					for(int i=0;i<tags.length;i++) {
+						sql+= "or tag ="+"\'"+tags[i]+"\'";
+					}
+					System.out.println(sql);
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+//			// SQL文を完成させる
+
+				pStmt.setString(1, gender);
+
+				pStmt.setString(2, subOuter);
+
+				pStmt.setString(3, subTops);
+
+				pStmt.setString(4, subBottoms);
+
+				pStmt.setString(5,  subDress);
+
+				pStmt.setString(6,  subShoes);
+
+				pStmt.setString(7, subAcce);
+
+				/*pStmt.setString(7, "%" + param.getSubShoes() + "%");
+
+				pStmt.setString(8, "%" + param.getSubAcce() + "%");
+
+				pStmt.setString(9, "%" + param.getTag() + "%");
+
+				pStmt.setString(10, "%" + param.getImg() + "%");
+
+				pStmt.setString(11, "%" + param.getGender() + "%");
+				*/
+
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+					// 結果表をコレクションにコピーする
+					while (rs.next()) {
+						//引数がありのRegistersメソッドを動かしている。
+						Registers poster = new Registers();
+						poster.setId(rs.getString("ID"));
+						String[] clothes = {rs.getString("OUTER"),rs.getString("TOPS"),
+								rs.getString("BOTTOMS"),rs.getString("DRESS"),rs.getString("SOCKS"),
+								rs.getString("SHOES"),rs.getString("ACCE")};
+						poster.setClothes(clothes);
+					    poster.setSubTops(rs.getString("SUBTOPS"));
+						poster.setSubOuter(rs.getString("SUBOUTER"));
+						poster.setSubBottoms(rs.getString("SUBBOTTOMS"));
+						poster.setSubDress(rs.getString("SUBDRESS"));
+						poster.setSubShoes(rs.getString("SUBSHOES"));
+						poster.setSubAcce(rs.getString("SUBACCE"));
+						String[] tag = {rs.getString("SPRING"),rs.getString("SUMMER"),rs.getString("AUTUM"),
+								rs.getString("WINTER"),rs.getString("CUTE"),rs.getString("CASUAL"),rs.getString("SIMPLE")
+								,rs.getString("STRIPE"),rs.getString("CHEC"),rs.getString("DOT"),rs.getString("BEAUTY")
+								,rs.getString("MODE"),rs.getString("NATURA"),rs.getString("CONSERVA"),rs.getString("COOL")
+								,rs.getString("LOWsHEIGHT"),rs.getString("MENS"),rs.getString("LOWPRICE"),rs.getString("MONOTONE")
+								,rs.getString("SKEWAVE"),rs.getString("SKESTRAIGHT"),rs.getString("SKENATURAL"),rs.getString("REPEAT")};
+						poster.setTag(tag);
+						poster.setImg(rs.getString("IMAGE"));
+
+						postList.add(poster);
+
+					}
+		}
+
+		catch (SQLException e) {			e.printStackTrace();
+			postList = null;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			postList = null;
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return postList;
+	}
+
+
+
+
 
 	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
 	public boolean insert(Registers postlist) {

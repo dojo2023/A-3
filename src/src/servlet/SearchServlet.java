@@ -24,7 +24,7 @@ public class SearchServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 登録ページにフォワードする
+		// 検索ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/search.jsp");
 		dispatcher.forward(request, response);
 	}
@@ -32,8 +32,7 @@ public class SearchServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+
 
 		//なにするのかをどんどん書いていく(コメントアウト)
 		// とりあえず現状は自由記入以外でなら検索引っかかるようにしてます
@@ -41,23 +40,30 @@ public class SearchServlet extends HttpServlet {
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
+		String id = request.getParameter("ID");
 		String gender = request.getParameter("gender");
-		String clothes = request.getParameter("clothes");
-		String tag = request.getParameter("tag");
-		String search = request.getParameter("search");
+		String[] item = request.getParameterValues("clothes");
+		String subOuter = request.getParameter("sub_outer");
+		String subTops = request.getParameter("sub_tops");
+		String subBottoms = request.getParameter("sub_bottoms");
+		String subDress = request.getParameter("sub_dress");
+		String subShoes = request.getParameter("sub_shoes");
+		String subAcce = request.getParameter("sub_acce");
+		String[] tags = request.getParameterValues("tag");
+
 
 		// 検索処理を行う（投稿されたものの中から捜索）
 		RegisterDao rDao = new RegisterDao();
-		List<Registers> searchList = rDao.select(new Registers());
+		List<Registers> searchList = rDao.searchSelect(id,gender,item,subOuter,subTops,subBottoms,subDress,subShoes,subAcce
+				,tags);
 
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("searchList", searchList);
 
-		// 結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/search_result.jsp");
+		// 検索ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("//WEB-INF/jsp/search_result.jsp");
 		dispatcher.forward(request, response);
-
 
 	}
 
