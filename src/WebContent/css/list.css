@@ -23,6 +23,7 @@ display: none;
 
 
 
+
 	/* リンクのとこにカーソルが当たると */
 	.linkArea:hover{
 		/* でかくなる最大値 */
@@ -34,3 +35,4 @@ display: none;
 		/* リンクの下線を消す */
 		text-decoration: none;
 	}
+

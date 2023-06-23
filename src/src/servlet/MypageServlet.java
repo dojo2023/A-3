@@ -29,9 +29,14 @@ public class MypageServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 		UsersDao uDao = new UsersDao();
-		Users user = new Users();
-		user.setId((String)session.getAttribute("user.userId"));
-		List<Users> postList = uDao.select((String)session.getAttribute("user.userId"));
+
+		//sessionからログイン時に設定されたuserデータを取得
+		Users user =(Users)session.getAttribute("user");
+		//その中からuserIDだけを取得してくる
+		String id = user.getId();
+		//それをdaoに渡して、現在のユーザー情報を取得してくる
+		List<Users> postList = uDao.select(id);
+
 
 		System.out.println(postList.size()+"aaaaaa");
 

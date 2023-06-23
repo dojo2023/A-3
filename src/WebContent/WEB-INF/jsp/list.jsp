@@ -28,8 +28,6 @@
 
 
 
-
-
 </head>
 
 <header>
@@ -70,6 +68,19 @@
 
 
 </body>
+
+<button class="open-default button">default</button>
+<div id="modal-default">
+  <div class="close">
+    <a data-izimodal-close="">
+ <c:forEach var="e" items="${list}" >
+		 <img src="/TRex/UploadPhoto/${e.img}" id="gazo">
+	 </c:forEach>
+</a>
+  </div>
+  <p>このモーダルはデフォルト設定です</p>
+</div>
+
 <script>
 	document.querySelector('.menu-btn').addEventListener('click', function(){
 	document.querySelector('.menu').classList.toggle('is-active');
