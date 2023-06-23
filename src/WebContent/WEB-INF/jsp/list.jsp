@@ -51,22 +51,27 @@
 </header>
 
 <body>
-<label class="open" for="pop-up">
-<%--画像表示 (横5枚　縦にスクロール)--%>
+ <div class="pu-box">
+      <label for="pu-on">
+        <div class="btn-open">
 	 <c:forEach var="e" items="${list}" >
 		 <img src="/TRex/UploadPhoto/${e.img}" id="gazo">
 	 </c:forEach>
-</label>
-<input type="checkbox" id="pop-up">
-	<div class="overlay">
-<div class="window">
-<label class="close" for="pop-up"style="width: 50px; height: 20px;"><font size="3">CLOSE</font></label>
-<p>
-<%--ポップアップの中に入れる情報 --%>
-ああああ
-</p>
 </div>
-</div>
+      </label>
+      <input type="checkbox" id="pu-on">
+      <div class="pu">
+        <label for="pu-on" class="icon-close">×</label>
+        <!-- ポップアップの中身 -->
+        <div class="pu-content">
+          <p>クリックした画像をポップアップで表示しています</p>
+          <c:forEach var="e" items="${list}" >
+		 <img src="/TRex/UploadPhoto/${e.img}" id="gazo">
+	 </c:forEach>
+  </div>
+      </div>
+    </div>
+
 
 </body>
 <script>
