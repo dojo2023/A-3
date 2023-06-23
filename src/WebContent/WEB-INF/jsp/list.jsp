@@ -25,6 +25,11 @@
     });
  </script>
  -->
+
+
+
+
+
 </head>
 
 <header>
@@ -51,44 +56,19 @@
 </header>
 
 <body>
-<div class="popupbg"></div>
 
-<div class="global_wrapper">
-  <ul class="item_wrapper">
-    <li class="item">
+
       <!-- クラス名に"pop"、hrefにポップアップしたいID名を入力-->
-      <a href="#img01_wrapper" class="pop">
+ <%--     <a href="#img01_wrapper" class="pop"> --%>
 <%--画像表示 (横5枚　縦にスクロール)--%>
 	 <c:forEach var="e" items="${list}" >
-		 <img src="/TRex/UploadPhoto/${e.img}" id="gazo">
-	 </c:forEach></a>
- <!-- ポップアップしたい要素-->
-      <div id="img01_wrapper" class="popup_wrapper">
-      <c:forEach var="e" items="${list}" varStatus="status">
-		 <img src="/TRex/UploadPhoto/${e.img}" id="gazo${status.index}">
-		 ${status.index}
-	 </c:forEach>
-<p class="caption">Caption1</p>
-        <div class="close_btn">×</div>
-      </div>
-    </li>
-   </ul>
-</div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
-<script>
-$(function() {
-	  $(".pop").click(function(e) {
-	    e.preventDefault();
-	    var id = $(this).attr("href");
-	    $(id).fadeIn();
-	    $(".popupbg").fadeIn();
-	  });
-	  $(".popupbg,.close_btn").click(function() {
-	    $(".popup_wrapper:visible").fadeOut();
-	    $(".popupbg").fadeOut();
-	  });
-	});
-</script>
+	 	<div class="linkArea">
+		<a href="#"><img src="/TRex/UploadPhoto/${e.img}" id="gazo"></a>
+		</div>
+
+	 </c:forEach><%-- </a> --%>
+
+
 </body>
 <script>
 	document.querySelector('.menu-btn').addEventListener('click', function(){
