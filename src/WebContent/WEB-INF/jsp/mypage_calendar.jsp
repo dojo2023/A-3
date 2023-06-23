@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>C²A</title>
+<link rel="stylesheet" href="/TRex/css/common.css">
 <link rel="stylesheet" href="/TRex/css/hamburger.css">
 <link rel ="stylesheet" href="/TRex/css/mypage_calendar.css">
 </head>

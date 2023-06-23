@@ -52,6 +52,7 @@ display: none;
 		    width: 100%;
 
 
+
 		}
 		table {
 		    outline: 2px solid #ddd;
@@ -68,7 +69,7 @@ display: none;
 		    padding-bottom: 30px;
 		    text-align: center;
             font-family: Times ;
-
+             background-color: white;
 		}
 		/*日曜日*/
 		td:first-child {
