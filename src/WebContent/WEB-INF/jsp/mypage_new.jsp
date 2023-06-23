@@ -7,6 +7,7 @@
 <title>C²A</title>
 <link rel="stylesheet" href="/TRex/css/hamburger.css">
 <link rel="stylesheet" href="/TRex/css/mypage_new.css">
+<link rel ="stylesheet" href="/TRex/css/common.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <header>

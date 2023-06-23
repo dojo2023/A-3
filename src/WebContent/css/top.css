@@ -1,4 +1,6 @@
 @charset "UTF-8";
+
+
 /*天気の大きさ*/
 .ww-box {
     width: 50%;
@@ -45,6 +47,7 @@ display: none;
     display: flex;
     align-items: center;
     height: 340px;
+
     overflow: hidden;
   }
   .slideshow {
@@ -78,3 +81,48 @@ display: none;
     overflow:hidden;
 }
 /*スライドショーここまで*/
+
+/*枠*/
+.box29 {
+     margin: 0 250px 0 250px;
+     background: rgba(220, 239, 255, 0.5); /* 半透明な背景色 */
+    border-radius: 8px; /* 角を丸くする */
+
+
+}
+.box29 .box-title {
+    font-size: 1.2em;
+    background: rgba(95, 179, 245, 0.5); /* 半透明な背景色 */
+    border-radius: 8px; /* 角を丸くする */
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+
+}
+/*ボタン*/
+.button-036 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    margin: 0 auto;
+    padding: .9em 2em;
+    border: 1px solid #1d1b1b;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #1d1b1b;
+    font-size: 1em;
+    height: 40px;
+    width: 300px;
+    font-size: 12px;
+
+}
+
+.button-036:hover {
+    border: none;
+    background-color:black;
+    color: #fff;
+    font-weight: 600;
+}
