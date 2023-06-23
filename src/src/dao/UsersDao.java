@@ -197,6 +197,7 @@ public class UsersDao{
 
 				while(rs.next()) {
 					Users users = new Users();
+					users.setId(rs.getString("id"));
 					users.setName(rs.getString("name"));
 					users.setEmail(rs.getString("email"));
 					users.setAddress(rs.getString("address"));

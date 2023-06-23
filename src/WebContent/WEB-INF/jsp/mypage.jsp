@@ -39,17 +39,20 @@
 		<p>あいこん</p>
 			<!-- <img src="" alt="icon"> ここ画像入ります -->
 		</div>
+
 		<div class="mypageinfo">
 			<table border=1>
 			<c:forEach var="e" items="${postList}" varStatus="status">
+
 				<tr>
 					<th>USER_ID</th>
 					<th>${e.id}</th>
+
 				</tr>
-				<tr>
+<%-- 				<tr>
 					<th>PASSWORD</th>
 					<th>${e.pw}</th>
-				</tr>
+				</tr> --%>
 				<tr>
 					<th>NAME</th>
 					<th>${e.name}</th>
@@ -77,6 +80,24 @@
 					<th>WEIGHT</th>
 					<th>${e.weight}</th>
 				</tr>
+				<tr>
+					<td colspan="2">
+						<form action ="/TRex/MypageEditServlet" method="get">
+							<input type="hidden" name="id" value="${e.id}">
+							<input type="hidden" name="name" value="${e.name}">
+							<input type="hidden" name="email" value="${e.email}">
+							<input type="hidden" name="gender" value="${e.gender}">
+							<input type="hidden" name="address" value="${e.address}">
+							<input type="hidden" name="birth" value="${e.birth}">
+							<input type="hidden" name="height" value="${e.height}">
+							<input type="hidden" name="weight" value="${e.weight}">
+							<input type="submit" value="プロフィール編集">
+						</form>
+					</td>
+				</tr>
+
+
+
 
 			</c:forEach>
 			</table>
