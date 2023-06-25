@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,7 @@ import javax.servlet.http.Part;
 /**
  * Servlet implementation class MypageEditServlet
  */
+@MultipartConfig(location = "C:\\dojo6\\src\\WebContent\\UploadPhoto") // アップロードファイルの一時的な保存先
 @WebServlet("/MypageEditServlet")
 public class MypageEditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -47,6 +49,7 @@ public class MypageEditServlet extends HttpServlet {
 		//データベースも書き直す
 
 	}
+	// ファイルの名前を取得してくる
 	private String getImg(Part part) {
         String name = null;
         for (String dispotion : part.getHeader("Content-Disposition").split(";")) {
