@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Registers implements Serializable {
 
@@ -35,6 +36,7 @@ public class Registers implements Serializable {
 	private String[] tag;
 	private String img;
 	private String gender;
+	private Date insert_date;
 
 
 
@@ -50,10 +52,11 @@ public class Registers implements Serializable {
 		this.tag = new String[0];
 		this.img = "";
 		this.gender="";
+		this.insert_date=null;
 	}
 
 	public Registers(String id, String[] clothes, String subOuter, String subTops, String subBottoms, String subDress,
-			String subShoes, String subAcce, String[] tag, String img ,String gender) {
+			String subShoes, String subAcce, String[] tag, String img ,String gender,Date insert_date) {
 		super();
 		this.id = id;
 		this.clothes = clothes;
@@ -66,6 +69,7 @@ public class Registers implements Serializable {
 		this.tag = tag;
 		this.img = img;
 		this.gender=gender;
+		this.insert_date=insert_date;
 	}
 
 	public String getId() {
@@ -154,6 +158,14 @@ public class Registers implements Serializable {
 
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+
+	public Date getInsert_date() {
+		return insert_date;
+	}
+
+	public void setInsert_date(Date insert_date) {
+		this.insert_date = insert_date;
 	}
 
 }

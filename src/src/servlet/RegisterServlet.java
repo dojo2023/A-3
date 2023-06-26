@@ -92,6 +92,7 @@ public class RegisterServlet extends HttpServlet {
 		Users user = (Users)session.getAttribute("user");
 		String gender = user.getGender();
 
+
 		//画像アップロード
 		Part part = request.getPart("IMAGE"); // getPartで取得
 		String image = this.getImg(part);
@@ -103,7 +104,7 @@ public class RegisterServlet extends HttpServlet {
 		//データベースも書き直す
 		RegisterDao rDao = new RegisterDao();
 		Registers register = new Registers( id,  clothes,  subOuter,  subTops,  subBottoms,  subDress,
-				 subShoes,  subAcce, tag,  image ,gender);
+				 subShoes,  subAcce, tag,  image ,gender,null);
 
 		if (rDao.insert(register)) {	// 登録成功
 		request.setAttribute("result",

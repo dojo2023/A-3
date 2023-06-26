@@ -1,10 +1,12 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,7 +81,7 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 						,rs.getString("SKEWAVE"),rs.getString("SKESTRAIGHT"),rs.getString("SKENATURAL"),rs.getString("REPEAT")};
 				poster.setTag(tag);
 				poster.setImg(rs.getString("IMAGE"));
-
+				poster.setImg(rs.getString("INSERT_DATE"));
 				postList.add(poster);
 
 			}
@@ -437,11 +439,11 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 			String sql = "insert into REGISTER (OUTER, TOPS, BOTTOMS, DRESS, SOCKS, SHOES, ACCE, SUBOUTER,"
 					+ " SUBTOPS, SUBBOTTOMS, SUBDRESS, SUBSHOES, SUBACCE,  SPRING, SUMMER, AUTUM, WINTER,"
 					+ " CUTE, CASUAL, SIMPLE, STRIPE, CHEC, DOT, BEAUTY, MODE, NATURA, CONSERVA,"
-					+ " COOL, LOWHEIGHT, MENS, LOWPRICE, MONOTONE, SKEWAVE, SKESTRAIGHT, SKENATURAL, REPEAT, IMAGE,GENDER)"
+					+ " COOL, LOWHEIGHT, MENS, LOWPRICE, MONOTONE, SKEWAVE, SKESTRAIGHT, SKENATURAL, REPEAT, IMAGE,GENDER,INSERT_DATE)"
 					+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?,"
 					+ 		  "?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
 					+		  "?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-					+         "?, ?, ?, ?, ?, ?, ?, ?,?)";
+					+         "?, ?, ?, ?, ?, ?, ?, ?,?,?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -457,6 +459,7 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 //			pStmt.setString(9,postlist.getTag());
 			pStmt.setString(37,postlist.getImg());
 			pStmt.setString(38,postlist.getGender());
+			pStmt.setDate(39,Date.valueOf(LocalDate.now()));
 
 			for(String n: postlist.getClothes()) {
 				if(n.equals("outer")) {
