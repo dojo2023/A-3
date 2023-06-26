@@ -54,7 +54,7 @@
 <body>
 	<c:forEach var="e" items="${list}" >
 	 	<div class="linkArea">
-		<a href="#" target="_blank"><img src="/TRex/UploadPhoto/${e.img}" id="gazo" style="width: 200px; height: 200px; "></a>
+		<a href="DetailServlet?key=${e.id}" target="_blank"><img src="/TRex/UploadPhoto/${e.img}" id="gazo" style="width: 200px; height: 200px; "></a>
 		</div>
 	 </c:forEach>
 
