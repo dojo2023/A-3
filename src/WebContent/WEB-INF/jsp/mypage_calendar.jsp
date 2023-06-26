@@ -20,8 +20,8 @@
 
 		/* 表示箇所を真ん中にするCSS */
 		.ui-datepicker {
-			margin-left:25%;
-			width: 700px;
+			margin-left:20%;
+			width: 500px;
 			height: 400px;
             font-size: 32px;
             font-family: Times ;
@@ -69,7 +69,8 @@
 	    <!-- カレンダー -->
 	    <!--  -<div id="calendar"></div>
 	</div>
-
+list = <%= new Gson().toJson(request.getAttribute("list"))%>;
+	alert(list[0].insert_date);
   -->
 </body>
 <script>
@@ -80,38 +81,41 @@
 
 
 	 //日付を擬似的に作成する（テストの為）
-    /* var dates = [];
+/*     var dates = [];
     dates.push(new Date("2023-06-10"));
     dates.push(new Date("2023-06-10"));
     dates.push(new Date("2023-06-15"));
     dates.push(new Date("2023-06-24")); */
 	list = <%= new Gson().toJson(request.getAttribute("list"))%>;
-	alert(list[0].img);
 
 
-	//読み込まれた際に実行するよ
+
+	//読み込まれた際に実行する
     $(document).ready(function() {
    	 //idがdatepickerのところに表示する
    	  $("#datepicker").datepicker({
-           //曜日表示Su→Sun変更
-           dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-
    		//カレンダーに赤枠を表示するメソッド----------------------
    	    beforeShowDay: function(date) {
    	    //ループで配列に格納された日付のところを赤色にする
    	      for (var i = 0; i < list.length; i++) {
    	    	//ひとつ取り出す
    	        var targetDate = list[i].insert_date;
-   	    	alert(targetDate.getFullYear());
-   	    	alert(targetDate.getMonth());
-   	    	alert(targetDate.getDate());
+
+   	    	//上記のデータを分割
+			var tSprit = targetDate.split(" ");
+  			var yy = tSprit[2];
+   	    	var mm = tSprit[0].replace("月","");
+   	    	var dd = tSprit[1].replace(",","");
 				//もし合致するデータがあったら
+
+
    	        if (
-   	          date.getFullYear() === targetDate.getFullYear() &&
-   	          date.getMonth() === targetDate.getMonth() &&
-   	          date.getDate() === targetDate.getDate()
+   	          date.getFullYear() == yy &&
+   	          date.getMonth()+1 == mm &&
+   	          date.getDate() == dd
    	        ) {
    	          //色を変える
+
    	          return [true, "highlight", "Custom text"];
    	        }
    	      }
@@ -146,13 +150,25 @@
 	            var flg=0;
 
 	            //HTMLの作成
-	            for (var i = 0; i < dates.length; i++) {
-	            	//今日の日付と合致する予定があったかどうか
-				  	if (
-	          	          year == dates[i].getFullYear() &&
-	          	          month == dates[i].getMonth()+1 &&
-	          	          day == dates[i].getDate()
+	            for (var i = 0; i < list.length; i++) {
+	            	var targetDate = list[i].insert_date;
+	            	//上記のデータを分割
+	    			var tSprit = targetDate.split(" ");
+	      			var yy = tSprit[2];
+	       	    	var mm = tSprit[0].replace("月","");
+	       	    	var dd = tSprit[1].replace(",","");
+	    				//もし合致するデータがあったら
+
+	    			if(mm.length==1){
+	    				mm="0"+mm;
+	    			}
+
+	       	        if (
+	       	          year == yy &&
+	       	          month == mm &&
+	       	          day == dd
 	          	        ) {
+
 	            		 // 要素の作成（合致するものがあったので、データを入れる）
 	    	            const divElement = document.createElement('div');
 	    	            divElement.classList.add('aaa');
@@ -164,8 +180,9 @@
 	    	            const inputElement = document.createElement('input');
 	    	            inputElement.type = 'text';
 	    	            inputElement.name = 'date';
+
 	    	            //今回データを入れている場所
-	    	            inputElement.value ="";
+	    	            inputElement.value =targetDate;
 
 	    	            const submitElement = document.createElement('input');
 	    	            submitElement.type = 'submit';
@@ -213,86 +230,5 @@
 	         }
        });
    });
-     /* カレンダー */
-		//const week = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
-		//const today = new Date();
-		// 月末だとずれる可能性があるため、1日固定で取得
-		//var showDate = new Date(today.getFullYear(), today.getMonth(), 1);
-
-		// 初期表示
-		//window.onload = function () {
-		   // showProcess(today, calendar);
-		//};
-		// 前の月表示
-		//function prev(){
-		   // showDate.setMonth(showDate.getMonth() - 1);
-		   // showProcess(showDate);
-	//	}
-
-		// 次の月表示
-		//function next(){
-		   // showDate.setMonth(showDate.getMonth() + 1);
-		    //showProcess(showDate);
-		//}
-
-		// カレンダー表示
-		/*  function showProcess(date) {
-		    var year = date.getFullYear();
-		    var month = date.getMonth();
-		    document.querySelector('#header').innerHTML = year + "年 " + (month + 1) + "月";
-
-		    var calendar = createProcess(year, month);
-		    document.querySelector('#calendar').innerHTML = calendar;
-		}  */
-
-		// カレンダー作成
-		//*  function createProcess(year, month) {
-		    // 曜日
-		    //var calendar = "<table><tr class='dayOfWeek'>";
-		    //for (var i = 0; i < week.length; i++) {
-		        //calendar += "<th>" + week[i] + "</th>";
-		   // }
-		    //calendar += "</tr>";
-
-		    //var count = 0;
-		   // var startDayOfWeek = new Date(year, month, 1).getDay();
-		   /// var endDate = new Date(year, month + 1, 0).getDate();
-		    //var lastMonthEndDate = new Date(year, month, 0).getDate();
-		    //var row = Math.ceil((startDayOfWeek + endDate) / week.length);
-
-		    // 1行ずつ設定
-		   // for (var i = 0; i < row; i++) {
-		       // calendar += "<tr>";
-		        // 1colum単位で設定
-		        //for (var j = 0; j < week.length; j++) {
-		         //   if (i == 0 && j < startDayOfWeek) {
-		                // 1行目で1日まで先月の日付を設定
-		             //   calendar += "<td class='disabled'>" + (lastMonthEndDate - startDayOfWeek + j + 1) + "</td>";
-		            //} else if (count >= endDate) {
-		                // 最終行で最終日以降、翌月の日付を設定
-		               // count++;
-		               // calendar += "<td class='disabled'>" + (count - endDate) + "</td>";
-		           // } else {
-		                // 当月の日付を曜日に照らし合わせて設定
-		               // count++;
-		                //if(year == today.getFullYear()
-		                 // && month == (today.getMonth())
-		                  //&& count == today.getDate()){
-		                 //   calendar += "<td class='today'>" + count + "</td>";
-		               // } else {
-							//表示したい項目がある場合は、ここでリンクを設定する
-		                    //calendar += "<td>" + count + "<br>"
-							//	+"<a href=''class='image-link'><img src='/TRex/img/hanger1.png' alt='Image' style='width: 50px; height: 50px;'></a>"
-		                   // +"</td>";
-
-		                //}
-		            //}
-		       // }
-		      //  calendar += "</tr>";
-		   // }
-		   // return calendar;
-		//}
-
-
-</script>
+ </script>
 </html>
