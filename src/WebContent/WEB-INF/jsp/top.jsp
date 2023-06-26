@@ -22,9 +22,9 @@
     </button>
     <div class="menu">
      <div class="menu__item"><a href="/TRex/MypageServlet">MY PAGE</a></div>
-      <div class="menu__item">TOP PAGE</div>
-      <div class="menu__item">SEARCH</div>
-      <div class="menu__item">LIST</div>
+      <div class="menu__item"><a href="/TRex/TopServlet">TOP PAGE</div>
+      <div class="menu__item"><a href="/TRex/SearchServlet">SEARCH</div>
+      <div class="menu__item"><a href="/TRex/ListServlet">LIST</div>
       <div class="menu__item"><a href="/TRex/RegisterServlet">REGISTER</a></div>
       <div class="menu__item">LOGOUT</div>
       <div class="hamburger-demo-cover"></div>
