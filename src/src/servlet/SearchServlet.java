@@ -47,15 +47,20 @@ public class SearchServlet extends HttpServlet {
 		String subDress = request.getParameter("sub_dress");
 		String subShoes = request.getParameter("sub_shoes");
 		String subAcce = request.getParameter("sub_acce");
-		String[] tag = request.getParameterValues("tag");
+		String[] tag = new String[1];
+		tag[0]= "test";
+		if(request.getParameterValues("tag")!=null) {
+			tag = request.getParameterValues("tag");
+		}
 		/*System.out.println(tag.length+"aaaaaaaaaaaaaaaaa");*/
+
+
 
 		// 検索処理を行う（投稿されたものの中から捜索）
 		RegisterDao rDao = new RegisterDao();
-		List<Registers> searchList = rDao.searchSelect(id,gender,item,subOuter,subTops,subBottoms,subDress,subShoes,subAcce
-				,tag);
+		List<Registers> searchList = rDao.searchSelect(id,gender,item,subOuter,subTops,subBottoms,subDress,subShoes,subAcce,tag);
 
-
+		System.out.println(searchList.size()+"aaaaaa");
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("searchList", searchList);
 
