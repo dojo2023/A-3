@@ -86,6 +86,7 @@
     dates.push(new Date("2023-06-15"));
     dates.push(new Date("2023-06-24")); */
 	list = <%= new Gson().toJson(request.getAttribute("list"))%>;
+	alert(list[0].img);
 
 
 	//読み込まれた際に実行する
@@ -100,7 +101,10 @@
    	    //ループで配列に格納された日付のところを赤色にする
    	      for (var i = 0; i < list.length; i++) {
    	    	//ひとつ取り出す
-   	        var targetDate = dates[i];
+   	        var targetDate = list[i].insert_date;
+   	    	alert(targetDate.getFullYear());
+   	    	alert(targetDate.getMonth());
+   	    	alert(targetDate.getDate());
 				//もし合致するデータがあったら
    	        if (
    	          date.getFullYear() === targetDate.getFullYear() &&
@@ -161,7 +165,7 @@
 	    	            inputElement.type = 'text';
 	    	            inputElement.name = 'date';
 	    	            //今回データを入れている場所
-	    	            inputElement.value =dates[i];
+	    	            inputElement.value ="";
 
 	    	            const submitElement = document.createElement('input');
 	    	            submitElement.type = 'submit';
