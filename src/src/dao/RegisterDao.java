@@ -194,7 +194,249 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 
 				pStmt.setString(7, subAcce);
 
-				for(String n: item) {
+				for(Registers n: searchList) {
+					if(n.getClothes().equals("outer")) {
+						pStmt.setString(8,"1");
+						break;
+					}else {
+						pStmt.setString(8,"0");
+					}
+				}
+				for(Registers a: searchList) {
+					if(a.getClothes().equals("tops")) {
+						pStmt.setString(9,"1");
+						break;
+					}else {
+						pStmt.setString(9,"0");
+					}
+				}
+					for(Registers b: searchList) {
+					if(b.getClothes().equals("bottoms")) {
+						pStmt.setString(10,"1");
+						break;
+					}else {
+						pStmt.setString(10,"0");
+					}
+				}
+					for(Registers c: searchList) {
+					if(c.getClothes().equals("dress")) {
+						pStmt.setString(11,"1");
+						break;
+					}else {
+						pStmt.setString(11,"0");
+					}
+				}
+					for(Registers d: searchList) {
+					if(d.getClothes().equals("socks")) {
+						pStmt.setString(12,"1");
+						break;
+					}else {
+						pStmt.setString(12,"0");
+					}
+				}
+					for(Registers e: searchList) {
+					if(e.getClothes().equals("shoes")) {
+						pStmt.setString(13,"1");
+						break;
+					}else {
+						pStmt.setString(13,"0");
+					}
+				}
+					for(Registers f: searchList) {
+					if(f.getClothes().equals("acce")) {
+						pStmt.setString(14,"1");
+						break;
+					}else {
+						pStmt.setString(14,"0");
+					}
+				}
+
+					for(Registers g: searchList) {
+						if(g.getTag().equals("spring")) {
+							pStmt.setString(15,"1");
+							break;
+						}else {
+							pStmt.setString(15,"0");
+						}
+					}
+					for(Registers h: searchList) {
+						if(h.getTag().equals("summer")) {
+							pStmt.setString(16,"1");
+							break;
+						}else {
+							pStmt.setString(16,"0");
+						}
+					}
+					for(Registers i: searchList) {
+						if(i.getTag().equals("autum")) {
+							pStmt.setString(17,"1");
+							break;
+						}else {
+							pStmt.setString(17,"0");
+						}
+					}
+					for(Registers j: searchList) {
+						if(j.getTag().equals("winter")) {
+							pStmt.setString(18,"1");
+							break;
+						}else {
+							pStmt.setString(18,"0");
+						}
+					}
+					for(Registers k: searchList) {
+						if(k.getTag().equals("cute")) {
+							pStmt.setString(19,"1");
+							break;
+						}else {
+							pStmt.setString(19,"0");
+						}
+					}
+					for(Registers l: searchList) {
+						if(l.getTag().equals("casual")) {
+							pStmt.setString(20,"1");
+							break;
+						}else {
+							pStmt.setString(20,"0");
+						}
+					}
+					for(Registers m: searchList) {
+						if(m.getTag().equals("simple")) {
+							pStmt.setString(21,"1");
+							break;
+						}else {
+							pStmt.setString(21,"0");
+						}
+					}
+					for(Registers o: searchList) {
+						if(o.getTag().equals("stripe")) {
+							pStmt.setString(22,"1");
+							break;
+						}else {
+							pStmt.setString(22,"0");
+						}
+					}
+					for(Registers p: searchList) {
+						if(p.getTag().equals("check")) {
+							pStmt.setString(23,"1");
+							break;
+						}else {
+							pStmt.setString(23,"0");
+						}
+					}
+					for(Registers q: searchList) {
+						if(q.getTag().equals("dot")) {
+							pStmt.setString(24,"1");
+							break;
+						}else {
+							pStmt.setString(24,"0");
+						}
+					}
+					for(Registers r: searchList) {
+						if(r.getTag().equals("beauty")) {
+							pStmt.setString(25,"1");
+							break;
+						}else {
+							pStmt.setString(25,"0");
+						}
+					}
+					for(Registers s: searchList) {
+						if(s.getTag().equals("mode")) {
+							pStmt.setString(26,"1");
+							break;
+						}else {
+							pStmt.setString(26,"0");
+						}
+					}
+					for(Registers t: searchList) {
+						if(t.getTag().equals("natural")) {
+							pStmt.setString(27,"1");
+							break;
+						}else {
+							pStmt.setString(27,"0");
+						}
+					}
+					for(Registers u: searchList) {
+						if(u.getTag().equals("conserva")) {
+							pStmt.setString(28,"1");
+							break;
+						}else {
+							pStmt.setString(28,"0");
+						}
+					}
+					for(Registers v: searchList) {
+						if(v.getTag().equals("cool")) {
+							pStmt.setString(29,"1");
+							break;
+						}else {
+							pStmt.setString(29,"0");
+						}
+					}
+					for(Registers w: searchList) {
+						if(w.getTag().equals("lowheight")) {
+							pStmt.setString(30,"1");
+							break;
+						}else {
+							pStmt.setString(30,"0");
+						}
+					}
+					for(Registers x: searchList) {
+						if(x.getTag().equals("mens")) {
+							pStmt.setString(31,"1");
+							break;
+						}else {
+							pStmt.setString(31,"0");
+						}
+					}
+					for(Registers z: searchList) {
+						if(z.getTag().equals("lowprice")) {
+							pStmt.setString(32,"1");
+							break;
+						}else {
+							pStmt.setString(32,"0");
+						}
+					}
+					for(Registers aa: searchList) {
+						if(aa.getTag().equals("monotone")) {
+							pStmt.setString(33,"1");
+							break;
+						}else {
+							pStmt.setString(33,"0");
+						}
+					}
+					for(Registers bb: searchList) {
+						if(bb.getTag().equals("skewave")) {
+							pStmt.setString(34,"1");
+							break;
+						}else {
+							pStmt.setString(34,"0");
+						}
+					}
+					for(Registers cc: searchList) {
+						if(cc.getTag().equals("skestraight")) {
+							pStmt.setString(35,"1");
+							break;
+						}else {
+							pStmt.setString(35,"0");
+						}
+					}
+					for(Registers dd: searchList) {
+						if(dd.getTag().equals("skenatural")) {
+							pStmt.setString(36,"1");
+							break;
+						}else {
+							pStmt.setString(36,"0");
+						}
+					}
+					for(Registers ee: searchList) {
+						if(ee.getTag().equals("repeat")) {
+							pStmt.setString(37,"1");
+							break;
+						}else {
+							pStmt.setString(37,"0");
+						}
+					}
+
+				/*for(String n: item) {
 					if(n.equals("outer")) {
 						pStmt.setString(8,"1");
 					}else {
@@ -348,7 +590,7 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 					}else {
 						pStmt.setString(37,"0");
 					}
-				}
+				}*/
 
 				/*pStmt.setString(7, "%" + param.getSubShoes() + "%");
 
