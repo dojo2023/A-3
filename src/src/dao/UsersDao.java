@@ -52,6 +52,7 @@ public class UsersDao{
 					user.setHeight(rs.getString("HEIGHT"));
 					user.setWeight(rs.getString("WEIGHT"));
 					user.setManagement(rs.getString("MANAGEMENT"));
+					user.setImg(rs.getString("IMAGE"));
 				}
 			}catch (SQLException e) {
 				e.printStackTrace();
@@ -89,7 +90,7 @@ public class UsersDao{
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
 
 				// SQL文を準備する
-				String sql = "insert into USER values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				String sql = "insert into USER values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
@@ -103,6 +104,7 @@ public class UsersDao{
 					pStmt.setString(8, user.getHeight());
 					pStmt.setString(9, user.getWeight());
 					pStmt.setString(10, "0");
+					pStmt.setString(11, user.getImg());
 
 				// SQL文を実行する
 				if (pStmt.executeUpdate() == 1) {
@@ -205,6 +207,7 @@ public class UsersDao{
 					users.setBirth(rs.getString("birth"));
 					users.setHeight(rs.getString("height"));
 					users.setWeight(rs.getString("weight"));
+					users.setImg(rs.getString("img"));
 					postList.add(users);
 				}
 
@@ -246,7 +249,7 @@ public class UsersDao{
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
 
 				// SQL文を準備する
-				String sql = "update USERS set ID=?, MAIL=?, NAME=?, PASS=?, GENDER=?, ADDRESS=?, BARTH=?, HEIGHT=?, MANAGEMENT=? where NUMBER=?";
+				String sql = "update USERS set ID=?, MAIL=?, NAME=?, PASS=?, GENDER=?, ADDRESS=?, BARTH=?, HEIGHT=?, MANAGEMENT=?,IMG=? where NUMBER=?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
@@ -290,6 +293,7 @@ public class UsersDao{
 				}
 				pStmt.setString(8, user.getHeight());
 				pStmt.setString(9, user.getWeight());
+				pStmt.setString(10, user.getImg());
 
 
 

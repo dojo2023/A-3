@@ -12,8 +12,9 @@ public class Users implements Serializable {
 	private String height;
 	private String weight;
 	private String management;
+	private String img;
 
-	public Users(String id, String pw, String name, String email, String gender, String address,String birth, String height, String weight, String management) {
+	public Users(String id, String pw, String name, String email, String gender, String address,String birth, String height, String weight, String management,String img) {
 		super();
 		this.id = id;
 		this.pw = pw;
@@ -25,6 +26,7 @@ public class Users implements Serializable {
 		this.height = height;
 		this.weight = weight;
 		this.management = management;
+		this.img = img;
 	}
 	public Users() {
 		super();
@@ -38,6 +40,7 @@ public class Users implements Serializable {
 		this.height = "";
 		this.weight = "";
 		this.management = "";
+		this.img = "";
 	}
 
 	public Users(String id) {
@@ -103,6 +106,12 @@ public class Users implements Serializable {
 	}
 	public void setManagement(String management) {
 		this.management = management;
+	}
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 }

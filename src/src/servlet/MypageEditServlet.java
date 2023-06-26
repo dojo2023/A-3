@@ -11,8 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-import dao.TopimageDao;
-import model.Topimages;
+import dao.UsersDao;
+import model.Result;
+import model.Users;
 
 /**
  * Servlet implementation class MypageEditServlet
@@ -44,11 +45,11 @@ public class MypageEditServlet extends HttpServlet {
 		// 画像アップロード
 		Part part = request.getPart("image");
 		//画像ファイルの名前を取得
-		String image = this.getImg(part);
-		request.setAttribute("image", image);
+		String img = this.getImg(part);
+		request.setAttribute("img", img);
 		// サーバの指定のファイルパスへファイルを保存
 		// 場所はクラス名↑の上に指定してある
-		part.write(image);
+		part.write(img);
 		String name=request.getParameter("name");
 		String email=request.getParameter("email");
 		String gender=request.getParameter("gender");
@@ -58,16 +59,16 @@ public class MypageEditServlet extends HttpServlet {
 		String birth=request.getParameter("birth");
 		//Daoに書き直す
 		//データベースも書き直す
-		TopimageDao rDao = new TopimageDao();
-
-		if (rDao.insert(image)) {	// 登録成功
+		UsersDao uDao = new UsersDao();
+		Users user = new Users();
+		if (uDao.insert(user)) {
 			request.setAttribute("result",
-			new Topimages());
-			}
-			else {												// 登録失敗
-			request.setAttribute("result",
-			new Topimages());
-			}
+			new Result("登録成功！", "レコードを登録しました。", "/TRex/MypageServlet"));
+						}
+						else {												// 登録失敗
+							request.setAttribute("result",
+							new Result("登録失敗！", "レコードを登録できませんでした。", "/TRex/MypageServlet"));
+						}
 
 		// トップページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");

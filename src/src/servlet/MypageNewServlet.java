@@ -49,10 +49,11 @@ public class MypageNewServlet extends HttpServlet {
 		String height= request.getParameter("height");
 		String weight= request.getParameter("weight");
 		String management= request.getParameter("management");
+		String img= request.getParameter("img");
 
 		// ユーザー情報の登録処理を行う
 		UsersDao uDao = new UsersDao();
-		Users user = new Users(id, pw,name,email,gender,address,birth,height,weight,management);
+		Users user = new Users(id, pw,name,email,gender,address,birth,height,weight,management, img);
 		if (uDao.insert(user)) {
 			request.setAttribute("result",
 			new Result("登録成功！", "レコードを登録しました。", "/TRex/TopServlet"));

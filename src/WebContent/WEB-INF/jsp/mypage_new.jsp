@@ -37,7 +37,7 @@
 		  <button type="submit">送信する</button>
 	<div>
 	USER ID<br>
-	<input type="text" name="id" placeholder="USER ID"><br>
+	<input type="text" name="id" placeholder="USER ID" ><br>
 	PASSWORDS<br>
 	<!-- <input type="password" name="password" placeholder="PASS"><br> -->
 	<span id="fieldPassword">
