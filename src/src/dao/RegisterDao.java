@@ -83,7 +83,7 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 				poster.setImg(rs.getString("IMAGE"));
 				poster.setInsert_date(rs.getDate("INSERT_DATE"));
 				postList.add(poster);
-
+				/*aa*/
 			}
 		}
 
