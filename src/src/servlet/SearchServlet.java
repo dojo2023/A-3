@@ -28,9 +28,7 @@ public class SearchServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/search.jsp");
 		dispatcher.forward(request, response);
 	}
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
@@ -49,13 +47,13 @@ public class SearchServlet extends HttpServlet {
 		String subDress = request.getParameter("sub_dress");
 		String subShoes = request.getParameter("sub_shoes");
 		String subAcce = request.getParameter("sub_acce");
-		String[] tags = request.getParameterValues("tag");
-
+		String[] tag = request.getParameterValues("tag");
+		/*System.out.println(tag.length+"aaaaaaaaaaaaaaaaa");*/
 
 		// 検索処理を行う（投稿されたものの中から捜索）
 		RegisterDao rDao = new RegisterDao();
 		List<Registers> searchList = rDao.searchSelect(id,gender,item,subOuter,subTops,subBottoms,subDress,subShoes,subAcce
-				,tags);
+				,tag);
 
 
 		// 検索結果をリクエストスコープに格納する
