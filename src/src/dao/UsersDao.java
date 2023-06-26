@@ -52,7 +52,7 @@ public class UsersDao{
 					user.setHeight(rs.getString("HEIGHT"));
 					user.setWeight(rs.getString("WEIGHT"));
 					user.setManagement(rs.getString("MANAGEMENT"));
-					user.setImg(rs.getString("IMAGE"));
+					user.setImg(rs.getString("IMG"));
 				}
 			}catch (SQLException e) {
 				e.printStackTrace();

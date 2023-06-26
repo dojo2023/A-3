@@ -464,36 +464,55 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 			for(String n: postlist.getClothes()) {
 				if(n.equals("outer")) {
 					pStmt.setString(1,"1");
+					break;
 				}else {
 					pStmt.setString(1,"0");
 				}
-				if(n.equals("tops")) {
+			}
+			for(String a: postlist.getClothes()) {
+				if(a.equals("tops")) {
 					pStmt.setString(2,"1");
+					break;
 				}else {
 					pStmt.setString(2,"0");
 				}
-				if(n.equals("bottoms")) {
+			}
+				for(String b: postlist.getClothes()) {
+				if(b.equals("bottoms")) {
 					pStmt.setString(3,"1");
+					break;
 				}else {
 					pStmt.setString(3,"0");
 				}
-				if(n.equals("dress")) {
+			}
+				for(String c: postlist.getClothes()) {
+				if(c.equals("dress")) {
 					pStmt.setString(4,"1");
+					break;
 				}else {
 					pStmt.setString(4,"0");
 				}
-				if(n.equals("socks")) {
+			}
+				for(String d: postlist.getClothes()) {
+				if(d.equals("socks")) {
 					pStmt.setString(5,"1");
+					break;
 				}else {
 					pStmt.setString(5,"0");
 				}
-				if(n.equals("shoes")) {
+			}
+				for(String e: postlist.getClothes()) {
+				if(e.equals("shoes")) {
 					pStmt.setString(6,"1");
+					break;
 				}else {
 					pStmt.setString(6,"0");
 				}
-				if(n.equals("acce")) {
+			}
+				for(String f: postlist.getClothes()) {
+				if(f.equals("acce")) {
 					pStmt.setString(7,"1");
+					break;
 				}else {
 					pStmt.setString(7,"0");
 				}
@@ -552,123 +571,191 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 //			pStmt.setString(33,postlist.getBelt());
 //
 //
-			for(String n: postlist.getTag()) {
-				if(n.equals("spring")) {
+			for(String g: postlist.getTag()) {
+				if(g.equals("spring")) {
 					pStmt.setString(14,"1");
+					break;
 				}else {
 					pStmt.setString(14,"0");
 				}
-				if(n.equals("summer")) {
+			}
+			for(String h: postlist.getTag()) {
+				if(h.equals("summer")) {
 					pStmt.setString(15,"1");
+					break;
 				}else {
 					pStmt.setString(15,"0");
 				}
-				if(n.equals("autum")) {
+			}
+			for(String i: postlist.getTag()) {
+				if(i.equals("autum")) {
 					pStmt.setString(16,"1");
+					break;
 				}else {
 					pStmt.setString(16,"0");
 				}
-				if(n.equals("winter")) {
+			}
+			for(String j: postlist.getTag()) {
+				if(j.equals("winter")) {
 					pStmt.setString(17,"1");
+					break;
 				}else {
 					pStmt.setString(17,"0");
 				}
-				if(n.equals("cute")) {
+			}
+			for(String k: postlist.getTag()) {
+				if(k.equals("cute")) {
 					pStmt.setString(18,"1");
+					break;
 				}else {
 					pStmt.setString(18,"0");
 				}
-				if(n.equals("casual")) {
+			}
+			for(String l: postlist.getTag()) {
+				if(l.equals("casual")) {
 					pStmt.setString(19,"1");
+					break;
 				}else {
 					pStmt.setString(19,"0");
 				}
-				if(n.equals("simple")) {
+			}
+			for(String m: postlist.getTag()) {
+				if(m.equals("simple")) {
 					pStmt.setString(20,"1");
+					break;
 				}else {
 					pStmt.setString(20,"0");
 				}
-				if(n.equals("stripe")) {
+			}
+			for(String o: postlist.getTag()) {
+				if(o.equals("stripe")) {
 					pStmt.setString(21,"1");
+					break;
 				}else {
 					pStmt.setString(21,"0");
 				}
-				if(n.equals("check")) {
+			}
+			for(String p: postlist.getTag()) {
+				if(p.equals("check")) {
 					pStmt.setString(22,"1");
+					break;
 				}else {
 					pStmt.setString(22,"0");
 				}
-				if(n.equals("dot")) {
+			}
+			for(String q: postlist.getTag()) {
+				if(q.equals("dot")) {
 					pStmt.setString(23,"1");
+					break;
 				}else {
 					pStmt.setString(23,"0");
 				}
-				if(n.equals("beauty")) {
+			}
+			for(String r: postlist.getTag()) {
+				if(r.equals("beauty")) {
 					pStmt.setString(24,"1");
+					break;
 				}else {
 					pStmt.setString(24,"0");
 				}
-				if(n.equals("mode")) {
+			}
+			for(String s: postlist.getTag()) {
+				if(s.equals("mode")) {
 					pStmt.setString(25,"1");
+					break;
 				}else {
 					pStmt.setString(25,"0");
 				}
-				if(n.equals("natural")) {
+			}
+			for(String t: postlist.getTag()) {
+				if(t.equals("natural")) {
 					pStmt.setString(26,"1");
+					break;
 				}else {
 					pStmt.setString(26,"0");
 				}
-				if(n.equals("conserva")) {
+			}
+			for(String u: postlist.getTag()) {
+				if(u.equals("conserva")) {
 					pStmt.setString(27,"1");
+					break;
 				}else {
 					pStmt.setString(27,"0");
 				}
-				if(n.equals("cool")) {
+			}
+			for(String v: postlist.getTag()) {
+				if(v.equals("cool")) {
 					pStmt.setString(28,"1");
+					break;
 				}else {
 					pStmt.setString(28,"0");
 				}
-				if(n.equals("lowheight")) {
+			}
+			for(String w: postlist.getTag()) {
+				if(w.equals("lowheight")) {
 					pStmt.setString(29,"1");
+					break;
 				}else {
 					pStmt.setString(29,"0");
 				}
-				if(n.equals("mens")) {
+			}
+			for(String x: postlist.getTag()) {
+				if(x.equals("mens")) {
 					pStmt.setString(30,"1");
+					break;
 				}else {
 					pStmt.setString(30,"0");
 				}
-				if(n.equals("lowprice")) {
+			}
+			for(String z: postlist.getTag()) {
+				if(z.equals("lowprice")) {
 					pStmt.setString(31,"1");
+					break;
 				}else {
 					pStmt.setString(31,"0");
 				}
-				if(n.equals("monotone")) {
+			}
+			for(String aa: postlist.getTag()) {
+				if(aa.equals("monotone")) {
 					pStmt.setString(32,"1");
+					break;
 				}else {
 					pStmt.setString(32,"0");
 				}
-				if(n.equals("skewave")) {
+			}
+			for(String bb: postlist.getTag()) {
+				if(bb.equals("skewave")) {
 					pStmt.setString(33,"1");
+					break;
 				}else {
 					pStmt.setString(33,"0");
 				}
-				if(n.equals("skestraight")) {
+			}
+			for(String cc: postlist.getTag()) {
+				if(cc.equals("skestraight")) {
 					pStmt.setString(34,"1");
+					break;
 				}else {
 					pStmt.setString(34,"0");
 				}
-				if(n.equals("skenatural")) {
+			}
+			for(String dd: postlist.getTag()) {
+				if(dd.equals("skenatural")) {
 					pStmt.setString(35,"1");
+					break;
 				}else {
 					pStmt.setString(35,"0");
 				}
-				if(n.equals("repeat")) {
+			}
+			for(String ee: postlist.getTag()) {
+				if(ee.equals("repeat")) {
 					pStmt.setString(36,"1");
+					break;
 				}else {
 					pStmt.setString(36,"0");
 				}
 			}
+
 //			pStmt.setString(57,postlist.getImg());
 //
 			// SQL文を実行する

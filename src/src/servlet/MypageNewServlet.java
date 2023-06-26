@@ -4,10 +4,12 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 import dao.UsersDao;
 import model.Result;
@@ -16,6 +18,7 @@ import model.Users;
 /**
  * Servlet implementation class MypageNewServlet
  */
+@MultipartConfig(location = "C:\\dojo6\\src\\WebContent\\UploadPhoto") // アップロードファイルの一時的な保存先
 @WebServlet("/MypageNewServlet")
 public class MypageNewServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -49,8 +52,14 @@ public class MypageNewServlet extends HttpServlet {
 		String height= request.getParameter("height");
 		String weight= request.getParameter("weight");
 		String management= request.getParameter("management");
-		String img= request.getParameter("img");
 
+		//画像アップロード
+				Part part = request.getPart("img"); // getPartで取得
+				String img = this.getImg(part);
+				request.setAttribute("img", img);
+				// サーバの指定のファイルパスへファイルを保存
+		        //場所はクラス名↑の上に指定してある
+				part.write(img);
 		// ユーザー情報の登録処理を行う
 		UsersDao uDao = new UsersDao();
 		Users user = new Users(id, pw,name,email,gender,address,birth,height,weight,management, img);
@@ -66,5 +75,16 @@ public class MypageNewServlet extends HttpServlet {
 						// 結果ページにフォワードする
 						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
 						dispatcher.forward(request, response);
+	}
+	private String getImg(Part part) {
+        String name = null;
+        for (String dispotion : part.getHeader("Content-Disposition").split(";")) {
+            if (dispotion.trim().startsWith("filename")) {
+                name = dispotion.substring(dispotion.indexOf("=") + 1).replace("\"", "").trim();
+                name = name.substring(name.lastIndexOf("\\") + 1);
+                break;
+            }
+        }		// TODO 自動生成されたメソッド・スタブ
+		return name;
 	}
 }

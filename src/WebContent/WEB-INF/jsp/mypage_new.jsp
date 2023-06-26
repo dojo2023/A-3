@@ -32,7 +32,7 @@
 	<hr>
 	</header>
 	<body>
-	<form id = "mypage_form" action="/TRex/MypageNewServlet" method="POST" enctype="multipart/form-data" action="UpLoadServlet">
+	<form id = "mypage_form" action="/TRex/MypageNewServlet" method="POST" enctype="multipart/form-data">
 		  <input type="file" name="icon">
 		  <button type="submit">送信する</button>
 	<div>
@@ -117,6 +117,12 @@
 		<div style="color:#ff0000;" class="contents" id="error_message"></div>
 		<input type="submit"name="submit" value="登録">
 	</div>
+
+		<label>画像アップロード<br>
+		<input type = "file" name = "img" accept="image/*" onchange="previewImage(this);">
+		</label>
+
+		<canvas id="preview" style="max-width:200px;"></canvas><br>
 	</form>
 
 </body>
@@ -126,6 +132,30 @@
 	document.querySelector('.menu').classList.toggle('is-active');
 	});
 
+	function previewImage(obj){
+
+		var fileReader = new FileReader();
+
+		// 読み込み後に実行する処理
+		fileReader.onload = (function() {
+
+			// canvas にプレビュー画像を表示
+			var canvas = document.getElementById('preview');
+			var ctx = canvas.getContext('2d');
+			var image = new Image();
+			image.src = fileReader.result;
+			console.log(fileReader.result) // ← (確認用)
+
+			image.onload = (function () {
+				canvas.width = image.width;
+				canvas.height = image.height;
+				ctx.drawImage(image, 0, 0);
+			});
+		});
+		// 画像読み込み
+		fileReader.readAsDataURL(obj.files[0]);
+		console.log(fileReader.result) // ← (確認用)null
+	}
 
 </script>
 <!-- マスク用 -->
