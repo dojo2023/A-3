@@ -11,13 +11,11 @@
 
 
 </head>
-    <header>
-    <div class="container">
+    <header id="top-header">
       <!-- 天気 -->
  <div id="ww_4872ca99eaffb" v='1.3' loc='id' a='{"t":"horizontal","lang":"ja","sl_lpl":1,"ids":[],"font":"Times","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3,"el_whr":3}'>Weather Data Source: <a href="https://oneweather.org/ja/tokyo/14_days/" id="ww_4872ca99eaffb_u" target="_blank">東京天気予報14日間</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_4872ca99eaffb"></script>
     <h1>TOP</h1>
-	<h2><img alt="" src="./img/logo.png"style="width: 200px; height: 200px;"></h2>
-</div>
+    <h2> <img alt="" src="./img/logo.png"style="width: 200px; height: 200px;"></h2>
      <!-- ハンバーガーメニュー -->
 	 <button type="button" class="menu-btn">
      <i class="fa fa-bars" aria-hidden="true"></i>

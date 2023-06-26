@@ -21,12 +21,10 @@ display: none;
 	font-size:13px;
 }
 /*ここまで*/
+
 /*一覧*/
 #gazo{
-		display:flex;
-    	justify-content: center;
-    	opacity: 0.4;
-
+    	margin: 50px 0 0 100px;
 }
 	/* リンクのとこにカーソルが当たると */
 .linkArea:hover{
@@ -35,9 +33,12 @@ display: none;
 		/* でかくなる速度 */
  		transition-duration: 1.0s;
 }
-
-.linkArea{
-		width:100px;/*幅を指定*/
-		height:100px;/*高さを指定*/
+body{
+	padding-top:150px;
+	display:flex;
 }
-
+header {
+	 height: 150px; /* （※）ヘッダーの高さを確認 */
+ 	 position: fixed;
+ 	 width: 100%;
+}
