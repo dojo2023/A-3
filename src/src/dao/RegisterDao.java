@@ -164,7 +164,7 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 					+" SKEWAVE=? and "
 					+" SKESTRAIGHT=? and "
 					+" SKENATURAL=? and "
-					+" REPEAT";
+					+" REPEAT=?";
 
 
 			/*					for(int i=0;i<item.length;i++) {
@@ -173,7 +173,7 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 								for(int i=0;i<tag.length;i++) {
 									sql+= "or tag ="+"\'"+tag[i]+"\'";
 								}*/
-					System.out.println(sql);
+			/*System.out.println(sql);*/
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 //			// SQL文を完成させる
