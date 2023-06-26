@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="/TRex/css/common.css" rel="stylesheet">
-<title>名刺管理アプリ</title>
+<title>C²A</title>
 </head>
 <body>
 <h1>C²A</h1>
