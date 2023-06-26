@@ -32,7 +32,7 @@
 	<hr>
 </header>
 <body>
-	<form id = "mypage_form" method = "POST" action = "/TRex/MypageEditServlet" enctype="multipart/form-data" action="UpLoadServlet">
+	<form id = "mypage_form" method = "POST" action = "/TRex/MypageEditServlet" enctype="multipart/form-data" >
 		<table>
 			<tr>
 				<td>
