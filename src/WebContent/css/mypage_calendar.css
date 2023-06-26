@@ -29,7 +29,7 @@ display: none;
 .ww_cond{
 	font-size:13px;
 }
-/*全体*/
+/*全体
 		.wrapper{
 		    max-width: 600px;
 		    margin: 0 auto;
@@ -41,12 +41,12 @@ display: none;
 		    width: 100%;
 		    margin: 1rem 0 0;
             font-family: Times ;
-           /* margin-top: 60px;*/
+
            position: relative;
            top: 50px;
 		}
 
-		/*カレンダー*/
+		/*カレンダー
 		#calendar {
 		    text-align: center;
 		    width: 100%;
@@ -72,24 +72,24 @@ display: none;
              background-color: white;
 		}
 		/*日曜日*/
-		td:first-child {
+		/* td:first-child {
 		    color: red;
 		}
-		/*土曜日*/
+		土曜日
 		td:last-child {
 		    color: blue;
 		}
-		/*前後月の日付*/
+		前後月の日付
 		td.disabled {
 		    color: #ccc;
 		}
-		/*本日*/
+		本日
 		td.today {
 		    background-color: #D65E72;
 		    color: #fff;
 		}
 
-		/*ボタン*/
+		ボタン
 		#next-prev-button {
 		    position: relative;
 		}
@@ -113,13 +113,27 @@ display: none;
 		#next {
 		    float: right;
 		}
-		/* ハンガーホバーカラー
+		ハンガーホバーカラー
 		.image-link:hover {
      color: red;   ホバー時のテキスト色
      background-color: #696969;   ホバー時の背景色
 
-       }*/
+       }
        td:hover{
        background-color: #ffb6c1;
 
-       }
+       } */
+
+      /* 新カレンダー */
+  .ui-datepicker td:hover {
+    background-color: #DDA0DD; /* ホバー時の背景色 */
+    cursor: pointer; /* カーソルのスタイル */
+  }
+  .ui-datepicker-calendar th.ui-datepicker-week-end {
+    color: blue;  /* Saの色を青に設定 */
+  }
+
+  .ui-datepicker-calendar th.ui-datepicker-week-end:first-child {
+    color: red;  /* Suの色を赤に設定 */
+  }
+
