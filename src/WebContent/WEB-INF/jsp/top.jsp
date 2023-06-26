@@ -45,9 +45,9 @@
   <div class="box-title">今週のトレンド</div>
     <div id = "area" class="wrap slide-paused" ontouchstart="">
 <ul class="slideshow" id="images">
-    <li class="content content-hover"><img src="/TRex/UploadPhoto/${list[0].image}" id="gazo"></li>
-    <li class="content content-hover"></li>
-    <li class="content content-hover"></li>
+    <li class="content content-hover"><img src="./img/メンズ春1.jpg"></li>
+    <li class="content content-hover"><img src="./img/メンズ夏1.jpg"></li>
+    <li class="content content-hover"><img src="./img/メンズ秋1.jpg"></li>
     <li class="content content-hover"></li>
 </ul>
 </div>

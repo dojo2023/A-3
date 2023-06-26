@@ -43,12 +43,12 @@
     <i class="fa fa-bars" aria-hidden="true"></i>
     </button>
     <div class="menu">
-      <div class="menu__item">MY PAGE</div>
-      <div class="menu__item">TOP PAGE</div>
-      <div class="menu__item">SEARCH</div>
-      <div class="menu__item">LIST</div>
-      <div class="menu__item">REGISTER</div>
-      <div class="menu__item">LOGOUT</div>
+      <div class="menu__item"><a href="/TRex/MypageServlet">MY PAGE</a></div>
+      <div class="menu__item"><a href="/TRex/TopServlet">TOP PAGE</a></div>
+      <div class="menu__item"><a href="/TRex/SearchServlet">SEARCH</a></div>
+      <div class="menu__item"><a href="/TRex/ListServlet">LIST</a></div>
+      <div class="menu__item"><a href="/TRex/RegisterServlet">REGISTER</a></div>
+      <div class="menu__item"><a href="/TRex/LoginServlet">LOGOUT</a></div>
     </div>
 	<hr>
 </header>
@@ -57,7 +57,7 @@
 
 	 <c:forEach var="e" items="${list}" >
 	 	<div class="linkArea">
-		<a href="#"><img src="/TRex/UploadPhoto/${e.img}" id="gazo"></a>
+		<a href="#" target="_blank"><img src="/TRex/UploadPhoto/${e.img}" id="gazo"></a>
 		</div>
 	 </c:forEach>
 
