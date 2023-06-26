@@ -32,7 +32,7 @@
 	<hr>
 	</header>
 	<body>
-	<form id = "mypage_form" action="/TRex/MypageNewServlet" method="POST">
+	<form id = "mypage_form" action="/TRex/MypageNewServlet" method="POST" enctype="multipart/form-data" action="UpLoadServlet">
 		  <input type="file" name="icon">
 		  <button type="submit">送信する</button>
 	<div>

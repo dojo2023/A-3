@@ -82,7 +82,7 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-						<form action ="/TRex/MypageEditServlet" method="get">
+						<form action ="/TRex/MypageEditServlet" method="get" enctype="multipart/form-data" action="UpLoadServlet">
 							<input type="hidden" name="id" value="${e.id}">
 							<input type="hidden" name="name" value="${e.name}">
 							<input type="hidden" name="email" value="${e.email}">

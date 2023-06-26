@@ -31,7 +31,7 @@
 	<hr>
 </header>
 <body>
-	<form action="">
+	<form method = "POST" action = "/TRex/SearchServlet">
 		<div>
 		<p>検索したいキーワードを入力してください。</p>
   		<input type="search" name="search" placeholder="キーワードを入力">

@@ -110,9 +110,9 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 
 	//検索用のselectメソッド
 	public List<Registers> searchSelect(String id ,String gender,String[] item,String subOuter,String subTops,
-			String subBottoms,String subDress,String subShoes,String subAcce,String[] tags) {
+			String subBottoms,String subDress,String subShoes,String subAcce,String[] tag) {
 		Connection conn = null;
-	List<Registers> postList = new ArrayList<Registers>();	//resultsetをArrayListに入れ直して返す
+	List<Registers> searchList = new ArrayList<Registers>();	//resultsetをArrayListに入れ直して返す
 
 		try {
 			// JDBCドライバを読み込む
@@ -126,19 +126,53 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 			// SQL文を準備する
 			String sql = "select * from REGISTER "
 					+ "WHERE"
-					+ " gender=? and "
-					+ " subOuter=? and "
-					+ "subTops=? and "
-					+ "subBottoms=? and "
-					+ "subDress=? and "
-					+ "subShoes=?"
-					+ "subAcce=? ";
-					for(int i=0;i<item.length;i++) {
-						sql+= "and item="+"\'"+item[i]+"\' ";
-					}
-					for(int i=0;i<tags.length;i++) {
-						sql+= "or tag ="+"\'"+tags[i]+"\'";
-					}
+					+ " GENDER=? and "
+					+ " SUBOUTER=? and "
+					+ "SUBTOPS=? and "
+					+ "SUBBOTTOMS=? and "
+					+ "SUBDRESS=? and "
+					+ "SUBSHOES=? and "
+					+ "SUBACCE=? and "
+
+					+ "OUTER=? and "
+					+ "TOPS=? and "
+					+ "BOTTOMS=? and "
+					+ "DRESS=? and "
+					+ "SOCKS=? and "
+					+ "SHOES=? and "
+					+" ACCE=? and "
+
+					+"SPRING=? and "
+					+" SUMMER=? and "
+					+" AUTUM=? and "
+					+" WINTER=? and "
+					+" CUTE=? and "
+					+" CASUAL=? and "
+					+" SIMPLE=? and "
+					+" STRIPE=? and "
+					+" CHEC=? and "
+					+" DOT=? and "
+					+" BEAUTY=? and "
+					+" MODE=? and "
+					+" NATURA=? and "
+					+" CONSERVA=? and "
+					+" COOL=? and "
+					+" LOWHEIGHT=? and "
+					+" MENS=? and "
+					+" LOWPRICE=? and "
+					+" MONOTONE=? and "
+					+" SKEWAVE=? and "
+					+" SKESTRAIGHT=? and "
+					+" SKENATURAL=? and "
+					+" REPEAT";
+
+
+			/*					for(int i=0;i<item.length;i++) {
+									sql+= "and clothes="+"\'"+item[i]+"\' ";
+								}
+								for(int i=0;i<tag.length;i++) {
+									sql+= "or tag ="+"\'"+tag[i]+"\'";
+								}*/
 					System.out.println(sql);
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -157,6 +191,162 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 				pStmt.setString(6,  subShoes);
 
 				pStmt.setString(7, subAcce);
+
+				for(String n: item) {
+					if(n.equals("outer")) {
+						pStmt.setString(8,"1");
+					}else {
+						pStmt.setString(8,"0");
+					}
+					if(n.equals("tops")) {
+						pStmt.setString(9,"1");
+					}else {
+						pStmt.setString(9,"0");
+					}
+					if(n.equals("bottoms")) {
+						pStmt.setString(10,"1");
+					}else {
+						pStmt.setString(10,"0");
+					}
+					if(n.equals("dress")) {
+						pStmt.setString(11,"1");
+					}else {
+						pStmt.setString(11,"0");
+					}
+					if(n.equals("socks")) {
+						pStmt.setString(12,"1");
+					}else {
+						pStmt.setString(12,"0");
+					}
+					if(n.equals("shoes")) {
+						pStmt.setString(13,"1");
+					}else {
+						pStmt.setString(13,"0");
+					}
+					if(n.equals("acce")) {
+						pStmt.setString(14,"1");
+					}else {
+						pStmt.setString(14,"0");
+					}
+				}
+
+				for(String n: tag) {
+					if(n.equals("spring")) {
+						pStmt.setString(15,"1");
+					}else {
+						pStmt.setString(15,"0");
+					}
+					if(n.equals("summer")) {
+						pStmt.setString(16,"1");
+					}else {
+						pStmt.setString(16,"0");
+					}
+					if(n.equals("autum")) {
+						pStmt.setString(17,"1");
+					}else {
+						pStmt.setString(17,"0");
+					}
+					if(n.equals("winter")) {
+						pStmt.setString(18,"1");
+					}else {
+						pStmt.setString(18,"0");
+					}
+					if(n.equals("cute")) {
+						pStmt.setString(19,"1");
+					}else {
+						pStmt.setString(19,"0");
+					}
+					if(n.equals("casual")) {
+						pStmt.setString(20,"1");
+					}else {
+						pStmt.setString(20,"0");
+					}
+					if(n.equals("simple")) {
+						pStmt.setString(21,"1");
+					}else {
+						pStmt.setString(21,"0");
+					}
+					if(n.equals("stripe")) {
+						pStmt.setString(22,"1");
+					}else {
+						pStmt.setString(22,"0");
+					}
+					if(n.equals("check")) {
+						pStmt.setString(23,"1");
+					}else {
+						pStmt.setString(23,"0");
+					}
+					if(n.equals("dot")) {
+						pStmt.setString(24,"1");
+					}else {
+						pStmt.setString(24,"0");
+					}
+					if(n.equals("beauty")) {
+						pStmt.setString(25,"1");
+					}else {
+						pStmt.setString(25,"0");
+					}
+					if(n.equals("mode")) {
+						pStmt.setString(26,"1");
+					}else {
+						pStmt.setString(26,"0");
+					}
+					if(n.equals("natural")) {
+						pStmt.setString(27,"1");
+					}else {
+						pStmt.setString(27,"0");
+					}
+					if(n.equals("conserva")) {
+						pStmt.setString(28,"1");
+					}else {
+						pStmt.setString(28,"0");
+					}
+					if(n.equals("cool")) {
+						pStmt.setString(29,"1");
+					}else {
+						pStmt.setString(29,"0");
+					}
+					if(n.equals("lowheight")) {
+						pStmt.setString(30,"1");
+					}else {
+						pStmt.setString(30,"0");
+					}
+					if(n.equals("mens")) {
+						pStmt.setString(31,"1");
+					}else {
+						pStmt.setString(31,"0");
+					}
+					if(n.equals("lowprice")) {
+						pStmt.setString(32,"1");
+					}else {
+						pStmt.setString(32,"0");
+					}
+					if(n.equals("monotone")) {
+						pStmt.setString(33,"1");
+					}else {
+						pStmt.setString(33,"0");
+					}
+					if(n.equals("skewave")) {
+						pStmt.setString(34,"1");
+					}else {
+						pStmt.setString(34,"0");
+					}
+					if(n.equals("skestraight")) {
+						pStmt.setString(35,"1");
+					}else {
+						pStmt.setString(35,"0");
+					}
+					if(n.equals("skenatural")) {
+						pStmt.setString(36,"1");
+					}else {
+						pStmt.setString(36,"0");
+					}
+					if(n.equals("repeat")) {
+						pStmt.setString(37,"1");
+					}else {
+						pStmt.setString(37,"0");
+					}
+				}
 
 				/*pStmt.setString(7, "%" + param.getSubShoes() + "%");
 
@@ -187,26 +377,27 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 						poster.setSubDress(rs.getString("SUBDRESS"));
 						poster.setSubShoes(rs.getString("SUBSHOES"));
 						poster.setSubAcce(rs.getString("SUBACCE"));
-						String[] tag = {rs.getString("SPRING"),rs.getString("SUMMER"),rs.getString("AUTUM"),
+						String[] tag1 = {rs.getString("SPRING"),rs.getString("SUMMER"),rs.getString("AUTUM"),
 								rs.getString("WINTER"),rs.getString("CUTE"),rs.getString("CASUAL"),rs.getString("SIMPLE")
 								,rs.getString("STRIPE"),rs.getString("CHEC"),rs.getString("DOT"),rs.getString("BEAUTY")
 								,rs.getString("MODE"),rs.getString("NATURA"),rs.getString("CONSERVA"),rs.getString("COOL")
 								,rs.getString("LOWsHEIGHT"),rs.getString("MENS"),rs.getString("LOWPRICE"),rs.getString("MONOTONE")
 								,rs.getString("SKEWAVE"),rs.getString("SKESTRAIGHT"),rs.getString("SKENATURAL"),rs.getString("REPEAT")};
-						poster.setTag(tag);
+						poster.setTag(tag1);
 						poster.setImg(rs.getString("IMAGE"));
 
-						postList.add(poster);
+						searchList.add(poster);
 
 					}
 		}
 
-		catch (SQLException e) {			e.printStackTrace();
-			postList = null;
+		catch (SQLException e) {
+			e.printStackTrace();
+			searchList = null;
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			postList = null;
+			searchList = null;
 		}
 		finally {
 			// データベースを切断
@@ -221,7 +412,7 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 		}
 
 		// 結果を返す
-		return postList;
+		return searchList;
 	}
 
 

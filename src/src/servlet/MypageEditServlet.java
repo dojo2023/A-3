@@ -39,12 +39,20 @@ public class MypageEditServlet extends HttpServlet {
 		//なにするのかをどんどん書いていく(コメントアウト)
 
 		// 画像アップロード
-		Part part = request.getPart("IMAGE");
+		Part part = request.getPart("image");
+		//画像ファイルの名前を取得
 		String image = this.getImg(part);
 		request.setAttribute("image", image);
 		// サーバの指定のファイルパスへファイルを保存
 		// 場所はクラス名↑の上に指定してある
 		part.write(image);
+		String name=request.getParameter("name");
+		String email=request.getParameter("email");
+		String gender=request.getParameter("gender");
+		String height=request.getParameter("height");
+		String weight=request.getParameter("weight");
+		String address=request.getParameter("address");
+		String birth=request.getParameter("birth");
 		//Daoに書き直す
 		//データベースも書き直す
 
