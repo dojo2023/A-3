@@ -53,7 +53,7 @@
 							<input type="checkbox" name="clothes"value="dress">dress
 							<input type="checkbox" name="clothes"value="socks">socks
 							<input type="checkbox" name="clothes"value="shoes">shoes
-							<input type="checkbox" name="clothes"value="accessory">accessory
+							<input type="checkbox" name="clothes"value="acce">accessory
 						</div>
 						<div>
 							SUB CATEGORY<br>
