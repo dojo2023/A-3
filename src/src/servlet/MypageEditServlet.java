@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import dao.TopimageDao;
+import model.Topimages;
+
 /**
  * Servlet implementation class MypageEditServlet
  */
@@ -55,6 +58,20 @@ public class MypageEditServlet extends HttpServlet {
 		String birth=request.getParameter("birth");
 		//Daoに書き直す
 		//データベースも書き直す
+		TopimageDao rDao = new TopimageDao();
+
+		if (rDao.insert(image)) {	// 登録成功
+			request.setAttribute("result",
+			new Topimages());
+			}
+			else {												// 登録失敗
+			request.setAttribute("result",
+			new Topimages());
+			}
+
+		// トップページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
+		dispatcher.forward(request, response);
 
 	}
 	// ファイルの名前を取得してくる
