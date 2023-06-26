@@ -659,6 +659,81 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 		return searchList;
 	}
 
+	// 詳細画面用の検索メソッド
+		public List<Registers> select(String key) {
+		Connection conn = null;
+		List<Registers> postList = new ArrayList<Registers>();	//resultsetをArrayListに入れ直して返す
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
+
+
+				// SQL文を準備する
+				String sql = "select * from REGISTER where id=? ";
+
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+				pStmt.setString(1, key);
+
+				// SQL文を実行し、結果表を取得する
+				ResultSet rs = pStmt.executeQuery();
+
+				// 結果表をコレクションにコピーする
+				while (rs.next()) {
+					//引数がありのRegistersメソッドを動かしている。
+					Registers poster = new Registers();
+					poster.setId(rs.getString("ID"));
+					String[] clothes = {rs.getString("OUTER"),rs.getString("TOPS"),
+							rs.getString("BOTTOMS"),rs.getString("DRESS"),rs.getString("SOCKS"),
+							rs.getString("SHOES"),rs.getString("ACCE")};
+					poster.setClothes(clothes);
+				    poster.setSubTops(rs.getString("SUBTOPS"));
+					poster.setSubOuter(rs.getString("SUBOUTER"));
+					poster.setSubBottoms(rs.getString("SUBBOTTOMS"));
+					poster.setSubDress(rs.getString("SUBDRESS"));
+					poster.setSubShoes(rs.getString("SUBSHOES"));
+					poster.setSubAcce(rs.getString("SUBACCE"));
+					String[] tag = {rs.getString("SPRING"),rs.getString("SUMMER"),rs.getString("AUTUM"),
+							rs.getString("WINTER"),rs.getString("CUTE"),rs.getString("CASUAL"),rs.getString("SIMPLE")
+							,rs.getString("STRIPE"),rs.getString("CHEC"),rs.getString("DOT"),rs.getString("BEAUTY")
+							,rs.getString("MODE"),rs.getString("NATURA"),rs.getString("CONSERVA"),rs.getString("COOL")
+							,rs.getString("LOWHEIGHT"),rs.getString("MENS"),rs.getString("LOWPRICE"),rs.getString("MONOTONE")
+							,rs.getString("SKEWAVE"),rs.getString("SKESTRAIGHT"),rs.getString("SKENATURAL"),rs.getString("REPEAT")};
+					poster.setTag(tag);
+					poster.setImg(rs.getString("IMAGE"));
+					poster.setImg(rs.getString("INSERT_DATE"));
+					postList.add(poster);
+
+				}
+			}
+
+			catch (SQLException e) {
+				e.printStackTrace();
+				postList = null;
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				postList = null;
+			}
+			finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+
+			// 結果を返す
+			return postList;
+		}
+
 
 
 
