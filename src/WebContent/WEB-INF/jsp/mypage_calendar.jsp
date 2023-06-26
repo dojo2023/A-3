@@ -89,7 +89,7 @@
 	alert(list[0].img);
 
 
-	//読み込まれた際に実行する
+	//読み込まれた際に実行するよ
     $(document).ready(function() {
    	 //idがdatepickerのところに表示する
    	  $("#datepicker").datepicker({
