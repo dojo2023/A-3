@@ -32,13 +32,15 @@
 	<hr>
 </header>
 <body>
-	<form id = "mypage_form" method = "POST" action = "/TRex/MypageEditServlet">
+	<form id = "mypage_form" method = "POST" action = "/TRex/MypageEditServlet" enctype="multipart/form-data" action="UpLoadServlet">
 		<table>
 			<tr>
 				<td>
 					<label>画像アップロード<br>
-					<input type = "file" name = "image">
+					<input type = "file" name = "image" accept="image/*" onchange="previewImage(this);">
 					</label>
+
+					<canvas id="preview" style="max-width:200px;"></canvas><br>
 				</td>
 			</tr>
 			<!-- <tr>
@@ -211,6 +213,31 @@
 	document.querySelector('.menu-btn').addEventListener('click', function(){
 	document.querySelector('.menu').classList.toggle('is-active');
 	});
+
+	function previewImage(obj){
+
+		var fileReader = new FileReader();
+
+		// 読み込み後に実行する処理
+		fileReader.onload = (function() {
+
+			// canvas にプレビュー画像を表示
+			var canvas = document.getElementById('preview');
+			var ctx = canvas.getContext('2d');
+			var image = new Image();
+			image.src = fileReader.result;
+			console.log(fileReader.result) // ← (確認用)
+
+			image.onload = (function () {
+				canvas.width = image.width;
+				canvas.height = image.height;
+				ctx.drawImage(image, 0, 0);
+			});
+		});
+		// 画像読み込み
+		fileReader.readAsDataURL(obj.files[0]);
+		console.log(fileReader.result) // ← (確認用)null
+	}
 </script>
 <script src="/TRex/js/user_error.js"></script>
 </html>
