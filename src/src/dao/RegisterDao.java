@@ -129,7 +129,7 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 			String sql = "select * from REGISTER "
 					+ "WHERE"
 					+ " GENDER=? and "
-					+ " SUBOUTER=? and "
+					+ " SUBOUTER like ? and "
 					+ "SUBTOPS=? and "
 					+ "SUBBOTTOMS=? and "
 					+ "SUBDRESS=? and "
@@ -179,20 +179,48 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 //			// SQL文を完成させる
+	/*			if(gender.equals("none")) {
+					pStmt.setString(1, "%");
+				}else {
+					pStmt.setString(1, "%"+gender+"%");
+				}*/
+				pStmt.setString(1,gender);
 
-				pStmt.setString(1, gender);
+				if(subOuter.equals("none")) {
+					pStmt.setString(2, "%");
+				}else {
+					pStmt.setString(2, "%"+subOuter+"%");
+				}
 
-				pStmt.setString(2, subOuter);
+				if(subTops.equals("none")) {
+					pStmt.setString(3, "%");
+				}else {
+					pStmt.setString(3, "%"+subTops+"%");
+				}
 
-				pStmt.setString(3, subTops);
+				if(subBottoms.equals("none")) {
+					pStmt.setString(4, "%");
+				}else {
+					pStmt.setString(4, "%"+subBottoms+"%");
+				}
 
-				pStmt.setString(4, subBottoms);
+				if(subDress.equals("none")) {
+					pStmt.setString(5, "%");
+				}else {
+					pStmt.setString(5, "%"+subDress+"%");
+				}
 
-				pStmt.setString(5,  subDress);
+				if(subShoes.equals("none")) {
+					pStmt.setString(6, "%");
+				}else {
+					pStmt.setString(6, "%"+subShoes+"%");
+				}
 
-				pStmt.setString(6,  subShoes);
-
-				pStmt.setString(7, subAcce);
+				if(subAcce.equals("none")) {
+					pStmt.setString(7, "%");
+				}else {
+					pStmt.setString(7, "%"+subAcce+"%");
+				}
 
 				for(Registers n: searchList) {
 					for(String cl:n.getClothes()) {
@@ -624,6 +652,7 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 
 					// 結果表をコレクションにコピーする
 					while (rs.next()) {
+						System.out.println("入ったよ");
 						//引数がありのRegistersメソッドを動かしている。
 						Registers poster = new Registers();
 						poster.setId(rs.getString("ID"));
