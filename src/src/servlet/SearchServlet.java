@@ -60,7 +60,7 @@ public class SearchServlet extends HttpServlet {
 		RegisterDao rDao = new RegisterDao();
 		List<Registers> searchList = rDao.searchSelect(id,gender,item,subOuter,subTops,subBottoms,subDress,subShoes,subAcce,tag);
 
-		System.out.println(searchList.size()+"aaaaaa");
+		/*System.out.println(searchList.size()+"aaaaaa");*/
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("searchList", searchList);
 
