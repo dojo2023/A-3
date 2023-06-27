@@ -188,37 +188,37 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 				if(subOuter.equals("none")) {
 					pStmt.setString(2, "%");
 				}else {
-					pStmt.setString(2, "%"+subOuter+"%");
+					pStmt.setString(2, subOuter);
 				}
 
 				if(subTops.equals("none")) {
 					pStmt.setString(3, "%");
 				}else {
-					pStmt.setString(3, "%"+subTops+"%");
+					pStmt.setString(3, subTops);
 				}
 
 				if(subBottoms.equals("none")) {
 					pStmt.setString(4, "%");
 				}else {
-					pStmt.setString(4, "%"+subBottoms+"%");
+					pStmt.setString(4, subBottoms);
 				}
 
 				if(subDress.equals("none")) {
 					pStmt.setString(5, "%");
 				}else {
-					pStmt.setString(5, "%"+subDress+"%");
+					pStmt.setString(5, subDress);
 				}
 
 				if(subShoes.equals("none")) {
 					pStmt.setString(6, "%");
 				}else {
-					pStmt.setString(6, "%"+subShoes+"%");
+					pStmt.setString(6, subShoes);
 				}
 
 				if(subAcce.equals("none")) {
 					pStmt.setString(7, "%");
 				}else {
-					pStmt.setString(7, "%"+subAcce+"%");
+					pStmt.setString(7, subAcce);
 				}
 
 
@@ -271,7 +271,7 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 					}
 				}
 				for(String cl:item) {
-					if(cl.equals("acce")) {
+					if(cl.equals("accessory")) {
 						pStmt.setString(14,"1");
 						break;
 					}else {
@@ -635,6 +635,7 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 				*/
 
 			// SQL文を実行し、結果表を取得する
+				System.out.println(pStmt+"aaaaaa");
 			ResultSet rs = pStmt.executeQuery();
 
 					// 結果表をコレクションにコピーする
