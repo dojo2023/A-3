@@ -10,6 +10,9 @@ import java.util.List;
 
 public class GoodDao{
 
+	public GoodDao() {
+
+	}
 	public GoodDao(String string, String string2, String string3) {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
@@ -27,11 +30,10 @@ public class GoodDao{
 			conn = DriverManager.getConnection("jdbc:h2:file:C:\\dojo6\\data", "sa", "sa");
 			String sql = "";
 			if(count==0) {
-				sql ="insert into GOOD values (?, ?, ?)";
+				sql ="insert into GOOD (GOODCLOTHES,UID) values (?, ?)";
 
 			}else {
 				sql ="delete from GOOD where GOODCLOTHES =? and UID=?";
-
 			}
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -43,13 +45,14 @@ public class GoodDao{
 
 
 			// SQL文を完成させる
-			pStmt.setString(1, uID);
+			pStmt.setString(1, clothesID);
+			pStmt.setString(2, uID);
 
 
 			// SQL文を実行する
-			if (pStmt.executeUpdate() == 1) {
-				result = check;
-			}
+			/*			if (pStmt.executeUpdate() == 1) {
+							result = check;
+						}*/
 
 			result = pStmt.executeUpdate();
 		}
@@ -79,9 +82,9 @@ public class GoodDao{
 	@SuppressWarnings("unchecked")
 	public List<GoodDao> select(GoodDao param) {
 		Connection conn = null;
-		List<GoodDao> cardList = new ArrayList<GoodDao>();
+		List<GoodDao> goodList = new ArrayList<GoodDao>();
 
-		Object goodList;
+
 		try {
 			// JDBCドライバを読み込む
 			Class.forName("org.h2.Driver");
