@@ -39,9 +39,9 @@
 		<div>
 		<label>GENDER<br></label>
 		<fieldset class="gender">
-		<label><input type="radio" name="gender" value="MEN"checked>MEN</label>
-		<label><input type="radio" name="gender" value="WOMAN">WOMAN</label>
-		<label><input type="radio" name="gender" value="OTHERS">OTHERS</label>
+		<label><input type="radio" name="gender" value="men"checked>MEN</label>
+		<label><input type="radio" name="gender" value="woman">WOMAN</label>
+		<label><input type="radio" name="gender" value="others">OTHERS</label>
 		</div>
 		<div>
 		<label>ITEM<br></label>
