@@ -33,7 +33,7 @@
  <!-- 天気 -->
  <div id="ww_4872ca99eaffb" v='1.3' loc='id' a='{"t":"horizontal","lang":"ja","sl_lpl":1,"ids":[],"font":"Times","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3,"el_whr":3}'>Weather Data Source: <a href="https://oneweather.org/ja/tokyo/14_days/" id="ww_4872ca99eaffb_u" target="_blank">東京天気予報14日間</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_4872ca99eaffb"></script>
 	<h1>MY PAGE CALENDER</h1>
-	<h2>C²A</h2>
+	<img alt="" src="./img/logo10.png"style="width: 200px; height: 100px; margin: 0 80px 0 auto;">
 	</div>
 	<!-- ハンバーガーメニュー -->
 	<button type="button" class="menu-btn">
@@ -178,7 +178,7 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 	       	        	// テーブルのデータを直接指定
 	       	        	var tableData = [
 	       	        	  ["画像", "/TRex/UploadPhoto/"+list[0].img], // 画像のパスを含む
-	       	        	  ["ITEM", ,list[0].clothes],
+	       	        	  ["ITEM",list[0].clothes],
 	       	        	  ["GENDER", list[0].gender],
 	       	        	  ["OUTER", list[0].subOuter],
 	       	        	  ["TOPS", list[0].subTops],
