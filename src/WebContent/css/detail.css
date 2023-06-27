@@ -1,1 +1,14 @@
 @charset "UTF-8";
+
+
+#checkboxImage {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(../img/good.png);
+  background-size: cover;
+}
+
+#myCheckbox:checked ~ #checkboxImage {
+  background-image: url(../img/good_change.png);
+}
