@@ -34,7 +34,7 @@
       <!-- 天気 -->
  <div id="ww_77e87b2ff5d3f" v='1.3' loc='id' a='{"t":"horizontal","lang":"ja","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one","sl_sot":"celsius","cl_bkg":"#FFFFFF00","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3,"el_whr":3}'>Weather Data Source: <a href="https://oneweather.org/ja/tokyo/14_days/" id="ww_77e87b2ff5d3f_u" target="_blank">東京天気14日間</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_77e87b2ff5d3f"></script>
     <h1>LIST</h1>
-    <h2> <img alt="" src="./img/logo9.png"style="width: 100px; height: 100px;"></h2>
+     <img alt="" src="./img/logo10.png"style="width: 200px; height: 100px; margin: 0 auto 0 auto;">
 
 	<!-- ハンバーガーメニュー -->
 	<button type="button" class="menu-btn">
