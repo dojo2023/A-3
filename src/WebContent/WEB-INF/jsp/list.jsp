@@ -6,9 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>C²A</title>
-<link rel ="stylesheet" href="/TRex/css/list.css">
+
 <link rel="stylesheet" href="/TRex/css/hamburger.css">
 <link rel ="stylesheet" href="/TRex/css/common.css">
+<link rel ="stylesheet" href="/TRex/css/list.css">
 <!--  <link rel="stylesheet" href="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.css"/>
  <script src="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.js"></script>
  <script>
@@ -29,11 +30,11 @@
 
 
 </head>
-
-<header>
-<!-- 天気　ロゴ　ハンバーガーメニュー -->
-<!-- 天気 -->
- <div id="ww_4872ca99eaffb" v='1.3' loc='id' a='{"t":"horizontal","lang":"ja","sl_lpl":1,"ids":[],"font":"Times","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3,"el_whr":3}'>Weather Data Source: <a href="https://oneweather.org/ja/tokyo/14_days/" id="ww_4872ca99eaffb_u" target="_blank">東京天気予報14日間</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_4872ca99eaffb"></script>
+<header id="top-header">
+      <!-- 天気 -->
+ <div id="ww_77e87b2ff5d3f" v='1.3' loc='id' a='{"t":"horizontal","lang":"ja","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one","sl_sot":"celsius","cl_bkg":"#FFFFFF00","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3,"el_whr":3}'>Weather Data Source: <a href="https://oneweather.org/ja/tokyo/14_days/" id="ww_77e87b2ff5d3f_u" target="_blank">東京天気14日間</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_77e87b2ff5d3f"></script>
+    <h1>LIST</h1>
+    <h2> <img alt="" src="./img/logo9.png"style="width: 100px; height: 100px;"></h2>
 
 	<!-- ハンバーガーメニュー -->
 	<button type="button" class="menu-btn">
@@ -52,11 +53,15 @@
 
 
 <body>
+<div class ="test">
 	<c:forEach var="e" items="${list}" >
-	 	<div class="linkArea">
-		<a href="DetailServlet?key=${e.id}" target="_blank"><img src="/TRex/UploadPhoto/${e.img}" id="gazo" style="width: 200px; height: 200px; "></a>
+	 	<div class="linkAreaa">
+			<a href="DetailServlet?key=${e.id}" target="_blank" >
+				<img src="/TRex/UploadPhoto/${e.img}" id="gazo" style="width: 200px; height: 200px;">
+			</a>
 		</div>
 	 </c:forEach>
+</div>
 
 
 </body>

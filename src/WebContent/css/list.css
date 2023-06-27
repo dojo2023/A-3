@@ -32,13 +32,11 @@ display: none;
 		transform: scale(1.1);
 		/* でかくなる速度 */
  		transition-duration: 1.0s;
+ }
+.linkAreaa{
+		width:25%;
 }
-body{
-	padding-top:150px;
-	display:flex;
-}
-header {
-	 height: 150px; /* （※）ヘッダーの高さを確認 */
- 	 position: fixed;
- 	 width: 100%;
+.test{
+		display: flex;
+		flex-wrap: wrap;
 }
