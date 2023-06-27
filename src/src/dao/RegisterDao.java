@@ -81,6 +81,7 @@ public class RegisterDao{// 引数paramで検索項目を指定し、検索結�
 						,rs.getString("SKEWAVE"),rs.getString("SKESTRAIGHT"),rs.getString("SKENATURAL"),rs.getString("REPEAT")};
 				poster.setTag(tag);
 				poster.setImg(rs.getString("IMAGE"));
+				poster.setGender(rs.getString("GENDER"));
 				poster.setInsert_date(rs.getDate("INSERT_DATE"));
 				postList.add(poster);
 
