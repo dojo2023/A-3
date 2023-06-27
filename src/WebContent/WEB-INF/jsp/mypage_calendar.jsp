@@ -20,10 +20,10 @@
 
 		/* 表示箇所を真ん中にするCSS */
 		.ui-datepicker {
-			margin-left:20%;
+			margin-left:30%;
 			width: 500px;
 			height: 400px;
-            font-size: 32px;
+            font-size: 29px;
             font-family: Times ;
 		}
 	</style>
@@ -50,7 +50,7 @@
     <hr>
 </header>
 <body>
-<input type="button" onclick="window.history.back();" value=MYPAGEに戻る>
+<input type="button" class="button-004" onclick="window.history.back();" value=MYPAGEに戻る>
 
     <div id="app">
     <div id="datepicker"></div>
@@ -127,7 +127,7 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 	        onSelect: function(dateText, inst) {
 	        	//クリックするたび、表示されたボックスを削除する
 	        	 // .aaaクラスの要素を取得
-	        	  var aaaElements = document.getElementsByClassName("aaa");
+	        	  var aaaElements = document.getElementsByClassName("show");
 	        	  // 要素が存在する場合にのみ削除処理を実行
 	        	  if (aaaElements.length > 0) {
 	        		  //作業途中のボックスのための確認ダイアログ
@@ -169,33 +169,47 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 	       	          day == dd
 	          	        ) {
 
-	            		 // 要素の作成（合致するものがあったので、データを入れる）
-	    	            const divElement = document.createElement('div');
-	    	            divElement.classList.add('aaa');
-
-	    	            const formElement = document.createElement('form');
-	    	            formElement.action = '飛び先';
-	    	            formElement.method = 'post';
-
-	    	            const inputElement = document.createElement('input');
-	    	            inputElement.type = 'text';
-	    	            inputElement.name = 'date';
-
-	    	            //今回データを入れている場所
-	    	            inputElement.value =targetDate;
-
-	    	            const submitElement = document.createElement('input');
-	    	            submitElement.type = 'submit';
-	    	            submitElement.value = 'クリック';
-
-	    	            formElement.appendChild(inputElement);
-	    	            formElement.appendChild(submitElement);
-
-	    	            divElement.appendChild(formElement);
-
-	    	            const bodyElement = document.querySelector('body');
-	    	            bodyElement.appendChild(divElement);
-
+	       	      // div要素を作成
+	       	        	var div = document.createElement("div");
+	       	        	div.className = "show";
+	       	        	// table要素を作成
+	       	        	var table = document.createElement("table");
+	       	        	table.setAttribute("border", "1");
+	       	        	// テーブルのデータを直接指定
+	       	        	var tableData = [
+	       	        	  ["画像", "/TRex/UploadPhoto/"+list[0].img], // 画像のパスを含む
+	       	        	  ["ITEM", ,list[0].item],
+	       	        	  ["GENDER", list[0].gender],
+	       	        	  ["OUTER", list[0].outer],
+	       	        	  ["TOPS", list[0].tops],
+	       	        	  ["BOTTOMS", list[0].bottoms],
+	       	        	  ["DRESS", list[0].dress],
+	       	        	  ["SHOES", list[0].shoes],
+	       	        	  ["ACCESSORY",list[0].accessory ],
+	       	        	  ["TAG", ,list[0].tags]
+	       	        	];
+	       	        	// テーブルの行を作成してデータをセット
+	       	        	for (var i = 0; i < tableData.length; i++) {
+	       	        	  var row = document.createElement("tr");
+	       	        	  var cell1 = document.createElement("td");
+	       	        	  var cell2 = document.createElement("td");
+	       	        	  cell1.textContent = tableData[i][0];
+	       	        	  // 画像の行の場合、img要素を作成してsrc属性に画像のパスを指定
+	       	        	  if (tableData[i][0] === "画像") {
+	       	        	    var img = document.createElement("img");
+	       	        	    img.src = tableData[i][1]; // 画像のパスをセット
+	       	        	    cell2.appendChild(img);
+	       	        	  } else {
+	       	        	    cell2.textContent = tableData[i][1];
+	       	        	  }
+	       	        	  row.appendChild(cell1);
+	       	        	  row.appendChild(cell2);
+	       	        	  table.appendChild(row);
+	       	        	}
+	       	        	// div要素にtable要素を追加
+	       	        	div.appendChild(table);
+	       	        	// body要素にdiv要素を追加
+	       	        	document.body.appendChild(div);
 	    	            flg++;
 	          		 }
 				 }
