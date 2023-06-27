@@ -2,8 +2,8 @@
 /*  天気*/
 /*天気の大きさ*/
 .ww-box {
-    width: 50%;
-  height: 20%;
+    width: 30%;
+  height: 10%;
   padding: 0;
   }
   .ww-temp{
@@ -18,7 +18,7 @@ div.ww_additional{
 display: none;
 }
 .ww_cond{
-	font-size:13px;
+	font-size:5px;
 }
 
 .mypageinfo{

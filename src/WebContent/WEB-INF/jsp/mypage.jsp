@@ -11,13 +11,13 @@
 <link rel ="stylesheet" href="/TRex/css/common.css">
 </head>
 <body>
-<header>
+<header id="top-header">
 <div class = "container">
 	<!-- 天気 -->
- <div id="ww_4872ca99eaffb" v='1.3' loc='id' a='{"t":"horizontal","lang":"ja","sl_lpl":1,"ids":[],"font":"Times","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3,"el_whr":3}'>Weather Data Source: <a href="https://oneweather.org/ja/tokyo/14_days/" id="ww_4872ca99eaffb_u" target="_blank">東京天気予報14日間</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_4872ca99eaffb"></script>
+<div id="ww_77e87b2ff5d3f" v='1.3' loc='id' a='{"t":"horizontal","lang":"ja","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one","sl_sot":"celsius","cl_bkg":"#FFFFFF00","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3,"el_whr":3,"el_nme":3}'>Weather Data Source: <a href="https://oneweather.org/ja/tokyo/14_days/" id="ww_77e87b2ff5d3f_u" target="_blank">東京天気14日間</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_77e87b2ff5d3f"></script>
 	<!-- ヘッダー -->
-	<h1>MY PAGE</h1>
-	<h2>C²A
+	<h1>MYPAGE</h1>
+	<h2> <img alt="" src="./img/logo9.png"style="width: 100px; height: 100px;"></h2>
 	</div>
 	<!-- ハンバーガーメニュー -->
 	<button type="button" class="menu-btn">
