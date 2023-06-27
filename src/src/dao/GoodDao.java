@@ -13,23 +13,23 @@ public class GoodDao{
 	public GoodDao() {
 
 	}
-	public GoodDao(String string, String string2, String string3) {
+	public GoodDao(String string, String string2) {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
 	public int insertDelete(String clothesID,String uID,int check) {
 		Connection conn = null;
 		int result = 0;
-		int count=0;
+
 
 		try {
 			// JDBCドライバを読み込む
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:\\dojo6\\data", "sa", "sa");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
 			String sql = "";
-			if(count==0) {
+			if(check==1) {
 				sql ="insert into GOOD (GOODCLOTHES,UID) values (?, ?)";
 
 			}else {
@@ -37,7 +37,7 @@ public class GoodDao{
 			}
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			pStmt = conn.prepareStatement(sql);
+//			pStmt = conn.prepareStatement(sql);
 
 
 			// SQL文を準備する
@@ -108,7 +108,6 @@ public class GoodDao{
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
 				GoodDao Goods = new GoodDao(
-				rs.getString("ID"),
 				rs.getString("CLOTHESID"),
 				rs.getString("UID")
 				);

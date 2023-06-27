@@ -56,22 +56,34 @@ public class DetailServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		GoodDao gDao = new GoodDao();
+
 
 		// 送信されたデータの取得
-		// この子達はどこから来た情報なの？
-		// intは何を入れるのが正解なの？
-		// 以前チェックを付けたとかはどうしたらわかるものなの？
-			String id = request.getParameter("id");
-			String clothesID = request.getParameter("clothesID");
-			String uID = request.getParameter("uID");
-		//確認するため
-			System.out.println(id);
 
-			gDao.insertDelete(clothesID, uID, 0);
+		// 桝井へのお願い
+		// GoodテーブルのGoodIdをオートインクリメントにしろ
+
+			String check = request.getParameter("check");
+			String clothesID = request.getParameter("id");
+			String uId = request.getParameter("uId");
+
+			//DAOにゅー
+			GoodDao gDao = new GoodDao();
+
+			int ans = gDao.insertDelete(clothesID, uId, Integer.parseInt(check));
+
+			if(ans==1) {
+				System.out.println("成功");
+			}
+		//確認するため
+			System.out.println(ans);
+			System.out.println("これ見えてますか？");
+
+
+
 
 			//ArrayListをインスタンス化
-			//ArrayList<Goods> list = new ArrayList<>();
+			//List<Goods> list = new ArrayList<>();
 
 	}
 

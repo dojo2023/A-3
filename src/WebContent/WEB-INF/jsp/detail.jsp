@@ -186,7 +186,8 @@
 		</div>
 	 </c:forEach>
 
-	<input type="hidden" name="clothesID" value="${clothesID}" id="cl">
+	<input type="hidden" name="clothesID" value="${list[0].id}" id="cl">
+	<input type="hidden" name="user_id" value="${user.id}" id="ul">
  	<label for="myCheckbox">
 		<input type="checkbox" id="myCheckbox">
 		<span id="checkboxImage"></span>
@@ -194,12 +195,13 @@
 
 
 <script>
-var ch = document.getElementById('iine');
+var ch = document.getElementById('myCheckbox');
 
 	ch.addEventListener("change",function(){
 		//チェックが付いたら１、外されたら０になるんやで
 		var c = this.checked ? 1:0;
 		var id = document.getElementById('cl').value;
+		var uId = document.getElementById('ul').value;
 
 		alert("functionはいったよ！");
 		//入力値を取得してくる
@@ -208,7 +210,9 @@ var ch = document.getElementById('iine');
 		let testuID = document.getElementById('test_uID').value; */
 
 		//{変数名：中に入れるもの}みたいに書いて、複数の値をpostData変数に格納
-		let postData = {check:c,id:id}
+/* 		request.setParameter("check",c);
+		request.getParameter("check"); */
+		let postData = {check:c,id:id,uId:uId}
 
 		//非同期通信始めるよ
 		$.ajaxSetup({scriptCharset:'utf-8'});
