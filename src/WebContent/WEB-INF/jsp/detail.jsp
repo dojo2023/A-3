@@ -58,11 +58,25 @@
 								アウター,
 							</c:if>
 							<c:if test="${status.index==1 && s=='1'}" >
-								アウター
+								トップス,
+							</c:if>
+							<c:if test="${status.index==2 && s=='1'}" >
+								ボトムス,
+							</c:if>
+							<c:if test="${status.index==3 && s=='1'}" >
+								ドレス,
+							</c:if>
+							<c:if test="${status.index==4 && s=='1'}" >
+								ソックス,
+							</c:if>
+							<c:if test="${status.index==5 && s=='1'}" >
+								シューズ,
+							</c:if>
+							<c:if test="${status.index==6 && s=='1'}" >
+								アクセサリー,
 							</c:if>
 
 						</c:forEach>
-
 					</th>
 				</tr>
 				<tr>
@@ -91,7 +105,80 @@
 				</tr>
 				<tr>
 					<th>TAG</th>
-					<th>${e.tag}</th>
+					<th>
+						<c:forEach var="s" items="${e.tag}" varStatus="status">
+							<c:if test="${status.index==0 && s=='1'}" >
+								SPRING,
+							</c:if>
+							<c:if test="${status.index==1 && s=='1'}" >
+								SUMMER,
+							</c:if>
+							<c:if test="${status.index==2 && s=='1'}" >
+								AUTUM,
+							</c:if>
+							<c:if test="${status.index==3 && s=='1'}" >
+								WINTER,
+							</c:if>
+							<c:if test="${status.index==4 && s=='1'}" >
+								CUTE,
+							</c:if>
+							<c:if test="${status.index==5 && s=='1'}" >
+								COOL,
+							</c:if>
+							<c:if test="${status.index==6 && s=='1'}" >
+								CASUAL,
+							</c:if>
+							<c:if test="${status.index==7 && s=='1'}" >
+								SIMPLE,
+							</c:if>
+							<c:if test="${status.index==8 && s=='1'}" >
+								STRIPE,
+							</c:if>
+							<c:if test="${status.index==9 && s=='1'}" >
+								CHECK,
+							</c:if>
+							<c:if test="${status.index==10 && s=='1'}" >
+								DOT,
+							</c:if>
+							<c:if test="${status.index==11 && s=='1'}" >
+								BEAUTY,
+							</c:if>
+							<c:if test="${status.index==12 && s=='1'}" >
+								MODE,
+							</c:if>
+							<c:if test="${status.index==13 && s=='1'}" >
+								NATURAL,
+							</c:if>
+							<c:if test="${status.index==14 && s=='1'}" >
+								CONSERVA,
+							</c:if>
+							<c:if test="${status.index==15 && s=='1'}" >
+								LOWHEIGHT,
+							</c:if>
+							<c:if test="${status.index==16 && s=='1'}" >
+								MENS,
+							</c:if>
+							<c:if test="${status.index==17 && s=='1'}" >
+								LOWPRICE,
+							</c:if>
+							<c:if test="${status.index==18 && s=='1'}" >
+								MONOTONE,
+							</c:if>
+							<c:if test="${status.index==19 && s=='1'}" >
+								REPEAT,
+							</c:if>
+							<c:if test="${status.index==20 && s=='1'}" >
+								SKEWAVE,
+							</c:if>
+							<c:if test="${status.index==21 && s=='1'}" >
+								SKESTRAIGHT,
+							</c:if>
+							<c:if test="${status.index==22 && s=='1'}" >
+								SKENATURAL,
+							</c:if>
+
+						</c:forEach>
+					</th>
 				</tr>
 
 			</table>
