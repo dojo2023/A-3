@@ -20,7 +20,7 @@
 
 		/* 表示箇所を真ん中にするCSS */
 		.ui-datepicker {
-			margin-left:30%;
+			margin-left:5%;
 			width: 500px;
 			height: 400px;
             font-size: 29px;
@@ -178,19 +178,20 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 	       	        	// テーブルのデータを直接指定
 	       	        	var tableData = [
 	       	        	  ["画像", "/TRex/UploadPhoto/"+list[0].img], // 画像のパスを含む
-	       	        	  ["ITEM", ,list[0].item],
+	       	        	  ["ITEM", ,list[0].clothes],
 	       	        	  ["GENDER", list[0].gender],
-	       	        	  ["OUTER", list[0].outer],
-	       	        	  ["TOPS", list[0].tops],
-	       	        	  ["BOTTOMS", list[0].bottoms],
-	       	        	  ["DRESS", list[0].dress],
-	       	        	  ["SHOES", list[0].shoes],
-	       	        	  ["ACCESSORY",list[0].accessory ],
-	       	        	  ["TAG", ,list[0].tags]
+	       	        	  ["OUTER", list[0].subOuter],
+	       	        	  ["TOPS", list[0].subTops],
+	       	        	  ["BOTTOMS", list[0].subBottoms],
+	       	        	  ["DRESS", list[0].subDress],
+	       	        	  ["SHOES", list[0].subShoes],
+	       	        	  ["ACCESSORY",list[0].subAcce],
+	       	        	  ["TAG", list[0].tag]
 	       	        	];
 	       	        	// テーブルの行を作成してデータをセット
 	       	        	for (var i = 0; i < tableData.length; i++) {
 	       	        	  var row = document.createElement("tr");
+	       	        	 row.style.backgroundColor = "white"; // 行の背景色を白に設定
 	       	        	  var cell1 = document.createElement("td");
 	       	        	  var cell2 = document.createElement("td");
 	       	        	  cell1.textContent = tableData[i][0];
