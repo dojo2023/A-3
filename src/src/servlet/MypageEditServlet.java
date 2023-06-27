@@ -61,7 +61,15 @@ public class MypageEditServlet extends HttpServlet {
 		//データベースも書き直す
 		UsersDao uDao = new UsersDao();
 		Users user = new Users();
-		if (uDao.insert(user)) {
+		user.setImg(img);
+		user.setName(name);
+		user.setEmail(email);
+		user.setGender(gender);
+		user.setHeight(height);
+		user.setWeight(weight);
+		user.setAddress(address);
+		user.setBirth(birth);
+		if (uDao.update(user)) {
 			request.setAttribute("result",
 			new Result("登録成功！", "レコードを登録しました。", "/TRex/MypageServlet"));
 						}
