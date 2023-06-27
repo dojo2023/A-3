@@ -40,8 +40,7 @@ public class DetailServlet extends HttpServlet {
 
 
 
-		//ArrayListをインスタンス化
-		//ArrayList<Goods> list = new ArrayList<>();
+
 
 
 		// マイページにフォワードする
@@ -70,6 +69,9 @@ public class DetailServlet extends HttpServlet {
 			System.out.println(id);
 
 			gDao.insertDelete(clothesID, uID, 0);
+
+			//ArrayListをインスタンス化
+			//ArrayList<Goods> list = new ArrayList<>();
 
 	}
 
