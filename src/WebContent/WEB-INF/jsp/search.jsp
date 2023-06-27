@@ -117,30 +117,30 @@
 		</div>
 		<div>
 			<label>TAG<br>
-			<input type = "checkbox" name = "tag" value = "春">SPRING
-			<input type = "checkbox" name = "tag" value = "夏">SUMMER
-			<input type = "checkbox" name = "tag" value = "秋">AUTUM
-			<input type = "checkbox" name = "tag" value = "冬">WINTER
-			<input type = "checkbox" name = "tag" value = "かわいい">CUTE
-			<input type = "checkbox" name = "tag" value = "かっこいい">COOL
-			<input type = "checkbox" name = "tag" value = "カジュアル">CASUAL<br>
-			<input type = "checkbox" name = "tag" value = "シンプル">SIMPLE
-			<input type = "checkbox" name = "tag" value = "ストライプ">STRIPE
-			<input type = "checkbox" name = "tag" value = "チェック">CHECK
-			<input type = "checkbox" name = "tag" value = "水玉">DOT
-			<input type = "checkbox" name = "tag" value = "きれいめ">BEAUTY
-			<input type = "checkbox" name = "tag" value = "モード">MODE
-			<input type = "checkbox" name = "tag" value = "ナチュラル">NATURAL<br>
-			<input type = "checkbox" name = "tag" value = "コンサバ">CONSERVA
-			<input type = "checkbox" name = "tag" value = "低身長">LOWHEIGHT
-			<input type = "checkbox" name = "tag" value = "メンズ">MENS
-			<input type = "checkbox" name = "tag" value = "プチプラ">LOWPRICE
-			<input type = "checkbox" name = "tag" value = "モノトーン">MONOTONE
-			<input type = "checkbox" name = "tag" value = "着回し">REPEAT
-			<input type = "checkbox" name = "tag" value = "骨格ウェーブ">SKEWAVE<br>
-			<input type = "checkbox" name = "tag" value = "骨格ストレート">SKESTRAIGHT
-			<input type = "checkbox" name = "tag" value = "骨格ナチュラル">SKENATURAL
-			</label>
+			<input type = "checkbox" name = "tag" value = "spring">SPRING
+				<input type = "checkbox" name = "tag" value = "summer">SUMMER
+				<input type = "checkbox" name = "tag" value = "autum">AUTUM
+				<input type = "checkbox" name = "tag" value = "winter">WINTER
+				<input type = "checkbox" name = "tag" value = "cute">CUTE
+				<input type = "checkbox" name = "tag" value = "cool">COOL
+				<input type = "checkbox" name = "tag" value = "casual">CASUAL<br>
+				<input type = "checkbox" name = "tag" value = "simple">SIMPLE
+				<input type = "checkbox" name = "tag" value = "stripe">STRIPE
+				<input type = "checkbox" name = "tag" value = "check">CHECK
+				<input type = "checkbox" name = "tag" value = "dot">DOT
+				<input type = "checkbox" name = "tag" value = "beauty">BEAUTY
+				<input type = "checkbox" name = "tag" value = "mode">MODE
+				<input type = "checkbox" name = "tag" value = "natural">NATURAL<br>
+				<input type = "checkbox" name = "tag" value = "conserva">CONSERVA
+				<input type = "checkbox" name = "tag" value = "lowheight">LOWHEIGHT
+				<input type = "checkbox" name = "tag" value = "mens">MENS
+				<input type = "checkbox" name = "tag" value = "lowprice">LOWPRICE
+				<input type = "checkbox" name = "tag" value = "monotone">MONOTONE
+				<input type = "checkbox" name = "tag" value = "repeat">REPEAT
+				<input type = "checkbox" name = "tag" value = "skewave">SKEWAVE<br>
+				<input type = "checkbox" name = "tag" value = "skestraight">SKESTRAIGHT
+				<input type = "checkbox" name = "tag" value = "skenatural">SKENATURAL
+				</label>
 		</div>
 		<div>
 		<input type="submit"name="submit" value="検索"class="button-030">
