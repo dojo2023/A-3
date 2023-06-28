@@ -192,36 +192,37 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 	       	        	 if(list[i].tag[4]=='1'){
 	        				tagDate+='cute,';
 	        			 }
+
 	       	        	 if(list[i].tag[5]=='1'){
-	        				tagDate+='cool,';
-	        			 }
-	       	        	 if(list[i].tag[6]=='1'){
 	        				tagDate+='casual,';
 	        			 }
-	       	             if(list[i].tag[7]=='1'){
+	       	             if(list[i].tag[6]=='1'){
 	        				tagDate+='simple,';
 	        			 }
-	       	        	 if(list[i].tag[8]=='1'){
+	       	        	 if(list[i].tag[7]=='1'){
 	        				tagDate+='stripe,';
 	        			 }
-	       	        	 if(list[i].tag[9]=='1'){
+	       	        	 if(list[i].tag[8]=='1'){
 	        				tagDate+='check,';
 	        			 }
-	       	        	if(list[i].tag[10]=='1'){
+	       	        	if(list[i].tag[9]=='1'){
 	        				tagDate+='dot,';
 	        			 }
-	       	        	 if(list[i].tag[11]=='1'){
+	       	        	 if(list[i].tag[10]=='1'){
 	        				tagDate+='beauty,';
 	        			 }
-	       	        	 if(list[i].tag[12]=='1'){
+	       	        	 if(list[i].tag[11]=='1'){
 	        				tagDate+='mode,';
 	        			 }
-	       	        	 if(list[i].tag[13]=='1'){
+	       	        	 if(list[i].tag[12]=='1'){
 	        				tagDate+='natural,';
 	        			 }
-	       	        	 if(list[i].tag[14]=='1'){
+	       	        	 if(list[i].tag[13]=='1'){
 	        				tagDate+='conserva,';
 	        			 }
+	       	        	 if(list[i].tag[14]=='1'){
+		        				tagDate+='cool,';
+		        			 }
 	       	        	 if(list[i].tag[15]=='1'){
 	        				tagDate+='lowheight,';
 	        			 }
@@ -234,24 +235,49 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 	       	        	 if(list[i].tag[18]=='1'){
 	        				tagDate+='monotone,';
 	        			 }
-	       	        	 if(list[i].tag[19]=='1'){
-	        				tagDate+='repeat,';
-	        			 }
-	       	        	if(list[i].tag[20]=='1'){
+
+	       	        	if(list[i].tag[19]=='1'){
 	        				tagDate+='skewave,';
 	        			 }
-	       	        	 if(list[i].tag[21]=='1'){
+	       	        	 if(list[i].tag[20]=='1'){
 	        				tagDate+='skestraight,';
 	        			 }
-	       	        	 if(list[i].tag[22]=='1'){
+	       	        	 if(list[i].tag[21]=='1'){
 	        				tagDate+='skenatural,';
+	        			 }
+	       	        	if(list[i].tag[22]=='1'){
+	        				tagDate+='repeat,';
+	        			 }
+
+	       	        	var clothesDate ="";
+	       	        	if(list[i].clothes[0]=='1'){
+	       	        		clothesDate+='outer,';
+	        			 }
+	       	        	 if(list[i].clothes[1]=='1'){
+	       	        		clothesDate+='tops,';
+	        			 }
+	       	        	 if(list[i].clothes[2]=='1'){
+	       	        		clothesDate+='bottoms,';
+	        			 }
+	       	        	 if(list[i].clothes[3]=='1'){
+	       	        		clothesDate+='dress,';
+	        			 }
+	       	        	 if(list[i].clothes[4]=='1'){
+	       	        		clothesDate+='socks,';
+	        			 }
+
+	       	        	 if(list[i].clothes[5]=='1'){
+	       	        		clothesDate+='shoes,';
+	        			 }
+	       	             if(list[i].clothes[6]=='1'){
+	       	            	clothesDate+='acce,';
 	        			 }
 
 
 	       	        	// テーブルのデータを直接指定
 	       	        	var tableData = [
 	       	        	  ["画像", "/TRex/UploadPhoto/"+list[0].img], // 画像のパスを含む
-	       	        	  ["ITEM",list[0].clothes],
+	       	        	  ["ITEM",clothesDate],
 	       	        	  ["GENDER", list[0].gender],
 	       	        	  ["OUTER", list[0].subOuter],
 	       	        	  ["TOPS", list[0].subTops],
