@@ -13,40 +13,29 @@
   	<!-- 天気 -->
   	<div id="ww_4872ca99eaffb" v='1.3' loc='id' a='{"t":"horizontal","lang":"ja","sl_lpl":1,"ids":[],"font":"Times","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3,"el_whr":3}'>Weather Data Source: <a href="https://oneweather.org/ja/tokyo/14_days/" id="ww_4872ca99eaffb_u" target="_blank">東京天気予報14日間</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_4872ca99eaffb"></script>
 	<h1>REGISTER</h1>
-	<h2>C²A</h2>
+	<img alt="" src="./img/logo10.png"style="width: 200px; height: 100px; margin: 0 0 0 auto;">
 	<!-- ハンバーガーメニュー -->
 	<button type="button" class="menu-btn">
     <i class="fa fa-bars" aria-hidden="true"></i>
     </button>
     <div class="menu">
-      <div class="menu__item">MY PAGE</div>
-      <div class="menu__item">TOP PAGE</div>
-      <div class="menu__item">SEARCH</div>
-      <div class="menu__item">LIST</div>
-      <div class="menu__item">REGISTER</div>
-      <div class="menu__item">LOGOUT</div>
+      <div class="menu__item"><a href="/TRex/MypageServlet">MY PAGE</a></div>
+      <div class="menu__item"><a href="/TRex/TopServlet">TOP PAGE</a></div>
+      <div class="menu__item"><a href="/TRex/SearchServlet">SEARCH</a></div>
+      <div class="menu__item"><a href="/TRex/ListServlet">LIST</a></div>
+      <div class="menu__item"><a href="/TRex/LoginServlet">LOGOUT</a></div>
     </div>
     <hr>
   </header>
 <body>
-	<div class = "wrapper">
+	<div class = "waraper">
 		<form id = "register" method = "POST" action = "/TRex/RegisterServlet"enctype="multipart/form-data">
 			<input type="hidden" name="ID">
 			<table>
 				<tr>
 					<td>
 						<div>
-						GENDER<br>
-						<input type="radio" name="gender" value="MEN">MEN
-						<input type="radio" name="gender" value="WOMAN">WOMAN
-						<input type="radio" name="gender" value="OTHERS">OTHERS
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div>
-							ITEM<br>
+							<br><b><label>ITEM</label></b><br>
 							<input type="checkbox" name="clothes"value="outer">outer
 							<input type="checkbox" name="clothes"value="tops">tops
 							<input type="checkbox" name="clothes"value="bottoms">bottoms
@@ -56,10 +45,10 @@
 							<input type="checkbox" name="clothes"value="acce">accessory
 						</div>
 						<div>
-							SUB CATEGORY<br>
+							<br><b><label>SUB CATEGORY</label></b>
 						</div>
 						<div>
-							OUTER<br>
+							<b>OUTER&emsp;&emsp;&emsp;&emsp;</b>
 							<select name="sub_outer">
 								<option value="none">選択してください</option>
 								<option value="jacket">ジャケット</option>
@@ -67,7 +56,7 @@
 							</select>
 						</div>
 						<div>
-							TOPS<br>
+							<br><b>TOPS&emsp;&emsp;&emsp;&emsp;</b>
 							<select name="sub_tops">
 								<option value="none">選択してください</option>
 								<option value="shirt">シャツ・ブラウス</option>
@@ -78,7 +67,7 @@
 							</select>
 						</div>
 						<div>
-							BOTTOMS<br>
+							<br><b>BOTTOMS&emsp;&emsp;</b>
 							<select name="sub_bottoms">
 								<option value="none">選択してください</option>
 								<option value="straight">ストレートパンツ</option>
@@ -90,7 +79,7 @@
 							</select>
 						</div>
 						<div>
-							DRESS<br>
+							<br><b>DRESS&emsp;&emsp;&emsp;&emsp;</b>
 							<select name="sub_dress">
 								<option value="none">選択してください</option>
 								<option value="shirts_dress">シャツワンピース</option>
@@ -99,7 +88,7 @@
 							</select>
 						</div>
 						<div>
-							SHOES<br>
+							<br><b>SHOES&emsp;&emsp;&emsp;&emsp;</b>
 							<select name="sub_shoes">
 								<option value="none">選択してください</option>
 								<option value="pumps">パンプス</option>
@@ -109,7 +98,7 @@
 							</select>
 						</div>
 						<div>
-							ACCESSORY<br>
+							<br><b>accessory&emsp;&emsp;</b>
 							<select name="sub_acce">
 								<option value="none">選択してください</option>
 								<option value="necklace">ネックレス</option>
@@ -123,7 +112,7 @@
 				<tr>
 					<td>
 						<div>
-							<label>TAG<br>
+							<br><b>TAG</b><br>
 							<input type = "checkbox" name = "tag" value = "spring">SPRING
 							<input type = "checkbox" name = "tag" value = "summer">SUMMER
 							<input type = "checkbox" name = "tag" value = "autum">AUTUM
@@ -157,7 +146,6 @@
 							<label>画像アップロード<br>
 								画像:<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);"><br>
 								<canvas id="preview" style="max-width:200px;"></canvas><br>
-								<input type="submit" value="送信">
 							</label>
 						</div>
 					</td>
@@ -165,7 +153,7 @@
 				<tr>
 					<td>
 						<div>
-							<input type = "submit" name = "register" value = "REGISTER">
+							<input type = "submit" name = "register" value = "REGISTER"class="button-030">
 						</div>
 					</td>
 				</tr>

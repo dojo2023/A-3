@@ -20,3 +20,59 @@ display: none;
 .ww_cond{
 	font-size:13px;
 }
+/*送信ボタン*/
+.button-030 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 250px;
+    margin:0 auto;
+    padding: .9em 2em;
+    border: 1px solid #b88eb1;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #b88eb1;
+    font-size: 1em;
+}
+
+.button-030:hover {
+    animation: anima-button-030 1s;
+}
+
+@keyframes anima-button-030 {
+    0% {
+        box-shadow: 0 0 0 0 rgb(184 142 177 / 50%);
+    }
+    100% {
+        box-shadow: 0 0 0 1.2em rgb(0 0 0 / 0%);
+    }
+}
+
+.button-030::after {
+    transform: rotate(45deg);
+    width: 5px;
+    height: 5px;
+    margin-left: 10px;
+    border-top: 2px solid #b88eb1;
+    border-right: 2px solid #b88eb1;
+    content: '';
+}
+.waraper{
+	font-family:Algerian;
+	padding: 10px;
+    border: 1px solid #333;
+    text-align: center;
+    margin-left: 400px;
+     width: 500px;
+    height: 980px;
+    font-size: 20px;
+}
+select{
+	width: 150px;
+    height: 20px;
+}
+ img {
+    width: 200px;
+    height: 300px;
+  }
