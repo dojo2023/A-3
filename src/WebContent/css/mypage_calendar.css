@@ -177,8 +177,7 @@ display: none;
 }
 
 .show{
-	margin-left:600px;
-
+	display: flex;
 }
 table {
 

@@ -20,7 +20,7 @@
 
 		/* 表示箇所を真ん中にするCSS */
 		.ui-datepicker {
-			margin-left:5%;
+			margin-left:30%;
 			width: 500px;
 			height: 400px;
             font-size: 29px;
@@ -28,7 +28,7 @@
 		}
 	</style>
 </head>
-<header>
+<header id="top-header">
 <div class="container">
  <!-- 天気 -->
  <div id="ww_4872ca99eaffb" v='1.3' loc='id' a='{"t":"horizontal","lang":"ja","sl_lpl":1,"ids":[],"font":"Times","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3,"el_whr":3}'>Weather Data Source: <a href="https://oneweather.org/ja/tokyo/14_days/" id="ww_4872ca99eaffb_u" target="_blank">東京天気予報14日間</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_4872ca99eaffb"></script>
@@ -175,6 +175,79 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 	       	        	// table要素を作成
 	       	        	var table = document.createElement("table");
 	       	        	table.setAttribute("border", "1");
+	       	        	var tagDate ="";
+
+	       	        	 if(list[i].tag[0]=='1'){
+	        				tagDate+='spring,';
+	        			 }
+	       	        	 if(list[i].tag[1]=='1'){
+	        				tagDate+='summer,';
+	        			 }
+	       	        	 if(list[i].tag[2]=='1'){
+	        				tagDate+='autum,';
+	        			 }
+	       	        	 if(list[i].tag[3]=='1'){
+	        				tagDate+='winter,';
+	        			 }
+	       	        	 if(list[i].tag[4]=='1'){
+	        				tagDate+='cute,';
+	        			 }
+	       	        	 if(list[i].tag[5]=='1'){
+	        				tagDate+='cool,';
+	        			 }
+	       	        	 if(list[i].tag[6]=='1'){
+	        				tagDate+='casual,';
+	        			 }
+	       	             if(list[i].tag[7]=='1'){
+	        				tagDate+='simple,';
+	        			 }
+	       	        	 if(list[i].tag[8]=='1'){
+	        				tagDate+='stripe,';
+	        			 }
+	       	        	 if(list[i].tag[9]=='1'){
+	        				tagDate+='check,';
+	        			 }
+	       	        	if(list[i].tag[10]=='1'){
+	        				tagDate+='dot,';
+	        			 }
+	       	        	 if(list[i].tag[11]=='1'){
+	        				tagDate+='beauty,';
+	        			 }
+	       	        	 if(list[i].tag[12]=='1'){
+	        				tagDate+='mode,';
+	        			 }
+	       	        	 if(list[i].tag[13]=='1'){
+	        				tagDate+='natural,';
+	        			 }
+	       	        	 if(list[i].tag[14]=='1'){
+	        				tagDate+='conserva,';
+	        			 }
+	       	        	 if(list[i].tag[15]=='1'){
+	        				tagDate+='lowheight,';
+	        			 }
+	       	        	 if(list[i].tag[16]=='1'){
+	        				tagDate+='mens,';
+	        			 }
+	       	             if(list[i].tag[17]=='1'){
+	        				tagDate+='lowprice,';
+	        			 }
+	       	        	 if(list[i].tag[18]=='1'){
+	        				tagDate+='monotone,';
+	        			 }
+	       	        	 if(list[i].tag[19]=='1'){
+	        				tagDate+='repeat,';
+	        			 }
+	       	        	if(list[i].tag[20]=='1'){
+	        				tagDate+='skewave,';
+	        			 }
+	       	        	 if(list[i].tag[21]=='1'){
+	        				tagDate+='skestraight,';
+	        			 }
+	       	        	 if(list[i].tag[22]=='1'){
+	        				tagDate+='skenatural,';
+	        			 }
+
+
 	       	        	// テーブルのデータを直接指定
 	       	        	var tableData = [
 	       	        	  ["画像", "/TRex/UploadPhoto/"+list[0].img], // 画像のパスを含む
@@ -186,7 +259,7 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 	       	        	  ["DRESS", list[0].subDress],
 	       	        	  ["SHOES", list[0].subShoes],
 	       	        	  ["ACCESSORY",list[0].subAcce],
-	       	        	  ["TAG", list[0].tag]
+	       	        	  ["TAG", tagDate]
 	       	        	];
 	       	        	// テーブルの行を作成してデータをセット
 	       	        	for (var i = 0; i < tableData.length; i++) {
@@ -200,7 +273,7 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 	       	        	    var img = document.createElement("img");
 	       	        	    img.src = tableData[i][1]; // 画像のパスをセット
 	       	        	    cell2.appendChild(img);
-	       	        	  } else {
+	       	        	  }else {
 	       	        	    cell2.textContent = tableData[i][1];
 	       	        	  }
 	       	        	  row.appendChild(cell1);
