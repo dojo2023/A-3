@@ -162,6 +162,7 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 	    			if(mm.length==1){
 	    				mm="0"+mm;
 	    			}
+					alert(year+":"+month+":"+day+"⇔"+yy+":"+mm+":"+dd);
 
 	       	        if (
 	       	          year == yy &&
@@ -287,20 +288,23 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 	       	        	  ["ACCESSORY",list[0].subAcce],
 	       	        	  ["TAG", tagDate]
 	       	        	];
+
+
 	       	        	// テーブルの行を作成してデータをセット
-	       	        	for (var i = 0; i < tableData.length; i++) {
+	       	         for (var j = 0; j < tableData.length; j++) {
 	       	        	  var row = document.createElement("tr");
 	       	        	 row.style.backgroundColor = "white"; // 行の背景色を白に設定
 	       	        	  var cell1 = document.createElement("td");
 	       	        	  var cell2 = document.createElement("td");
-	       	        	  cell1.textContent = tableData[i][0];
+
+	       	        	  cell1.textContent = tableData[j][0];
 	       	        	  // 画像の行の場合、img要素を作成してsrc属性に画像のパスを指定
-	       	        	  if (tableData[i][0] === "画像") {
+	       	        	  if (tableData[j][0] === "画像") {
 	       	        	    var img = document.createElement("img");
-	       	        	    img.src = tableData[i][1]; // 画像のパスをセット
+	       	        	    img.src = tableData[j][1]; // 画像のパスをセット
 	       	        	    cell2.appendChild(img);
 	       	        	  }else {
-	       	        	    cell2.textContent = tableData[i][1];
+	       	        	    cell2.textContent = tableData[j][1];
 	       	        	  }
 	       	        	  row.appendChild(cell1);
 	       	        	  row.appendChild(cell2);
@@ -311,7 +315,7 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 	       	        	// body要素にdiv要素を追加
 	       	        	document.body.appendChild(div);
 	    	            flg++;
-	          		 }
+	          		}
 				 }
 	            //HTMLの作成：合致するものが無かったら空の要素を作成する
 	         	if(flg==0){
