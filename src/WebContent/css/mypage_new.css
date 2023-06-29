@@ -20,3 +20,14 @@ display: none;
 .ww_cond{
 	font-size:13px;
 }
+
+div.waraper{
+	font-family:Algerian;
+	padding: 10px;
+    border: 1px solid #333;
+    text-align: center;
+    margin-left: 400px;
+     width: 500px;
+    height: 980px;
+    font-size: 20px;
+}

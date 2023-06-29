@@ -5,12 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>C²A</title>
+<link rel="stylesheet" href="/TRex/css/register.css">
 <link rel="stylesheet" href="/TRex/css/hamburger.css">
-<link rel="stylesheet" href="/TRex/css/mypage_new.css">
 <link rel ="stylesheet" href="/TRex/css/common.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
-<header>
+<header id="top-header">
 <div class = "container">
 <!-- 天気 -->
  <div id="ww_4872ca99eaffb" v='1.3' loc='id' a='{"t":"horizontal","lang":"ja","sl_lpl":1,"ids":[],"font":"Times","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3,"el_whr":3}'>Weather Data Source: <a href="https://oneweather.org/ja/tokyo/14_days/" id="ww_4872ca99eaffb_u" target="_blank">東京天気予報14日間</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_4872ca99eaffb"></script>
@@ -32,10 +32,9 @@
 	<hr>
 	</header>
 	<body>
+	<div  class = "waraper">
 	<form id = "mypage_form" action="/TRex/MypageNewServlet" method="POST" enctype="multipart/form-data">
-		  <input type="file" name="icon">
-		  <button type="submit">送信する</button>
-	<div>
+
 	USER ID<br>
 	<input type="text" name="id" placeholder="USER ID" ><br>
 	PASSWORDS<br>
@@ -112,19 +111,21 @@
 				</select><br>
 	BIRTHDAY<br>
 		<input type="date" name="birth" max="9999-12-31">
-	</div>
-	<div>
+
+
+		<label><br>画像アップロード<br>
+		<input type = "file" name = "img" accept="image/*" onchange="previewImage(this);">
+		<canvas id="preview" style="max-width:200px;"></canvas><br>
+		</label>
+
+		<div>
 		<div style="color:#ff0000;" class="contents" id="error_message"></div>
 		<input type="submit"name="submit" value="登録">
 	</div>
 
-		<label>画像アップロード<br>
-		<input type = "file" name = "img" accept="image/*" onchange="previewImage(this);">
-		</label>
 
-		<canvas id="preview" style="max-width:200px;"></canvas><br>
 	</form>
-
+	</div>
 </body>
 <script>
 	/* ハンバーガーメニュー用 */
