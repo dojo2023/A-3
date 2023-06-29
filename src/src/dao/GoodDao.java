@@ -90,7 +90,7 @@ public class GoodDao{
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:\\dojo6\\data", "sa", "sa");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
 
 			// SQL文を準備する（何で検索することが多いかを考える）
 			//検索
@@ -137,6 +137,57 @@ public class GoodDao{
 
 		// 結果を返す
 		return (List<GoodDao>) goodList;
+	}
+
+
+	public boolean select(String clothesID,String uID) {
+		Connection conn = null;
+		boolean result = false;
+
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/data", "sa", "sa");
+			//検索
+			String sql = "select * from GOOD WHERE GOODCLOTHES = ? AND UID = ? ORDER BY GOODID";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+				pStmt.setString(1, clothesID);
+				pStmt.setString(2, uID);
+
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			// 結果表をコレクションにコピーする
+			while (rs.next()) {
+				result = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+
+		// 結果を返す
+		return result;
 	}
 
 	private String getgetuID() {
