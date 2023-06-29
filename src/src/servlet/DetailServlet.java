@@ -9,10 +9,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.GoodDao;
 import dao.RegisterDao;
 import model.Registers;
+import model.Users;
 
 /**
  * Servlet implementation class DetailServlet
@@ -30,17 +32,21 @@ public class DetailServlet extends HttpServlet {
         response.setContentType("application/json");
 		response.setHeader("Cache-Control", "nocache");
 		RegisterDao rDao = new RegisterDao();
+		GoodDao gDao = new GoodDao();
 		String key= request.getParameter("key");
-
+		HttpSession session = request.getSession();
+		Users user =(Users)session.getAttribute("user");
+		String id = user.getId();
 
 		//daoに対して同じIDの投稿を持ってくるよう指示
 		List<Registers> list =rDao.select(key);
+		System.out.println(key+":"+id);
 		//もらってきたデータをlistという名前でスコープにセット
 		request.setAttribute("list",list);
 
+		boolean ans = gDao.select(key, id);
 
-
-
+		request.setAttribute("ans",ans);
 
 
 		// マイページにフォワードする

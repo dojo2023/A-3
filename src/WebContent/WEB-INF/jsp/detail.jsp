@@ -188,8 +188,9 @@
 
 	<input type="hidden" name="clothesID" value="${list[0].id}" id="cl">
 	<input type="hidden" name="user_id" value="${user.id}" id="ul">
- 	<label for="myCheckbox">
-		<input type="checkbox" id="myCheckbox">
+
+ 	<label for="myCheckbox" >
+		<input type="checkbox" id="myCheckbox" <c:if test="${ans==true}">checked</c:if> style="visibility:hidden">
 		<span id="checkboxImage"></span>
 	</label>
 
