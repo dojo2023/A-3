@@ -290,13 +290,13 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 						];
 
 						// 行の数だけループして行を作成
-						for (var i = 0; i < rowData.length; i++) {
+						for (var j = 0; j < rowData.length; j++) {
 						  var row = document.createElement("tr");
 
 						  // 各行のセルを作成
-						  for (var j = 0; j < rowData[i].length; j++) {
+						  for (var k = 0; k < rowData[j].length; k++) {
 						    var cell = document.createElement("td");
-						    cell.textContent = rowData[i][j];
+						    cell.textContent = rowData[j][l];
 						    row.appendChild(cell);
 						  }
 
