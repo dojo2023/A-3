@@ -297,7 +297,7 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 						  // 各行のセルを作成
 						  for (var k = 0; k < rowData[j].length; k++) {
 						    var cell = document.createElement("td");
-						    cell.textContent = rowData[j][l];
+						    cell.textContent = rowData[j][k];
 						    row.appendChild(cell);
 						  }
 
