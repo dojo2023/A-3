@@ -162,7 +162,6 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 	    			if(mm.length==1){
 	    				mm="0"+mm;
 	    			}
-					alert(year+":"+month+":"+day+"⇔"+yy+":"+mm+":"+dd);
 
 	       	        if (
 	       	          year == yy &&
@@ -170,7 +169,157 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 	       	          day == dd
 	          	        ) {
 
-	       	      // div要素を作成
+						//tagDateとclothesDateの値を作成
+						var tagDate ="";
+
+							 if(list[i].tag[0]=='1'){
+							tagDate+='spring,';
+						}
+							 if(list[i].tag[1]=='1'){
+							tagDate+='summer,';
+						}
+							 if(list[i].tag[2]=='1'){
+							tagDate+='autum,';
+						}
+							 if(list[i].tag[3]=='1'){
+							tagDate+='winter,';
+						}
+							 if(list[i].tag[4]=='1'){
+							tagDate+='cute,';
+						}
+
+							 if(list[i].tag[5]=='1'){
+							tagDate+='casual,';
+						}
+						   if(list[i].tag[6]=='1'){
+							tagDate+='simple,';
+						}
+							 if(list[i].tag[7]=='1'){
+							tagDate+='stripe,';
+						}
+							 if(list[i].tag[8]=='1'){
+							tagDate+='check,';
+						}
+							if(list[i].tag[9]=='1'){
+							tagDate+='dot,';
+						}
+							 if(list[i].tag[10]=='1'){
+							tagDate+='beauty,';
+						}
+							 if(list[i].tag[11]=='1'){
+							tagDate+='mode,';
+						}
+							 if(list[i].tag[12]=='1'){
+							tagDate+='natural,';
+						}
+							 if(list[i].tag[13]=='1'){
+							tagDate+='conserva,';
+						}
+							 if(list[i].tag[14]=='1'){
+								tagDate+='cool,';
+							 }
+							 if(list[i].tag[15]=='1'){
+							tagDate+='lowheight,';
+						}
+							 if(list[i].tag[16]=='1'){
+							tagDate+='mens,';
+						}
+						   if(list[i].tag[17]=='1'){
+							tagDate+='lowprice,';
+						}
+							 if(list[i].tag[18]=='1'){
+							tagDate+='monotone,';
+						}
+
+							if(list[i].tag[19]=='1'){
+							tagDate+='skewave,';
+						}
+							 if(list[i].tag[20]=='1'){
+							tagDate+='skestraight,';
+						}
+							 if(list[i].tag[21]=='1'){
+							tagDate+='skenatural,';
+						}
+							if(list[i].tag[22]=='1'){
+							tagDate+='repeat,';
+						}
+
+							var clothesDate ="";
+							if(list[i].clothes[0]=='1'){
+								clothesDate+='outer,';
+						}
+							 if(list[i].clothes[1]=='1'){
+								clothesDate+='tops,';
+						}
+							 if(list[i].clothes[2]=='1'){
+								clothesDate+='bottoms,';
+						}
+							 if(list[i].clothes[3]=='1'){
+								clothesDate+='dress,';
+						}
+							 if(list[i].clothes[4]=='1'){
+								clothesDate+='socks,';
+						}
+
+							 if(list[i].clothes[5]=='1'){
+								clothesDate+='shoes,';
+						}
+						   if(list[i].clothes[6]=='1'){
+						  	clothesDate+='acce,';
+						}
+
+						//新しいdiv要素を作成
+						var div = document.createElement("div");
+						div.id = "show";
+
+						// 新しいtable要素を作成
+						var table = document.createElement("table");
+						table.setAttribute("border", "1");
+
+						// 各行のデータを定義
+						var rowData = [
+						  ["ITEM",clothesDate],
+	       	        	  ["GENDER", list[0].gender],
+	       	        	  ["OUTER", list[0].subOuter],
+	       	        	  ["TOPS", list[0].subTops],
+	       	        	  ["BOTTOMS", list[0].subBottoms],
+	       	        	  ["DRESS", list[0].subDress],
+	       	        	  ["SHOES", list[0].subShoes],
+	       	        	  ["ACCESSORY",list[0].subAcce],
+	       	        	  ["TAG", tagDate]
+						];
+
+						// 行の数だけループして行を作成
+						for (var i = 0; i < rowData.length; i++) {
+						  var row = document.createElement("tr");
+
+						  // 各行のセルを作成
+						  for (var j = 0; j < rowData[i].length; j++) {
+						    var cell = document.createElement("td");
+						    cell.textContent = rowData[i][j];
+						    row.appendChild(cell);
+						  }
+
+						  // 行をテーブルに追加
+						  table.appendChild(row);
+						}
+
+						// 最初の行に画像を含むセルを追加
+						var firstRow = document.createElement("tr");
+						var imgCell = document.createElement("td");
+						var img = document.createElement("img");
+						img.src = "/TRex/UploadPhoto/"+list[0].img; // 画像のパスを指定
+						imgCell.appendChild(img);
+						firstRow.appendChild(imgCell);
+						table.insertBefore(firstRow, table.firstChild);
+
+						// テーブルをdivに追加
+						div.appendChild(table);
+
+						// 最終的なHTMLをbody要素に追加
+						document.body.appendChild(div);
+
+	       	      /* 		// div要素を作成
 	       	        	var div = document.createElement("div");
 	       	        	div.className = "show";
 	       	        	// table要素を作成
@@ -345,7 +494,7 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 	   	            const bodyElement = document.querySelector('body');
 	   	            bodyElement.appendChild(divElement);
 			  	}
-	         }
+	         } */
        });
    });
  </script>
