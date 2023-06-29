@@ -176,9 +176,9 @@ display: none;
     border-bottom-width: 2px;
 }
 
-.show{
-	/* display: flex; */
-	margin-left:520px;
+.out{
+	display: flex;
+	/* margin-left:520px; */
 }
 table {
 

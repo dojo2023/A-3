@@ -268,10 +268,11 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 						   if(list[i].clothes[6]=='1'){
 						  	clothesDate+='acce,';
 						}
-
+						var outerDiv = document.createElement("div");
+						outerDiv.className="out";
 						//新しいdiv要素を作成
 						var div = document.createElement("div");
-						div.id = "show";
+						div.className = "show";
 
 						// 新しいtable要素を作成
 						var table = document.createElement("table");
@@ -308,15 +309,16 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 						// 最初の行に画像を含むセルを追加
 						var firstRow = document.createElement("tr");
 						var imgCell = document.createElement("td");
+						imgCell.setAttribute("colspan", "2"); // colspan
 						var img = document.createElement("img");
-						img.src = "/TRex/UploadPhoto/"+list[0].img; // 画像のパスを指定
+						img.src = "/TRex/UploadPhoto/"+list[i].img; // 画像のパスを指定
 						imgCell.appendChild(img);
 						firstRow.appendChild(imgCell);
 						table.insertBefore(firstRow, table.firstChild);
 
 						// テーブルをdivに追加
 						div.appendChild(table);
-
+						outerDiv.appendChild(div);
 						// 最終的なHTMLをbody要素に追加
 						document.body.appendChild(div);
 	       	        }}
