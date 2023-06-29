@@ -127,6 +127,7 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 	        onSelect: function(dateText, inst) {
 	        	//クリックするたび、表示されたボックスを削除する
 	        	 // .aaaクラスの要素を取得
+
 	        	  var aaaElements = document.getElementsByClassName("show");
 	        	  // 要素が存在する場合にのみ削除処理を実行
 	        	  if (aaaElements.length > 0) {
@@ -318,6 +319,10 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 
 						// 最終的なHTMLをbody要素に追加
 						document.body.appendChild(div);
+	       	        }}
+	   	         }
+	            });
+	        });
 
 	       	      /* 		// div要素を作成
 	       	        	var div = document.createElement("div");
@@ -494,8 +499,6 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 	   	            const bodyElement = document.querySelector('body');
 	   	            bodyElement.appendChild(divElement);
 			  	}*/
-	         }
-       });
-   });
+
  </script>
 </html>
