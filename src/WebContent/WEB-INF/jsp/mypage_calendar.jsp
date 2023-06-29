@@ -493,8 +493,8 @@ list = <%= new Gson().toJson(request.getAttribute("list"))%>;
 
 	   	            const bodyElement = document.querySelector('body');
 	   	            bodyElement.appendChild(divElement);
-			  	}
-	         } */
+			  	}*/
+	         }
        });
    });
  </script>
